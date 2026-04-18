@@ -14,13 +14,13 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-[#0f172a] transition-colors duration-300">
       <Header />
 
-      <div className="bg-secondary text-white py-20 relative overflow-hidden">
+      <div className="bg-gradient-to-l from-secondary to-primary-dark text-white py-20 relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-black mb-4">تواصل معنا</h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-black mb-4 font-heading">تواصل معنا</h1>
+          <p className="text-xl text-white/80 max-w-2xl mx-auto font-body">
             نحن هنا للإجابة على جميع استفساراتك. تواصل معنا عبر أي من القنوات المتاحة.
           </p>
         </div>
@@ -37,14 +37,14 @@ export default function ContactPage() {
               { icon: MapPin, title: "العنوان", lines: ["المملكة العربية السعودية", "الرياض، حي شبرا، طريق تويق"], href: "#" },
               { icon: Clock, title: "أوقات العمل", lines: ["الأحد – الخميس", "8:00 صباحاً – 4:00 مساءً"], href: "#" },
             ].map((item, i) => (
-              <div key={i} className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 flex items-start gap-4">
+              <div key={i} className="bg-white dark:bg-[#1a2333] rounded-2xl p-6 shadow-soft border border-gray-100 dark:border-gray-800 flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
                   <item.icon className="text-primary" size={22} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-secondary dark:text-white mb-1">{item.title}</h3>
+                  <h3 className="font-bold text-secondary dark:text-white mb-1 font-heading">{item.title}</h3>
                   {item.lines.map((line, j) => (
-                    <p key={j} className="text-gray-500 dark:text-gray-400 text-sm">{line}</p>
+                    <p key={j} className="text-gray-500 dark:text-gray-400 text-sm font-body">{line}</p>
                   ))}
                 </div>
               </div>
@@ -52,14 +52,14 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+          <div className="lg:col-span-2 bg-white dark:bg-[#1a2333] rounded-3xl p-8 shadow-soft border border-gray-100 dark:border-gray-800">
             {sent ? (
               <div className="flex flex-col items-center justify-center text-center h-full min-h-[400px] gap-4">
-                <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center">
+                <div className="w-20 h-20 bg-emerald-100 dark:bg-emerald-900/20 rounded-full flex items-center justify-center">
                   <CheckCircle2 size={40} className="text-emerald-500" />
                 </div>
-                <h2 className="text-2xl font-black text-secondary dark:text-white">تم إرسال رسالتك بنجاح</h2>
-                <p className="text-gray-500 dark:text-gray-400">سنتواصل معك في أقرب وقت ممكن. شكراً لتواصلك مع جمعية سقيا الماء.</p>
+                <h2 className="text-2xl font-black text-secondary dark:text-white font-heading">تم إرسال رسالتك بنجاح</h2>
+                <p className="text-gray-500 dark:text-gray-400 font-body">سنتواصل معك في أقرب وقت ممكن. شكراً لتواصلك مع جمعية سقيا الماء.</p>
                 <button onClick={() => setSent(false)} className="mt-4 bg-primary text-white font-bold px-8 py-3 rounded-xl hover:bg-primary-dark transition-all">
                   إرسال رسالة أخرى
                 </button>

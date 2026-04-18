@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getDatabaseRows } from "@/lib/db";
+import { getPostBySlug } from "@/lib/mdx";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Calendar, ArrowRight, Tag, Newspaper } from "lucide-react";
@@ -11,27 +12,39 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { id } = await params;
   const rows = await getDatabaseRows();
-  const item = rows.find(r => r.ID === id && r.TemplateType === "News");
+  const dbItem = rows.find(r => r.ID === id && r.TemplateType === "News");
+  const mdxItem = dbItem ? null : getPostBySlug("news", id);
+  const title = dbItem?.Title || mdxItem?.meta.title || "خبر";
+
   return {
-    title: item ? `${item.Title} | سقيا الماء` : "خبر | سقيا الماء",
-    description: item?.Description ?? "المركز الإعلامي لجمعية سقيا الماء",
+    title: `${title} | سقيا الماء`,
+    description: dbItem?.Description || mdxItem?.meta.excerpt || "المركز الإعلامي لجمعية سقيا الماء",
   };
 }
 
 export default async function MediaDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
+  
+  // 1. Try DB first
   const rows = await getDatabaseRows();
-  const item = rows.find(r => r.ID === id && r.TemplateType === "News");
+  const dbItem = rows.find(r => r.ID === id && r.TemplateType === "News");
+  
+  // 2. Try MDX if not in DB
+  const mdxItem = dbItem ? null : getPostBySlug("news", id);
 
-  if (!item) return notFound();
+  if (!dbItem && !mdxItem) return notFound();
 
-  // Parse markdown-like content
-  const contentLines = item.Content
-    ? item.Content.replace(/^#+ .+\n?/, "").trim()
-    : item.Description;
+  const title = dbItem?.Title || mdxItem?.meta.title;
+  const description = dbItem?.Description || mdxItem?.meta.excerpt;
+  const category = dbItem?.Category || mdxItem?.meta.category;
+  const date = dbItem ? new Date() : new Date(mdxItem!.meta.date);
+  
+  const content = dbItem 
+    ? (dbItem.Content || dbItem.Description) 
+    : mdxItem!.content;
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 font-sans">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-[#0f172a] font-sans transition-colors duration-300">
       <Header />
 
       <main className="flex-grow container mx-auto px-4 py-12 max-w-4xl">
@@ -40,33 +53,33 @@ export default async function MediaDetailPage({ params }: { params: Promise<{ id
         <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-8">
           <Link href="/media" className="hover:text-primary transition-colors">المركز الإعلامي</Link>
           <ArrowRight size={14} className="rotate-180" />
-          <span className="text-gray-700 dark:text-gray-200 font-medium line-clamp-1">{item.Title}</span>
+          <span className="text-gray-700 dark:text-gray-200 font-medium line-clamp-1">{title}</span>
         </div>
 
-        <article className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden">
+        <article className="bg-white dark:bg-gray-900/40 rounded-3xl shadow-soft border border-gray-100 dark:border-gray-800 overflow-hidden">
 
           {/* Article Header */}
-          <div className="bg-primary/5 dark:bg-primary/10 p-8 md:p-12 border-b border-gray-100 dark:border-gray-700">
+          <div className="bg-primary/5 dark:bg-primary/10 p-8 md:p-12 border-b border-gray-100 dark:border-gray-800">
             <div className="flex flex-wrap gap-3 items-center mb-6">
               <span className="flex items-center gap-1 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
-                <Tag size={12} /> {item.Category}
+                <Tag size={12} /> {category}
               </span>
               <span className="flex items-center gap-1 text-gray-400 text-sm">
-                <Calendar size={14} /> {new Date().toLocaleDateString("ar-SA", { year: "numeric", month: "long", day: "numeric" })}
+                <Calendar size={14} /> {date.toLocaleDateString("ar-SA", { year: "numeric", month: "long", day: "numeric" })}
               </span>
             </div>
-            <h1 className="text-2xl md:text-4xl font-black text-secondary dark:text-white leading-tight mb-4">
-              {item.Title}
+            <h1 className="text-2xl md:text-4xl font-black text-secondary dark:text-gray-100 leading-tight mb-4 font-heading">
+              {title}
             </h1>
-            <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed">
-              {item.Description}
+            <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed font-body">
+              {description}
             </p>
           </div>
 
           {/* Article Body */}
           <div className="p-8 md:p-12">
-            <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300 leading-loose">
-              {contentLines.split("\n").map((para, i) => para.trim() && (
+            <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300 leading-loose font-body">
+              {content.split("\n").map((para, i) => para.trim() && (
                 <p key={i} className="mb-4">{para.trim()}</p>
               ))}
             </div>

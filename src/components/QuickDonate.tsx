@@ -28,7 +28,7 @@ export default function QuickDonate() {
 
   return (
     <div className="w-full max-w-md mx-auto relative z-20 px-4 md:px-0" style={{ fontFamily: "var(--font-ibm)" }}>
-      <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col p-4 md:p-6 pb-2 transition-colors duration-300">
+      <div className="bg-white dark:bg-gray-900/80 rounded-3xl shadow-soft overflow-hidden border border-gray-100 dark:border-gray-800 flex flex-col p-4 md:p-6 pb-2 transition-colors duration-300">
 
         {/* Category Tabs */}
         <div className="flex border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 rounded-xl overflow-hidden mb-6 mx-auto w-full">

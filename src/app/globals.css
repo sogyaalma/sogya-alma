@@ -3,27 +3,52 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #004080;      /* Dark Official Blue */
-  --color-primary-light: #005A9C;
-  --color-primary-dark: #002b5e; /* Interaction / Active Blue */
-  --color-secondary: #0D121C;
-  --color-accent: #FFA500;
-  --color-primary-100: #b3d1f0;    /* Light Blue for text on dark bg */
-  --color-light: #ffffff;
+  --color-primary: #003B73;      /* Deep Marine Blue (Authority, Trust) */
+  --color-primary-light: #0074B7; /* Azure Secondary */
+  --color-primary-dark: #00264D;  /* Navy Blue */
+  --color-secondary: #0074B7;    /* Legacy Secondary */
+  --color-accent: #60A3D9;       /* Light Ocean Blue */
+  --color-accent-hover: #BFD7ED;  /* Soft Blue Highlight */
+  --color-primary-100: #BFD7ED;   /* Light Blue for text on dark bg */
+  --color-light: #F8F9FA;
+  
+  /* Typography Tokens */
+  --font-heading: 'IBM Plex Sans Arabic', sans-serif;
+  --font-body: 'Cairo', sans-serif;
   --font-ibm: 'IBM Plex Sans Arabic', sans-serif;
+
+  /* Shadows */
+  --shadow-soft: 0 10px 30px -5px rgba(0, 59, 115, 0.05);
+  --shadow-hover: 0 20px 40px -10px rgba(0, 59, 115, 0.1);
+
+  /* Dark Mode Tokens */
+  --color-midnight-surface: #0f172a;
+  --color-midnight-border: #1e293b;
 }
 
 @layer base {
   :root {
-    --primary: #004080;
-    --primary-light: #005A9C;
-    --primary-dark: #002b5e;
-    --secondary: #0D121C;
+    --primary: #003B73;
+    --primary-light: #0074B7;
+    --primary-dark: #00264D;
+    --secondary: #0074B7;
+    --accent: #60A3D9;
+    --bg-light: #F8F9FA;
   }
   
   html, body {
-    @apply bg-white text-gray-900 font-sans;
-    font-family: var(--font-ibm);
+    @apply bg-white text-gray-900 antialiased selection:bg-primary/20 selection:text-primary;
+    font-family: var(--font-body);
+    scroll-behavior: smooth;
+  }
+
+  .dark {
+    @apply bg-[#020617] text-gray-100; /* Deep Premium Midnight Navy */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    @apply font-bold tracking-tight;
   }
 }
 

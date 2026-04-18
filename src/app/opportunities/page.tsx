@@ -39,7 +39,7 @@ export default async function ProjectsPage({
   const projects = await getProjects(activeSearch);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-[#0f172a] transition-colors duration-300">
       <Header />
       
       {/* Hero Section */}
@@ -49,15 +49,15 @@ export default async function ProjectsPage({
           <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
             <Droplets size={32} className="text-white" />
           </div>
-          <h1 className="text-3xl md:text-5xl font-black mb-4 font-ibm">دليل فرص التبرع والمشاريع</h1>
-          <p className="text-lg text-primary-100 max-w-2xl mx-auto">
+          <h1 className="text-3xl md:text-5xl font-black mb-4 font-heading">دليل فرص التبرع والمشاريع</h1>
+          <p className="text-lg text-primary-100 max-w-2xl mx-auto font-body">
             تصفح جميع مشاريع جمعية سقيا الماء واختر المشروع الذي تود المساهمة فيه. كل ريال يُحدث فرقاً.
           </p>
         </div>
       </div>
 
       {/* Filter Ribbon */}
-      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 py-4 sticky top-[72px] z-40 shadow-sm transition-colors duration-300">
+      <div className="bg-white dark:bg-[#1a2333] border-b border-gray-200 dark:border-gray-800 py-4 sticky top-[72px] z-40 shadow-sm transition-colors duration-300">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400">
@@ -99,11 +99,11 @@ export default async function ProjectsPage({
               <CardRenderer key={project.ID} row={project} />
             ))
           ) : (
-            <div className="col-span-full text-center py-20 bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700">
-               <div className="text-gray-400 mb-4 text-6xl">🔍</div>
-               <h3 className="text-xl font-bold text-gray-700 dark:text-gray-300 mb-2">لا توجد نتائج مطابقة</h3>
-               <p className="text-gray-500 mb-6">حاول البحث باستخدام كلمات أخرى مثل (حفر، سقيا، وقف).</p>
-               <Link href="/opportunities" className="inline-block bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-primary-dark transition">
+            <div className="col-span-full text-center py-20 bg-white dark:bg-[#1a2333] rounded-3xl border border-gray-100 dark:border-gray-800 shadow-soft">
+               <div className="text-gray-400 mb-4 text-6xl opacity-50">🔍</div>
+               <h3 className="text-xl font-bold text-gray-700 dark:text-gray-200 mb-2 font-heading">لا توجد نتائج مطابقة</h3>
+               <p className="text-gray-500 dark:text-gray-400 mb-8 font-body">حاول البحث باستخدام كلمات أخرى مثل (حفر، سقيا، وقف).</p>
+               <Link href="/opportunities" className="inline-block bg-primary text-white px-10 py-4 rounded-xl font-bold hover:bg-primary-dark transition shadow-lg hover:shadow-xl hover:-translate-y-1">
                  عرض جميع المشاريع
                </Link>
             </div>

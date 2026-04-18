@@ -62,7 +62,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-[#020617] transition-colors duration-300 font-sans">
       <Header />
 
       {/* Page Hero */}
@@ -81,8 +81,8 @@ export default function ServicesPage() {
           <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
             <Droplets size={32} className="text-white" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-black mb-4">الخدمات الإلكترونية</h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-black mb-4 font-heading">الخدمات الإلكترونية</h1>
+          <p className="text-xl text-white/80 max-w-2xl mx-auto font-body">
             جمعية سقيا الماء توفر منظومة متكاملة من الخدمات الرقمية لخدمة المتبرعين والمستفيدين والشركاء.
           </p>
         </div>
@@ -95,21 +95,21 @@ export default function ServicesPage() {
             <Link
               key={i}
               href={service.link}
-              className="group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              className="group bg-white dark:bg-midnight-surface rounded-3xl p-8 shadow-soft border border-gray-100 dark:border-midnight-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
-              <div className={`w-14 h-14 ${service.bg} dark:bg-opacity-20 rounded-2xl flex items-center justify-center mb-6`}>
+              <div className={`w-14 h-14 ${service.bg} dark:bg-opacity-20 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110`}>
                 <service.icon className={`${service.color} w-7 h-7`} />
               </div>
-              <span className={`text-xs font-bold ${service.color} bg-opacity-10 mb-3 self-start px-3 py-1 rounded-full border border-current border-opacity-20`}>
+              <span className={`text-xs font-bold ${service.color} bg-opacity-10 mb-3 self-start px-3 py-1 rounded-full border border-current border-opacity-20 font-body`}>
                 {service.badge}
               </span>
-              <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-3 group-hover:text-primary transition-colors">
+              <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-3 group-hover:text-primary transition-colors font-heading">
                 {service.title}
               </h2>
-              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed flex-grow">
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed flex-grow font-body">
                 {service.description}
               </p>
-              <div className={`mt-6 flex items-center gap-2 ${service.color} font-bold text-sm`}>
+              <div className={`mt-6 flex items-center gap-2 ${service.color} font-bold text-sm font-body group-hover:gap-3 transition-all`}>
                 الدخول للخدمة <ExternalLink size={14} />
               </div>
             </Link>
@@ -117,21 +117,21 @@ export default function ServicesPage() {
         </div>
 
         {/* Contact CTA */}
-        <div className="bg-white dark:bg-gray-800 rounded-3xl p-10 shadow-sm border border-gray-100 dark:border-gray-700 text-center">
-          <h2 className="text-2xl font-bold text-secondary dark:text-white mb-4">هل تحتاج مساعدة؟</h2>
-          <p className="text-gray-500 dark:text-gray-400 mb-8 max-w-xl mx-auto">
+        <div className="bg-white dark:bg-midnight-surface rounded-3xl p-12 shadow-soft border border-gray-100 dark:border-midnight-border text-center">
+          <h2 className="text-2xl font-bold text-secondary dark:text-white mb-4 font-heading">هل تحتاج مساعدة؟</h2>
+          <p className="text-gray-500 dark:text-gray-400 mb-10 max-w-xl mx-auto font-body text-lg">
             فريقنا جاهز للإجابة على جميع استفساراتك وتقديم الدعم اللازم لك.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-6">
             <a
               href="tel:0112766744"
-              className="flex items-center gap-2 bg-primary text-white font-bold px-8 py-3 rounded-xl hover:bg-primary-dark transition-all shadow-md"
+              className="flex items-center gap-2 bg-primary text-white font-bold px-10 py-4 rounded-xl hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               <Phone size={18} /> 0112766744
             </a>
             <a
               href="mailto:info@sogyaalma.org.sa"
-              className="flex items-center gap-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-bold px-8 py-3 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-all"
+              className="flex items-center gap-2 bg-gray-100 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 font-bold px-10 py-4 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-800 transition-all border border-transparent dark:border-midnight-border"
             >
               <Mail size={18} /> info@sogyaalma.org.sa
             </a>

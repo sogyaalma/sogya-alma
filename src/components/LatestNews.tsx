@@ -10,7 +10,7 @@ export default async function LatestNews() {
   if (newsItems.length === 0) return null;
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+    <section className="py-20 bg-white dark:bg-gray-950 transition-colors duration-300">
       <div className="container mx-auto px-4 md:px-8">
 
         {/* Section Header */}

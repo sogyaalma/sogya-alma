@@ -40,31 +40,31 @@ function AboutTab() {
     <div className="flex flex-col gap-10">
       {/* Vision Mission */}
       <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-2xl p-6">
-          <h3 className="text-lg font-bold text-primary mb-3 flex items-center gap-2"><Shield size={20} /> رؤيتنا</h3>
-          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">أن تكون جمعية سقيا الماء المنصة الأولى والأكثر موثوقية لتوصيل الماء الصافي لكل من يحتاجه في المملكة العربية السعودية.</p>
+        <div className="bg-primary/5 dark:bg-primary/20 border border-primary/20 rounded-2xl p-8 transition-all hover:shadow-lg">
+          <h3 className="text-xl font-bold text-primary dark:text-blue-400 mb-4 flex items-center gap-2 font-heading"><Shield size={24} /> رؤيتنا</h3>
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-body text-lg">أن تكون جمعية سقيا الماء المنصة الأولى والأكثر موثوقية لتوصيل الماء الصافي لكل من يحتاجه في المملكة العربية السعودية.</p>
         </div>
-        <div className="bg-secondary/5 dark:bg-secondary/10 border border-secondary/20 rounded-2xl p-6">
-          <h3 className="text-lg font-bold text-secondary dark:text-primary mb-3 flex items-center gap-2"><Users size={20} /> رسالتنا</h3>
-          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">تيسير عمليات التبرع بالمياه وتوزيعها بكفاءة وشفافية عالية على المستحقين في جميع مناطق المملكة.</p>
+        <div className="bg-secondary/5 dark:bg-secondary/20 border border-secondary/20 rounded-2xl p-8 transition-all hover:shadow-lg">
+          <h3 className="text-xl font-bold text-secondary dark:text-secondary-light mb-4 flex items-center gap-2 font-heading"><Users size={24} /> رسالتنا</h3>
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-body text-lg">تيسير عمليات التبرع بالمياه وتوزيعها بكفاءة وشفافية عالية على المستحقين في جميع مناطق المملكة.</p>
         </div>
       </div>
 
       {/* License Info */}
-      <div className="bg-white dark:bg-gray-700 rounded-2xl border border-gray-100 dark:border-gray-600 p-6">
-        <h3 className="font-bold text-secondary dark:text-white mb-4 flex items-center gap-2">
-          <FileText className="text-primary" size={20} /> بيانات الترخيص والتسجيل
+      <div className="bg-white dark:bg-[#1a2333] rounded-2xl border border-gray-100 dark:border-gray-800 p-8 shadow-soft">
+        <h3 className="font-bold text-secondary dark:text-white mb-6 flex items-center gap-2 font-heading">
+          <FileText className="text-primary" size={24} /> بيانات الترخيص والتسجيل
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { label: "رقم الترخيص", value: "1123" },
-            { label: "جهة الإشراف", value: "وزارة الموارد البشرية" },
+            { label: "جهة الإشراف", value: "مركز تنمية القطاع غير الربحي" },
             { label: "تاريخ التأسيس", value: "1443/03/14هـ" },
             { label: "نسبة الحوكمة", value: "98%" },
           ].map((item, i) => (
-            <div key={i} className="bg-gray-50 dark:bg-gray-600 p-4 rounded-xl text-center">
-              <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">{item.label}</p>
-              <p className="font-black text-secondary dark:text-white text-lg">{item.value}</p>
+            <div key={i} className="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-xl text-center border border-transparent dark:border-gray-800">
+              <p className="text-xs text-gray-500 dark:text-gray-400 mb-1 font-body">{item.label}</p>
+              <p className="font-black text-secondary dark:text-secondary-light text-xl font-heading">{item.value}</p>
             </div>
           ))}
         </div>
@@ -294,7 +294,7 @@ function AboutPageInner() {
   }, [searchParams]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-[#0f172a] transition-colors duration-300">
       <Header />
 
       {/* Page Header */}
@@ -307,7 +307,7 @@ function AboutPageInner() {
       </div>
 
       {/* Tab Navigation */}
-      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-[72px] z-40 shadow-sm">
+      <div className="bg-white dark:bg-[#1a2333] border-b border-gray-200 dark:border-gray-800 sticky top-[72px] z-40 shadow-sm">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex overflow-x-auto hide-scrollbar">
             {tabs.map((tab) => (

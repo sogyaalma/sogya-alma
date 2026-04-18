@@ -8,7 +8,7 @@ export default async function Projects() {
   const projects = rows.filter(r => r.TemplateType === 'Project').slice(0, 3); // Get 3 latest projects
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900/60 transition-colors duration-300">
       <div className="container mx-auto px-4 md:px-8">
         
         {/* Section Header */}

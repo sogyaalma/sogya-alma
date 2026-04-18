@@ -18,7 +18,7 @@ const tabs = [
 
 function MdxCard({ post }: { post: Post }) {
   return (
-    <Link href={`/news/${post.meta.slug}`} className="group bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+    <Link href={`/media/${post.meta.slug}`} className="group bg-white dark:bg-gray-900/40 rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
       <div className="h-44 bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-primary/20 dark:to-secondary/20 flex items-center justify-center relative">
         <Newspaper size={40} className="text-primary/40" />
         <div className="absolute top-3 right-3 bg-primary text-white text-xs font-bold px-2.5 py-1 rounded-full">{post.meta.category}</div>

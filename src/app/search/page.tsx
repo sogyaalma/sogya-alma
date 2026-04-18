@@ -64,7 +64,7 @@ function SearchContent() {
             المشاريع
           </button>
           <button 
-            onClick={() => setFilter("news") || alert("سيتم إضافة أخبار قريباً.")}
+            onClick={() => { setFilter("news"); alert("سيتم إضافة أخبار قريباً."); }}
             className={`px-6 py-2.5 rounded-xl text-sm font-black transition-all font-body ${filter === 'news' ? 'bg-primary text-white shadow-md' : 'text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-950'}`}
           >
             المكتبة الإعلامية

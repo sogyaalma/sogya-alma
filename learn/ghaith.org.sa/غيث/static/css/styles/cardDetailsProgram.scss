@@ -1,0 +1,506 @@
+.ghaith--layout-details {
+  background-color: $detailsBackgroundColor;
+}
+.ghaith--card-details-project-container {
+  width: 100%;
+  min-height: 50vh;
+  border-radius: 5px;
+  background-color: #ffffff;
+  filter: drop-shadow(0px 4px 14px rgba(0, 0, 0, 0.06));
+  overflow: visible;
+  padding-bottom: 3rem;
+  position: relative;
+  @media (max-width: 480px) {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+.ghaith--card-details-project-image {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @media (max-width: 500px) {
+    padding-right: 3rem;
+    padding-top: 3rem;
+  }
+  border-radius: 5px 5px 0 0;
+  border: 1px solid white;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.623),
+      rgba(255, 255, 255, 0.623),
+      rgba(255, 255, 255, 0.623)
+    );
+    pointer-events: none;
+  }
+}
+
+/* Updated: Title wrapper with flexbox for horizontal layout */
+.ghaith--card-details-project-title-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 53%;
+  transform: translateX(-50%);
+  z-index: 20;
+  padding: 1rem;
+  margin-bottom: -45px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: -35px;
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 0.8rem;
+    margin-bottom: -120px;
+  }
+}
+
+/* Circular image styling with responsive sizing and partial border */
+.ghaith--card-details-project-icon {
+  width: 80px;
+  height: 80px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: transparent !important;
+  @media (max-width: 1024px) {
+    width: 70px;
+    height: 70px;
+  }
+
+  @media (max-width: 767px) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+  }
+}
+.ghaith--card-details-project-icon img {
+  background: transparent !important;
+}
+.ghaith--card-details-project-detail {
+  font-family: $fontFamilyArabicMedium;
+  font-size: $font-size-title;
+  font-weight: $fontWeightBold;
+  color: $titleMainColor;
+}
+.ghaith--card-details-project-title {
+  font-family: $fontFamilyArabicMedium;
+  font-size: $font-size-remarkable;
+  font-weight: $fontWeightLight;
+  color: $titleMainColor;
+  line-height: 1.3;
+  flex: 1;
+  @media (max-width: 515px) {
+    font-size: $font-size-substantial;
+  }
+  @media (max-width: 480px) {
+    font-size: $font-size-strong;
+  }
+}
+
+/* New: Project Meta Row (Number + Social Icons) */
+.ghaith--card-details-project-meta-row {
+  padding-top: 5rem !important;
+  padding: 1.5rem 2rem;
+
+  @media (max-width: 767px) {
+    padding-top: 8rem !important;
+
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.ghaith--card-details-project-number {
+  display: flex;
+  align-items: center;
+
+  span {
+    font-family: $fontFamilyArabicMedium;
+    font-size: $font-size-strong;
+    font-weight: $fontWeightBold;
+    color: #000;
+  }
+
+  @media (max-width: 767px) {
+    justify-content: center;
+  }
+  @media (max-width: 480px) {
+    span {
+      font-size: $font-size-title;
+    }
+  }
+}
+
+.ghaith--card-details-project-social {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  background-color: $semiTransparentWhiteColor;
+  border-radius: 50px;
+  padding: 1rem;
+  width: fit-content;
+  @media (max-width: 767px) {
+    justify-content: center;
+    margin: 0 auto;
+    gap: 0.4rem;
+    padding: 0.4rem;
+  }
+}
+
+.ghaith--card-details-project-social-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+  }
+
+  &:first-child {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  @media (max-width: 767px) {
+    width: 38px;
+    height: 38px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:last-child img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+/* Updated: QR code positioned to overlap image (2/3 top, 1/3 bottom) */
+.ghaith--card-details-project-qr {
+  position: absolute;
+  top: 90%;
+  left: 1.5rem;
+  transform: translateY(-50%);
+
+  height: fit-content;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.25) 0px 2px 4px -1px;
+  background-color: $whiteColor;
+  text-align: center;
+  padding: 0.2rem;
+  z-index: 20;
+  max-width: 159px;
+  img {
+    width: 100%;
+  }
+  span {
+    font-family: $fontFamilyArabicMedium;
+    font-size: $font-size-fine;
+    font-weight: $fontWeightNormal;
+    color: $nightBlueColor;
+    line-height: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    left: 1.5rem;
+  }
+  @media (max-width: 472px) {
+    left: 1.5rem;
+    max-width: 129px;
+    span {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.ghaith--card-details-project-statistics {
+  width: 100%;
+  padding: 1rem;
+  background-color: $semiTransparentWhiteColor;
+  text-align: left;
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+  }
+  span {
+    font-family: $fontFamilyArabicMedium;
+    font-size: $font-size-strong;
+    font-weight: $fontWeightNormal;
+    color: $darkBlueColor;
+    line-height: 2.5rem;
+    margin-left: 1rem;
+    @media (max-width: 680px) {
+      font-size: $font-size-noteworthy;
+    }
+  }
+}
+
+.ghaith--card-details-project-statistics-first {
+  span {
+    font-size: $font-size-remarkable;
+  }
+}
+
+.ghaith--card-details-project-border-right {
+  border-radius: 5px;
+}
+.ghaith--card-details-project-border-left {
+  border-radius: 5px;
+}
+
+.ghaith--card-details-project-border-center {
+  border-radius: 5px;
+}
+
+.ghaith--card-details-project-statistics-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  span {
+    font-family: $fontFamilyArabicMedium;
+    font-size: $font-size-bold;
+    font-weight: $fontWeightNormal;
+    color: $simpleGrayColor;
+    @media (max-width: 680px) {
+      font-size: $font-size-moderate;
+    }
+  }
+}
+
+////////////////////////////////////////////////
+
+.ghaith--card-details-project-additional-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $semiTransparentWhiteColor;
+  border-radius: 10px;
+  padding: 1.5rem;
+
+  @media (max-width: 868px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.ghaith--card-details-project-additional-info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+
+  &--wide {
+    flex: 1.2; // Give more space to the first item
+  }
+
+  &:last-child {
+    padding-right: 2rem; // Add space after the divider for the second item
+
+    @media (max-width: 868px) {
+      padding-right: 0; // Reset on mobile
+    }
+  }
+
+  @media (max-width: 868px) {
+    width: 100%;
+    justify-content: center;
+
+    &--wide {
+      flex: 1; // Reset on mobile
+    }
+  }
+}
+
+.ghaith--card-details-project-additional-info-value-wrapper {
+  display: flex;
+  align-items: baseline; // Changed from flex-end to baseline
+  gap: 0.6rem;
+  direction: rtl;
+}
+
+.ghaith--card-details-project-additional-info-label {
+  font-family: $fontFamilyArabicMedium;
+  font-size: $font-size-moderate;
+  font-weight: $fontWeightBold;
+  color: $aquaGreenColor;
+
+  @media (max-width: 480px) {
+    font-size: $font-size-fine;
+  }
+}
+
+.ghaith--card-details-project-additional-info-value {
+  font-family: $fontFamilyArabicRegular;
+  font-size: $font-size-bold;
+  font-weight: $fontWeightBold;
+  color: #393a3a;
+  line-height: 1;
+  @media (max-width: 1418px) and (min-width: 1200px) {
+    font-size: $font-size-prominent; // Or smaller
+    top: 0.3rem;
+  }
+  @media (max-width: 480px) {
+    font-size: $font-size-moderate;
+  }
+}
+
+.ghaith--card-details-project-additional-info-unit {
+  font-family: $fontFamilyArabicMedium;
+  font-size: $font-size-moderate;
+  font-weight: $fontWeightNormal;
+  color: $nightBlueColor;
+  position: relative;
+  top: 0.45rem; // Push unit down to appear below the baseline
+
+  @media (max-width: 680px) {
+    font-size: $font-size-extra-fine;
+    top: 0.2rem;
+  }
+}
+
+.ghaith--card-details-project-additional-info-divider {
+  width: 3px;
+  height: 60px;
+  background-color: $mistyBlueColor;
+
+  @media (max-width: 868px) {
+    width: 80%;
+    height: 1px;
+  }
+}
+.ghaith--card-details-project-description {
+  font-family: $fontFamilyArabicMedium;
+  font-size: $font-size-moderate;
+  // color: $darkBlueColor;
+  line-height: 1.8;
+
+  /* Style HTML elements that might be in the content */
+  p {
+    margin-bottom: 1rem;
+  }
+
+  ul,
+  ol {
+    margin: 1rem 0;
+    padding-right: 2rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  strong,
+  b {
+    font-weight: $fontWeightBold;
+  }
+
+  a {
+    color: $aquaGreenColor;
+    text-decoration: underline;
+
+    &:hover {
+      color: darken($aquaGreenColor, 10%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: $font-size-fine;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+.ghaith--card-details-project-distribution {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+}
+
+.ghaith--card-details-project-distribution-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+
+  @media (max-width: 480px) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.ghaith--card-details-project-distribution-label {
+  font-family: $fontFamilyArabicMedium;
+  font-size: $font-size-title;
+  font-weight: $fontWeightBold;
+  color: $titleMainColor;
+  white-space: nowrap;
+
+  @media (max-width: 480px) {
+    font-size: $font-size-moderate;
+  }
+}
+
+.ghaith--card-details-project-distribution-value {
+  font-family: $fontFamilyArabicMedium;
+  font-size: $font-size-title;
+  font-weight: $fontWeightNormal;
+  color: $titleMainColor;
+  line-height: 1.6;
+
+  @media (max-width: 480px) {
+    font-size: $font-size-moderate;
+  }
+}

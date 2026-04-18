@@ -1,0 +1,67 @@
+var _style, _g;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import * as React from "react";
+function SvgCreditCardPayment(_ref, svgRef) {
+  let {
+    title,
+    titleId,
+    ...props
+  } = _ref;
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 512 512",
+    width: 512,
+    height: 512,
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title === undefined ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, "credit-card-payment") : title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _style || (_style = /*#__PURE__*/React.createElement("style", null, "\n\t\t.s0 { fill: #6fabe6 } \n\t\t.s1 { fill: #82bcf4 } \n\t\t.s2 { fill: #f6ccaf } \n\t\t.s3 { fill: #ffdec7 } \n\t\t.s4 { fill: #edb996 } \n\t\t.s5 { fill: #374f68 } \n\t\t.s6 { fill: #425b72 } \n\t\t.s7 { fill: #edebf2 } \n\t")), _g || (_g = /*#__PURE__*/React.createElement("g", {
+    id: "hold_credit_card"
+  }, /*#__PURE__*/React.createElement("path", {
+    fillRule: "evenodd",
+    className: "s0",
+    d: "m32 74.7h234.7c11.7 0 21.3 9.5 21.3 21.3v149.3c0 11.8-9.6 21.4-21.3 21.4h-234.7c-11.8 0-21.3-9.6-21.3-21.4v-149.3c0-11.8 9.5-21.3 21.3-21.3z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s1",
+    d: "m288 96v138.7h-213.3c-4.2 0-8.4-0.9-12.3-2.5-3.9-1.6-7.4-3.9-10.4-6.9-2.9-3-5.3-6.5-6.9-10.4-1.6-3.9-2.4-8-2.4-12.2v-128h224c2.8 0 5.5 0.5 8.1 1.6 2.6 1.1 5 2.6 7 4.6 1.9 2 3.5 4.3 4.6 6.9 1 2.6 1.6 5.4 1.6 8.2z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s2",
+    d: "m501.3 298.7v138.6l-42.6-21.3c-31.2-3.5-52.3-2.9-76.4-17.9-44.6-27.8-57.3-54.4-73.6-71.9-19.4-21.3-33.7-27.1-78.6-53.3-4.4-2.6-8.1-6.1-10.9-10.4-2.7-4.2-4.4-9.1-4.9-14.1-0.5-5.1 0.1-10.2 2-14.9 1.8-4.7 4.8-8.9 8.6-12.3 24.7-16.5 34.4-5.5 63.1 10.7v-88.4c16.9 3.2 33.4 7.9 49.4 14.2 16 6.2 31.4 14 46 23.1 14.5 9.1 28.2 19.5 40.8 31.1 12.7 11.7 24.2 24.5 34.5 38.2q4.6 6.7 9.6 13.1 5 6.4 10.3 12.4 5.3 6.1 11 11.9 5.7 5.7 11.7 11.2z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s3",
+    d: "m501.3 298.7v101.3l-32-16c-31.1-3.5-52.2-2.9-76.3-17.9-44.6-27.8-57.3-54.4-73.6-71.9-38.7-41.9-86.2-43.5-93.7-73.4q2.6-2.2 5.6-3.9 3-1.6 6.2-2.6 3.3-0.9 6.7-1.2 3.4-0.2 6.8 0.2c6.9 1.2 7.7 1.8 37 18.9v-88.7c16.9 3.2 33.4 7.9 49.4 14.2 16 6.2 31.4 14 46 23.1 14.5 9.1 28.2 19.5 40.8 31.1 12.7 11.7 24.2 24.5 34.5 38.2q4.6 6.7 9.6 13.1 5 6.4 10.3 12.4 5.3 6.1 11 11.9 5.7 5.7 11.7 11.2z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s4",
+    d: "m339.1 274.5l-56.4-32.8c-1.2-0.7-2.3-1.6-3.1-2.7-0.9-1.1-1.5-2.4-1.8-3.8-0.4-1.3-0.5-2.7-0.3-4.1 0.2-1.4 0.6-2.7 1.3-3.9l9.2 5.3v-10.6c3.9 0 0-1.5 61.8 34 2.4 1.4 4.2 3.8 4.9 6.5 0.8 2.7 0.4 5.6-1 8.1-1.4 2.4-3.8 4.2-6.5 5-2.7 0.7-5.6 0.3-8.1-1z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s2",
+    d: "m265.9 293.7l-12.9 22.1c-2.9 5.1-7.5 9.1-12.9 11.3-5.5 2.2-11.5 2.6-17.1 1-5.7-1.5-10.7-4.9-14.3-9.5-3.5-4.7-5.4-10.4-5.4-16.3 0-9.9 4-13.9 17.6-35.6 3.2 0 1.5 2 9.2 6.4z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s3",
+    d: "m247.5 285.7l-5.2 8.8c-1.9 3.2-4.4 6-7.5 8.2-3 2.2-6.5 3.7-10.2 4.5-3.7 0.7-7.5 0.7-11.2-0.2-3.6-0.8-7.1-2.4-10.1-4.6 0-10.7 4.1-14.2 17.6-35.7 3.2 0 1.5 2 9.2 6.4 19.6 11.4 19.7 10.2 17.4 12.6z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s2",
+    d: "m221.5 265.7l-0.6 1"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s2",
+    d: "m308.7 326.2l-4.3 7.3c-2.9 5.1-7.5 9.1-12.9 11.3-5.4 2.2-11.5 2.6-17.1 1-5.7-1.5-10.7-4.9-14.2-9.5-3.6-4.7-5.5-10.4-5.5-16.3 0-9.1 4.3-14.3 11.2-26.3q6 3.1 11.7 6.7 5.7 3.7 11.1 7.7 5.3 4.1 10.3 8.7 5.1 4.5 9.7 9.4z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s3",
+    d: "m293.8 312.2c-1.9 3.2-4.5 6-7.6 8.2-3 2.2-6.5 3.7-10.2 4.5-3.7 0.7-7.5 0.7-11.1-0.2-3.7-0.8-7.2-2.4-10.2-4.6 0-9.4 4.2-14.3 11.2-26.4q3.7 1.9 7.3 4.1 3.6 2.1 7.1 4.5 3.5 2.3 6.8 4.8 3.4 2.5 6.7 5.1z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s5",
+    d: "m10.7 128h277.3v42.7h-277.3z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s6",
+    d: "m288 128v21.3h-224c-2.8 0-5.6-0.5-8.2-1.6-2.6-1.1-4.9-2.6-6.9-4.6-2-2-3.5-4.3-4.6-6.9-1.1-2.6-1.6-5.4-1.6-8.2z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s7",
+    d: "m149.3 234.7h-96c-2.8 0-5.5-1.2-7.5-3.2-2-2-3.1-4.7-3.1-7.5 0-2.8 1.1-5.5 3.1-7.5 2-2 4.7-3.2 7.5-3.2h96c2.9 0 5.6 1.2 7.6 3.2 2 2 3.1 4.7 3.1 7.5 0 2.8-1.1 5.5-3.1 7.5-2 2-4.7 3.2-7.6 3.2z"
+  }))));
+}
+const ForwardRef = /*#__PURE__*/React.forwardRef(SvgCreditCardPayment);
+export default __webpack_public_path__ + "static/media/credit-card-payment.c76abcd48cce0745dd3b2bc46a92beea.svg";
+export { ForwardRef as ReactComponent };

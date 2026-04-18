@@ -1,0 +1,154 @@
+.ghaith--video-album-container {
+  direction: rtl;
+  justify-content: center;
+}
+.ghaith--video-album-title {
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightNormal;
+  font-size: $font-size-prominent;
+  color: $blueOceanColor;
+  text-align: right;
+  padding-right: 8vw;
+  padding-bottom: 1rem;
+}
+.ghaith--video-photo-container {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  width: 350px;
+  height: 220px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+.ghaith--project-details_reports {
+  width: 200px;
+  height: 340px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+@media (min-width: 1600px) {
+  .ghaith--video-photo-container {
+    width: 30vw;
+    max-width: 500px;
+    height: calc(30vw * 0.63);
+    max-height: 300px;
+  }
+  .ghaith--project-details_reports {
+    width: 200px;
+    height: 340px;
+    max-height: 370px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.ghaith--video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightNormal;
+  font-size: $font-size-modest;
+  color: $whiteColor;
+}
+
+.ghaith--video-album-title {
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightNormal;
+  font-size: $font-size-prominent;
+  color: $blueOceanColor;
+  text-align: right;
+  padding-right: 8vw;
+  padding-bottom: 1rem;
+}
+
+.ghaith--video-photo-container .ghaith--video-overlay {
+  opacity: 1;
+}
+
+.ghaith--custom-video-modal .ant-modal-content {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ghaith--modal-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ghaith--close-icon {
+  cursor: pointer;
+  color: $whiteColor;
+  font-size: $font-size-prominent;
+  font-weight: $fontWeightNormal;
+}
+
+.ghaith--custom-video-modal .ant-modal-header {
+  background-color: transparent !important;
+}
+.ghaith--modal-title {
+  color: $whiteColor !important;
+  font-size: $font-size-small;
+  font-weight: $fontWeightNormal;
+  font-family: $fontFamilyArabicLight;
+  direction: rtl;
+}
+
+.ghaith--pagination-container {
+  margin-top: 30px;
+}
+
+.ghaith--video-album-container .ant-row {
+  justify-content: center;
+}
+
+.ghaith--video-modal-col {
+  text-align: center;
+  flex: auto;
+}
+
+/** arrow **/
+.modal-arrow-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ghaith--modal-arrow-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none !important;
+  border-color: transparent !important;
+  color: $whiteColor !important;
+  font-size: $font-size-outstanding;
+}
+
+.ghaith--modal-arrow-left {
+  left: -1.51vw;
+}
+
+.ghaith--modal-arrow-right {
+  right: -1.51vw;
+}
+
+.ghaith--modal-image {
+  width: 100%;
+  max-height: 130vh;
+  display: block;
+  margin: 0 auto;
+}

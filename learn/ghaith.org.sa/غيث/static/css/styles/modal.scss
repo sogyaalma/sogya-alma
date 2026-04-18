@@ -1,0 +1,56 @@
+.ghaith--pdf-preview-modal-container .ant-modal-content {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ghaith--pdf-preview-modal-container .ant-modal-close {
+  margin-top: -0.8rem;
+  margin-right: 2.5rem !important;
+}
+
+.ghaith--pdf-preview-modal-container .ant-modal-close-x {
+  color: $whiteColor;
+  font-size: $font-size-moderate;
+  font-weight: $fontWeightNormal;
+}
+.ghaith--pdf-preview-modal {
+  margin-top: 1.5rem;
+  width: 97% !important;
+  height: 80vh !important;
+  max-height: 100vh !important;
+  border: none !important;
+}
+.ghaith--pdf-preview-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100%;
+  border-radius: 15px;
+  padding: 0.8rem;
+  color: $whiteColor !important;
+  font-family: $fontFamilyArabicLight;
+  font-size: $font-size-moderate;
+  font-weight: $fontWeightNormal;
+  background-color: $midNightBlueColor;
+  cursor: pointer;
+  text-decoration: none;
+  @media (max-width: 768px) and (min-width: 520px) {
+    margin-top: 60%;
+  }
+  @media (width: 912px) {
+    margin-top: 70%;
+  }
+  @media (width: 1024px) {
+    width: 50%;
+    margin: 25% auto;
+  }
+  @media (width: 1280px) {
+    width: 50%;
+    margin: 25% auto;
+  }
+}
+.ghaith--donation-modal .ant-modal-content {
+  border-radius: 24px;
+}

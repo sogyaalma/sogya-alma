@@ -1,0 +1,132 @@
+.ghaith--gift-sub-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  display: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  direction: rtl;
+  font-weight: $fontWeightNormal !important;
+  font-family: $fontFamilyArabicLight !important;
+  font-size: $font-size-dominant;
+  @media (max-width: 768px) {
+    font-size: $font-size-noteworthy;
+  }
+}
+.ghaith--gift-wrapper {
+  margin-bottom: 5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: $whiteColor;
+  border-radius: 12px;
+  direction: rtl;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.ghaith--gift-form-wrapper {
+  background-color: $whiteColor;
+  padding: 0 40px 40px 40px;
+  border-radius: 12px;
+  direction: rtl;
+}
+.ghaith--meals-wrapper {
+  @media (max-width: 600px) {
+    padding: 0 15px 15px 15px;
+  }
+}
+.ghaith--gift-form-title {
+  color: $mainGreenColor;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: right;
+}
+.ghaith--gift-image-card {
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s;
+  width: 120px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.ghaith--gift-image-container {
+  border-radius: 8px;
+  width: 100%;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.ghaith--gift-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  background-color: #009767;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+}
+.gift--gift-big-image-container {
+  border-radius: 12px;
+  height: 100%;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative; // Added for absolute positioning of QR code
+}
+
+.ghaith--gift-big_card {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.16);
+  border-radius: 12px;
+}
+
+.ghaith--qr-code-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 120px; // Adjust size as needed
+  height: 120px;
+  object-fit: contain;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  // Responsive sizing
+  @media (max-width: 768px) {
+    width: 90px;
+    height: 90px;
+    bottom: 15px;
+    left: 15px;
+  }
+}
+.ghaith--meals-wrapper {
+  margin-bottom: 5rem;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: $whiteColor;
+  border-radius: 12px;
+  direction: rtl;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.ghaith--umrah-wrapper {
+  @media (max-width: 600px) {
+    padding: 0 20px 15px 20px !important;
+  }
+}

@@ -1,0 +1,73 @@
+var _defs;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import * as React from "react";
+function SvgUser(_ref, svgRef) {
+  let {
+    title,
+    titleId,
+    ...props
+  } = _ref;
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    id: "svg10326",
+    xmlSpace: "preserve",
+    width: 682.66669,
+    height: 682.66669,
+    viewBox: "0 0 682.66669 682.66669",
+    xmlns: "http://www.w3.org/2000/svg",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _defs || (_defs = /*#__PURE__*/React.createElement("defs", {
+    id: "defs10330"
+  }, /*#__PURE__*/React.createElement("clipPath", {
+    clipPathUnits: "userSpaceOnUse",
+    id: "clipPath10340"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M 0,512 H 512 V 0 H 0 Z",
+    id: "path10338"
+  })))), /*#__PURE__*/React.createElement("g", {
+    id: "g10332",
+    transform: "matrix(1.3333333,0,0,-1.3333333,0,682.66667)"
+  }, /*#__PURE__*/React.createElement("g", {
+    id: "g10334"
+  }, /*#__PURE__*/React.createElement("g", {
+    id: "g10336",
+    clipPath: "url(#clipPath10340)"
+  }, /*#__PURE__*/React.createElement("g", {
+    id: "g10342",
+    transform: "translate(128,364)"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M 0,0 C 0,70.692 57.308,128 128,128 198.692,128 256,70.692 256,0 256,-70.692 198.692,-128 128,-128 57.308,-128 0,-70.692 0,0 Z",
+    style: {
+      fill: "none",
+      stroke: "#0989c5",
+      strokeWidth: 40,
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      strokeMiterlimit: 10,
+      strokeDasharray: "none",
+      strokeOpacity: 1
+    },
+    id: "path10344"
+  })), /*#__PURE__*/React.createElement("g", {
+    id: "g10346",
+    transform: "translate(402.0977,207)"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M 0,0 C 23.308,-10.357 41.955,-22.615 56.089,-35.034 77.637,-53.966 89.902,-81.317 89.902,-110 v -37 c 0,-22.091 -17.908,-40 -40,-40 h -392 c -22.091,0 -40,17.909 -40,40 v 37 c 0,28.683 12.265,56.034 33.813,74.966 C -311.801,-2.979 -245.262,29 -146.098,29",
+    style: {
+      fill: "none",
+      stroke: "#0989c5",
+      strokeWidth: 40,
+      strokeLinecap: "round",
+      strokeLinejoin: "miter",
+      strokeMiterlimit: 10,
+      strokeDasharray: "none",
+      strokeOpacity: 1
+    },
+    id: "path10348"
+  }))))));
+}
+const ForwardRef = /*#__PURE__*/React.forwardRef(SvgUser);
+export default __webpack_public_path__ + "static/media/user.3ba5ceb7e3f546612fc3c42f0a04c04e.svg";
+export { ForwardRef as ReactComponent };

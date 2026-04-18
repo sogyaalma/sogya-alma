@@ -1,0 +1,16 @@
+.gh--investment-div {
+  text-align: start !important;
+  align-items: start !important;
+  justify-content: start !important;
+  gap: 1rem;
+  direction: rtl;
+  font-weight: $fontWeightNormal !important;
+  font-family: $fontFamilyArabicLight !important;
+  font-size: $font-size-dominant;
+  @media (max-width: 768px) {
+    font-size: $font-size-noteworthy;
+  }
+}
+.ghaith--investment-primary {
+  color: $mainGreenColor;
+}

@@ -1,0 +1,104 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #004080;      /* Dark Official Blue */
+  --color-primary-light: #005A9C;
+  --color-primary-dark: #002b5e; /* Interaction / Active Blue */
+  --color-secondary: #0D121C;
+  --color-accent: #FFA500;
+  --color-primary-100: #b3d1f0;    /* Light Blue for text on dark bg */
+  --color-light: #ffffff;
+  --font-ibm: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+@layer base {
+  :root {
+    --primary: #004080;
+    --primary-light: #005A9C;
+    --primary-dark: #002b5e;
+    --secondary: #0D121C;
+  }
+  
+  html, body {
+    @apply bg-white text-gray-900 font-sans;
+    font-family: var(--font-ibm);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary); 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark); 
+}
+
+/* System Styles: pure white backgrounds for cards, dark blue on hover */
+.glass-panel {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.shadow-hover {
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent;
+}
+
+/* Base Interaction: shift to official dark blue */
+.shadow-hover:hover, .shadow-hover:focus-within {
+  box-shadow: 0 10px 25px -5px rgba(0, 64, 128, 0.15);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Generic Nav Links Interaction */
+.nav-link {
+  @apply h-full flex items-center xl:px-4 lg:px-2 text-[15px] font-bold transition-all whitespace-nowrap 
+         text-gray-600 bg-transparent;
+}
+.dark .nav-link {
+  @apply text-gray-300;
+}
+
+.nav-link:hover, .nav-link:focus, .nav-link-active {
+  color: var(--primary);
+  background-color: rgba(0, 64, 128, 0.05);
+}
+.dark .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.nav-link-active {
+  border-bottom: 2px solid var(--primary);
+}
+
+/* Button & Interaction defaults */
+.btn-primary {
+  @apply bg-white text-[--primary] border-2 border-[--primary] font-bold py-3 px-6 rounded-xl transition-all shadow-sm;
+}
+.btn-primary:hover, .btn-primary:active {
+  @apply bg-[--primary-dark] text-white border-[--primary-dark] shadow-md;
+}
+
+/* Hide Scrollbar Utility */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

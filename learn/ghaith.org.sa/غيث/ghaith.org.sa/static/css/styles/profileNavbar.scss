@@ -1,0 +1,229 @@
+.ghaith--sub-profile-navbar {
+  position: fixed;
+  top: 95px;
+  width: 100%;
+  z-index: 998;
+  background-color: #fff;
+  padding: 0.6rem 0;
+
+  .ghaith--sub-profile-navbar-content {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+
+    /* Mobile Menu Icon (Three Dots) */
+    .ghaith--mobile-menu-wrapper {
+      display: none;
+      margin-left: auto;
+      @media (max-width: 767px) {
+        display: block;
+      }
+
+      .ghaith--mobile-menu-icon {
+        font-size: 26px;
+        color: #009767;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        transform: rotate(90deg);
+
+        &:hover {
+          transform: rotate(90deg) scale(1.1);
+        }
+
+        &:active {
+          transform: rotate(90deg) scale(0.95);
+        }
+      }
+    }
+
+    /* Force the menu to stay perfectly centered */
+    .ghaith--sub-profile-navbar-menu {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .ghaith--sub-profile-navbar-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        font-size: $font-size-title !important;
+        font-weight: 600;
+        color: #009767;
+        transition: color 0.3s ease;
+        text-wrap: nowrap;
+        .menu-icon {
+          font-size: 18px;
+        }
+
+        &:hover {
+          color: #007a54;
+        }
+
+        &.active {
+          color: #009767;
+          border-bottom: 2px solid #009688;
+          padding-bottom: 6px;
+        }
+
+        span {
+          margin-right: 3px;
+          font-family: $fontFamilyArabicLight !important;
+        }
+        @media (max-width: 1024px) {
+          font-size: $font-size-fine !important;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        gap: 2rem;
+        left: 55%;
+      }
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+
+  /* Left Side Icons & Profile */
+  .ghaith--sub-profile-navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 5%;
+    margin-right: auto;
+
+    @media (max-width: 1024px) {
+      margin-left: 0;
+    }
+
+    .ghaith--sub-profile-navbar-icon {
+      font-size: 18px;
+      color: #555;
+      cursor: pointer;
+      transition: color 0.2s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .ghaith--top-profile-section {
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+
+      .ghaith--top-profile-img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  /* Divider */
+  .ghaith--navbar-divider {
+    border-top: 2px solid #f7f7f7;
+    margin: 8px 0 0;
+    width: 100%;
+    top: 0.6rem !important;
+    position: relative;
+  }
+
+  @media (max-width: 768px) {
+    top: 90px;
+  }
+}
+
+.ghaith--sub-navbar-notification-icon {
+  margin-top: 2px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.ghaith--sub-navbar-notification-icon:hover {
+  transform: translateY(-1px) scale(1.08);
+}
+
+.ghaith--sub-navbar-notification-icon:active {
+  transform: translateY(0) scale(1);
+}
+
+/* Mobile Menu Dropdown Styles */
+/* Mobile Menu Dropdown Styles */
+.ghaith--mobile-menu-dropdown {
+  .ant-dropdown-menu {
+    padding: 8px 0;
+    min-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    direction: rtl;
+
+    @media (max-width: 768px) {
+      min-width: 90vw;
+      width: 90vw;
+      max-width: 90vw;
+      border-radius: 0;
+      left: 0 !important;
+      right: 0 !important;
+    }
+
+    .ant-dropdown-menu-item {
+      padding: 0;
+
+      &:hover {
+        background-color: #f0f9f6;
+      }
+    }
+  }
+
+  .ghaith--mobile-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: $fontFamilyArabicMedium;
+    color: #009767;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    .menu-icon {
+      font-size: 18px;
+    }
+
+    &.active {
+      background-color: #e6f7f3;
+      color: #007a54;
+      border-right: 3px solid #009688;
+    }
+
+    &:hover {
+      color: #007a54;
+    }
+
+    span {
+      font-family: $fontFamilyArabicLight !important;
+    }
+  }
+}

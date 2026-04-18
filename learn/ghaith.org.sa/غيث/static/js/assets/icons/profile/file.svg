@@ -1,0 +1,26 @@
+var _path;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import * as React from "react";
+function SvgFile(_ref, svgRef) {
+  let {
+    title,
+    titleId,
+    ...props
+  } = _ref;
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    id: "Layer_3",
+    viewBox: "0 0 36 36",
+    xmlns: "http://www.w3.org/2000/svg",
+    "data-name": "Layer 3",
+    fill: "#0989c5",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _path || (_path = /*#__PURE__*/React.createElement("path", {
+    d: "m18 33h-14c-.55 0-1-.45-1-1v-28c0-.55.45-1 1-1h12v6c0 1.65 1.35 3 3 3h6v3c0 .55.45 1 1 1s1-.45 1-1v-4s-.01-.04-.01-.06c0-.09-.02-.17-.05-.25 0-.02 0-.05-.01-.07 0-.01-.02-.02-.02-.03-.05-.11-.11-.21-.2-.29l-9-9.01c-.09-.09-.19-.15-.29-.2-.01 0-.02-.02-.03-.02-.02 0-.04 0-.07-.01-.08-.03-.16-.04-.25-.05-.02 0-.04-.01-.06-.01h-13.01c-1.65 0-3 1.35-3 3v28c0 1.65 1.35 3 3 3h14c.55 0 1-.45 1-1s-.45-1-1-1zm5.59-23h-4.59c-.55 0-1-.45-1-1v-4.59zm2.41 7c-4.96 0-9 4.04-9 9s4.04 9 9 9 9-4.04 9-9-4.04-9-9-9zm6.92 8h-5.92v-5.92c3.06.44 5.48 2.86 5.92 5.92zm-6.92 8c-3.86 0-7-3.14-7-7 0-3.52 2.61-6.43 6-6.92v6.92c0 .55.45 1 1 1h6.92c-.49 3.39-3.4 6-6.92 6zm-21-17c0-.55.45-1 1-1h10c.55 0 1 .45 1 1s-.45 1-1 1h-10c-.55 0-1-.45-1-1zm0-5c0-.55.45-1 1-1h7c.55 0 1 .45 1 1s-.45 1-1 1h-7c-.55 0-1-.45-1-1z"
+  })));
+}
+const ForwardRef = /*#__PURE__*/React.forwardRef(SvgFile);
+export default __webpack_public_path__ + "static/media/file.04810c4d825db16d749273bc5492d10d.svg";
+export { ForwardRef as ReactComponent };

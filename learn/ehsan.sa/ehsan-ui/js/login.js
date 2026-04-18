@@ -1,0 +1,2 @@
+import{J as e}from"./justvalidation.js";let i=document.getElementById("submitBtnLogin");var a=new e("#loginForm",{validateBeforeSubmitting:!0});i.addEventListener("click",(function(e){a.addField("#phoneNumber",[{rule:"required",errorMessage:globalLocalization.validationFieldRequired},{rule:"customRegexp",value:"^(05[0-9]{8})$",errorMessage:globalLocalization.mobileNotValid}]).onSuccess((e=>{i.disabled=!0,e.target.submit()})).onFail((e=>{payDirectZakatBtn.disabled=!1}))}));
+//# sourceMappingURL=login.js.map

@@ -1,0 +1,28 @@
+var _style, _g;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import * as React from "react";
+function SvgVerified(_ref, svgRef) {
+  let {
+    title,
+    titleId,
+    ...props
+  } = _ref;
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 512 512",
+    width: 512,
+    height: 512,
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title === undefined ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, "verified(1)") : title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _style || (_style = /*#__PURE__*/React.createElement("style", null, "\n\t\t.s0 { fill: #009767 } \n\t")), _g || (_g = /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    className: "s0",
+    d: "m459.7 82.9l-196-81.4c-4.9-2-10.5-2-15.4 0l-196 81.4c-7.4 3.1-12.3 10.4-12.3 18.5v98.9c0 136.2 82.3 258.7 208.4 310.2 4.9 2 10.3 2 15.2 0 126.1-51.5 208.4-174 208.4-310.2v-98.9c0-8.1-4.9-15.4-12.3-18.5zm-27.7 117.4c0 115.8-68 222.4-176 270-105.1-46.3-176-151.1-176-270v-85.6l176-73 176 73zm-198.1 67.4l86-85.9c7.8-7.8 20.4-7.8 28.2 0 7.9 7.8 7.9 20.5 0 28.3l-100.1 100.1c-7.8 7.8-20.4 7.8-28.2 0l-55.9-55.9c-7.9-7.8-7.9-20.5 0-28.3 7.8-7.8 20.4-7.8 28.2 0z"
+  }))));
+}
+const ForwardRef = /*#__PURE__*/React.forwardRef(SvgVerified);
+export default __webpack_public_path__ + "static/media/verified.8444fb07dff8bb9973657aa21662cefd.svg";
+export { ForwardRef as ReactComponent };

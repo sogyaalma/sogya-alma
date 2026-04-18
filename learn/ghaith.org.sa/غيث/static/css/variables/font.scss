@@ -1,0 +1,20 @@
+/*-----------------------FONTS-----------------------*/
+/** Font Weights */
+$fontWeightLight: 300;
+$fontWeightNormal: 400;
+$fontWeightMedium: 600;
+$fontWeightXMedium: 500;
+$fontWeightBold: 700;
+
+/** Font Family */
+
+$fontFamilyArabicThin: 'IBM Plex Sans Arabic Thin', sans-serif;
+$fontFamilyArabicExtraLight: 'IBM Plex Sans Arabic ExtraLight', sans-serif;
+$fontFamilyArabicLight: 'IBM Plex Sans Arabic Light', sans-serif;
+$fontFamilyArabicRegular: 'IBM Plex Sans Arabic Regular', sans-serif;
+$fontFamilyArabicMedium: 'IBM Plex Sans Arabic Medium', sans-serif;
+$fontFamilyArabicSemiBold: 'IBM Plex Sans Arabic SemiBold', sans-serif;
+$fontFamilyArabicBold: 'IBM Plex Sans Arabic Bold', sans-serif;
+
+/** (optional fallback for dynamic use) */
+$fontFamilyArabic: 'IBM Plex Sans Arabic', sans-serif;

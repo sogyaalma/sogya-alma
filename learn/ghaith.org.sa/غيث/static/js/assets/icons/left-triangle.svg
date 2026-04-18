@@ -1,0 +1,30 @@
+var _g;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import * as React from "react";
+function SvgLeftTriangle(_ref, svgRef) {
+  let {
+    title,
+    titleId,
+    ...props
+  } = _ref;
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "512.000000pt",
+    height: "512.000000pt",
+    viewBox: "0 0 512.000000 512.000000",
+    preserveAspectRatio: "xMidYMid meet",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _g || (_g = /*#__PURE__*/React.createElement("g", {
+    transform: "translate(0.000000,512.000000) scale(0.100000,-0.100000)",
+    fill: "#ffffffff",
+    stroke: "none"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M4395 5103 c-71 -26 -3938 -2260 -3990 -2306 -24 -21 -56 -63 -72 -95 -24 -49 -28 -69 -28 -142 0 -73 4 -93 28 -142 16 -32 48 -74 72 -95 57 -50 3923 -2282 3995 -2306 147 -51 324 30 393 181 l22 47 0 2315 0 2315 -28 56 c-32 67 -100 133 -165 161 -65 29 -164 33 -227 11z m105 -2543 c0 -1232 -1 -2240 -3 -2240 -2 0 -768 441 -1703 981 -934 540 -1806 1042 -1936 1118 -131 75 -238 138 -238 141 0 3 149 91 331 195 181 105 1051 607 1932 1116 881 510 1605 927 1610 928 4 1 7 -1007 7 -2239z"
+  }))));
+}
+const ForwardRef = /*#__PURE__*/React.forwardRef(SvgLeftTriangle);
+export default __webpack_public_path__ + "static/media/left-triangle.4b483c51ae85ee6156bd153cd5d213fe.svg";
+export { ForwardRef as ReactComponent };

@@ -1,0 +1,256 @@
+.ghaith--no-project-message {
+  direction: rtl;
+  align-self: center;
+  font-family: $fontFamilyArabicMedium;
+  font-weight: $fontWeightNormal;
+  font-size: $font-size-noteworthy;
+  color: $primaryColor;
+}
+.ghaith--loading-projects-cases {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  align-self: center;
+  direction: rtl;
+}
+
+//////////// moyassar result form //////////////////
+/// /*---------Message After Donation---------*/
+//content container
+.ghaith--moyasar-result-content {
+  padding-top: 3vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+//title
+.ghaith--moyasar-message-title {
+  font-family: $fontFamilyArabicMedium;
+  font-weight: $fontWeightLight;
+  color: $forestColor;
+  font-size: $font-size-dominant;
+}
+//Image Container
+.ghaith--moyasar-image-container {
+  width: 8rem;
+  height: 8rem;
+}
+//span
+.ghaith--moyasar-message-span {
+  font-family: $fontFamilyArabicMedium;
+  font-weight: $fontWeightLight;
+  color: $mainGreenColor;
+  font-size: $font-size-strong;
+  line-height: 1;
+}
+//paragraph
+.ghaith--moyasar-message-paragraph {
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightLight;
+  color: $primaryColor;
+  font-size: $font-size-fine;
+  text-align: center;
+  @media (max-width: 767px) {
+    font-size: $font-size-extra-fine;
+  }
+}
+//card
+.ghaith--card-moyasser-header {
+  width: 100%;
+  height: 9vh;
+  border-radius: 40px 40px 0 0;
+  background-color: $fineGrayColor;
+  display: flex;
+  padding: 1.5rem;
+  align-items: center;
+  justify-content: flex-end;
+  span {
+    font-family: $fontFamilyArabicLight;
+    font-weight: $fontWeightNormal;
+    font-size: $font-size-strong;
+    color: $primaryColor;
+  }
+}
+//body
+.ghaith--card-moyasser-body {
+  background-color: $whiteColor;
+  padding: 1.5rem;
+  direction: rtl;
+  border-radius: 0 0 40px 40px;
+}
+//body item
+.ghaith--card-moyasser-body-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ghaith--card-moyasser-body-item-title {
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightLight;
+  color: $mainGreenColor;
+  font-size: $font-size-moderate;
+  @media (max-width: 500px) {
+    font-size: $font-size-fine;
+  }
+  @media (max-width: 380px) {
+    font-size: $font-size-fine-plus;
+  }
+}
+//span value
+.ghaith--card-moyasser-body-item-value {
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightLight;
+  color: $primaryColor;
+  font-size: $font-size-modest;
+  @media (max-width: 500px) {
+    font-size: $font-size-extra-fine;
+  }
+  @media (max-width: 380px) {
+    font-size: $font-size-xtra-fine;
+  }
+}
+//divider
+.ghaith--card-moyasser-divider {
+  width: 80% !important;
+  border-color: $grayColor !important;
+}
+//item color #666666
+.ghaith--text-color {
+  color: $simpleGrayColor !important;
+}
+
+.ghaith--rating-item {
+  padding: 1rem;
+  justify-items: center !important;
+  cursor: pointer;
+  p {
+    margin-top: 0.5rem;
+    font-size: $font-size-fine;
+    font-family: $fontFamilyArabicMedium;
+  }
+  .ghaith--rating-bad {
+    color: $badRating;
+  }
+  .ghaith--rating-notbad {
+    color: $notbadRating;
+  }
+  .ghaith--rating-good {
+    color: $goodRating;
+  }
+}
+.ghaith--rating-label {
+  margin-bottom: 0.5rem;
+  font-size: $font-size-fine;
+  font-family: $fontFamilyArabicLight;
+  color: $badRating;
+}
+.ghaith--moyasar-divider-btn {
+  background-color: #d7d8d8;
+  margin: 24px -10px;
+  margin-right: -10px;
+  width: calc(100% + 20px);
+}
+
+//////////////////////////
+
+.ghaith--donation-details {
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.ghaith--detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.ghaith--detail-label {
+  color: #1c4246;
+  font-size: $font-size-fine;
+  text-align: right;
+  font-family: $fontFamilyArabicMedium;
+  flex: 1;
+}
+
+.ghaith--detail-value {
+  color: #1c4246;
+  font-size: $font-size-fine;
+  text-align: right;
+  width: 120px;
+  font-family: $fontFamilyArabicMedium;
+
+  flex-shrink: 0;
+}
+.ghaith--moyassar-divider {
+  justify-self: center;
+  border-top: 1px solid #cfcfcf;
+  margin: 8px;
+  width: 90%;
+  position: relative;
+}
+.ghaith--moyassar-button {
+  padding: 0 !important;
+  background-color: #479a74 !important;
+  border-color: #528475 !important;
+  margin-bottom: 8px !important;
+  &:hover {
+    background-color: #479a75e5 !important;
+  }
+}
+.ghaith--divider-method-payment {
+  border-top: 2px solid $mediumGrayColor;
+  opacity: 0.3;
+}
+.ghaith--rating-item {
+  padding: 1rem;
+  justify-items: center !important;
+  cursor: pointer;
+  p {
+    margin-top: 0.5rem;
+    font-size: $font-size-fine;
+    font-family: $fontFamilyArabicLight;
+  }
+  .ghaith--rating-bad {
+    color: $badRating;
+  }
+  .ghaith--rating-notbad {
+    color: $notbadRating;
+  }
+  .ghaith--rating-good {
+    color: $goodRating;
+  }
+}
+.ghaith--rating-label {
+  margin-bottom: 0.5rem;
+  font-size: $font-size-fine;
+  font-family: $fontFamilyArabicLight;
+  color: $badRating;
+}
+.ghaith--inactive {
+  background-color: $inactiveBtnColor !important;
+  cursor: not-allowed;
+  &:hover {
+    background-color: $inactiveBtnColor !important;
+  }
+}
+.ghaith--inactive:disabled {
+  background-color: $inactiveBtnColor !important;
+  color: #fff !important;
+  cursor: not-allowed;
+  &:hover {
+    background-color: $inactiveBtnColor !important;
+  }
+}
+.ghaith--btn-color {
+  background-color: #479a74;
+  color: white;
+  &:hover {
+    background-color: #479a74 !important;
+    color: white !important;
+  }
+}

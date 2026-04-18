@@ -1,0 +1,98 @@
+.ghaith--dots-loader {
+  width: 13px;
+  height: 13px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
+}
+
+@keyframes l5 {
+  0% {
+    box-shadow: 20px 0 #009767, -20px 0 rgba(0, 151, 103, 0.2);
+    background: #009767;
+  }
+  33% {
+    box-shadow: 20px 0 #009767, -20px 0 rgba(0, 151, 103, 0.2);
+    background: rgba(0, 151, 103, 0.2);
+  }
+  66% {
+    box-shadow: 20px 0 rgba(0, 151, 103, 0.2), -20px 0 #009767;
+    background: rgba(0, 151, 103, 0.2);
+  }
+  100% {
+    box-shadow: 20px 0 rgba(0, 151, 103, 0.2), -20px 0 #009767;
+    background: #009767;
+  }
+}
+
+.ghaith--page-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  gap: 4vh;
+  background-color: rgba(0, 151, 103, 0.08) !important;
+}
+
+.loader {
+  --d: 22px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  color: #009767;
+  box-shadow: calc(1 * var(--d)) 0 0 0,
+    calc(0.707 * var(--d)) calc(0.707 * var(--d)) 0 1px,
+    0 calc(1 * var(--d)) 0 2px,
+    calc(-0.707 * var(--d)) calc(0.707 * var(--d)) 0 3px,
+    calc(-1 * var(--d)) 0 0 4px,
+    calc(-0.707 * var(--d)) calc(-0.707 * var(--d)) 0 5px,
+    0 calc(-1 * var(--d)) 0 6px;
+  animation: l27 1s infinite steps(8);
+
+  @keyframes l27 {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+}
+
+.ghaith--loader-text {
+  font-size: $font-size-noteworthy;
+  color: #009767;
+  font-family: $fontFamilyArabicMedium;
+  line-height: 20px;
+}
+
+.ghaith--loader-grey {
+  font-size: $font-size-noteworthy;
+  color: $simpleGrayColor;
+  font-family: $fontFamilyArabicLight;
+  line-height: 0;
+}
+
+.loader--spinner {
+  width: $font-size-prominent;
+  height: $font-size-prominent;
+  border: 5px solid #009767;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  filter: drop-shadow(0 0 4px rgba(0, 151, 103, 0.3));
+
+  @media (max-width: 767px) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

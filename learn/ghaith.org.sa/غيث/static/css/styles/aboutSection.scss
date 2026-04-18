@@ -1,0 +1,150 @@
+.ghaith--about-section {
+  width: 100%;
+  margin-top: 5rem;
+  direction: rtl;
+  --accent-mint: #c6e4e1;
+  --l-size: 18px;
+  --l-offset: 18px;
+  margin-bottom: 6rem !important;
+  @media (max-width: 768px) {
+    margin-bottom: 4rem;
+  }
+}
+.ghaith--about-title {
+  margin-right: 14rem;
+  margin-bottom: 6rem;
+  @media (max-width: 1248px) {
+    margin-right: 8rem;
+  }
+  @media (max-width: 768px) {
+    margin-right: 3rem;
+  }
+}
+
+.ghaith--about-text {
+  flex: 1;
+  font-size: $font-size-prominent;
+  font-family: $fontFamilyArabicExtraLight !important;
+  font-weight: $fontWeightMedium !important  ;
+  line-height: 1.8;
+  text-align: right;
+  p{
+    text-align: justify;
+  }
+}
+
+.ghaith--about-right {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.ghaith--about-big-img {
+  width: 480px;
+  min-height: 520px;
+  object-fit: cover;
+}
+.ghaith--about-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.ghaith--about-small-img {
+  position: relative;
+  display: inline-block;
+  margin-top: 6rem;
+  align-self: center;
+}
+
+.ghaith--about-small-img img {
+  display: block;
+  width: 100%;
+  max-height: 15rem;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+  z-index: 2; /* keep image above the bars */
+}
+
+.ghaith--about-small-img::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--l-offset) * -1);
+  top: var(--l-offset);
+  bottom: calc(var(--l-offset) * -1);
+  width: var(--l-size);
+  background: var(--accent-mint);
+  z-index: 1;
+}
+
+.ghaith--about-small-img::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--l-offset) * -1);
+  right: calc(var(--l-offset) * +1);
+  bottom: calc(var(--l-offset) * -1);
+  height: var(--l-size);
+  background: var(--accent-mint);
+  z-index: 1;
+}
+
+.ghaith--about-big-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* wrapper that draws the left & bottom bars */
+.ghaith--about-big-img-frame {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+/* left bar */
+.ghaith--about-big-img-frame::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--l-offset) * -1);
+  top: var(--l-offset);
+  bottom: calc(var(--l-offset) * -1);
+  width: var(--l-size);
+  background: var(--accent-mint);
+  z-index: 1;
+}
+
+/* bottom bar */
+.ghaith--about-big-img-frame::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--l-offset) * -1);
+  right: calc(var(--l-offset) * +1);
+  bottom: calc(var(--l-offset) * -1);
+  height: var(--l-size);
+  background: var(--accent-mint);
+  z-index: 1;
+}
+
+.ghaith--about-spacer {
+  min-height: 48vh;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .ghaith--about-spacer {
+    min-height: 20vh;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .ghaith--about-spacer {
+    min-height: 10vh;
+  }
+}

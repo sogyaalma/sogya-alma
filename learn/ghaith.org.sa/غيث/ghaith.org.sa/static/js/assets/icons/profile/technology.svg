@@ -1,0 +1,30 @@
+var _g, _g2, _g3;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import * as React from "react";
+function SvgTechnology(_ref, svgRef) {
+  let {
+    title,
+    titleId,
+    ...props
+  } = _ref;
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    id: "_x31__x2C_5",
+    enableBackground: "new 0 0 24 24",
+    viewBox: "0 0 24 24",
+    xmlns: "http://www.w3.org/2000/svg",
+    fill: "#0baeb0",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _g || (_g = /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "m14.25 24h-.5c-.965 0-1.75-.785-1.75-1.75v-4.5c0-.965.785-1.75 1.75-1.75h.5c.965 0 1.75.785 1.75 1.75v4.5c0 .965-.785 1.75-1.75 1.75zm-.5-6.5c-.138 0-.25.112-.25.25v4.5c0 .138.112.25.25.25h.5c.136 0 .25-.114.25-.25v-4.5c0-.138-.112-.25-.25-.25z"
+  }))), _g2 || (_g2 = /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "m20.75 24h-.51c-2.758 0-4.387-.694-5.112-1.108-.359-.205-.484-.663-.279-1.023.205-.359.663-.486 1.023-.279.479.274 1.866.911 4.368.911h.51c.584 0 1.111-.427 1.2-.971.005-.028.011-.057.019-.083.072-.311.509-2.518.532-2.813-.001-.613-.522-1.134-1.161-1.134h-2.5c-.277 0-.531-.152-.662-.397-.13-.244-.115-.54.039-.771s.343-.551.343-1.452c0-.897-.353-1.317-.48-1.368.043.028-.139.259-.139.908 0 1.676-1.625 2.87-2.324 3.307-.353.218-.814.11-1.033-.24s-.111-.813.24-1.033c.781-.487 1.617-1.277 1.617-2.033 0-1.658.854-2.4 1.699-2.4.943 0 1.92 1.07 1.92 2.86 0 .427-.053.803-.128 1.12h1.408c1.467 0 2.66 1.193 2.66 2.66 0 .093 0 .247-.29 1.739-.124.637-.208 1.072-.292 1.37l.013.002c-.208 1.27-1.361 2.228-2.681 2.228z"
+  }))), _g3 || (_g3 = /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    d: "m9.25 20h-4c-1.24 0-2.25-1.01-2.25-2.25v-6.25h-1.75c-.689 0-1.25-.561-1.25-1.25 0-.349.148-.684.407-.917l9.575-9.126c.289-.275.744-.275 1.035 0l2.483 2.363v-.82c0-.414.336-.75.75-.75h3c.414 0 .75.336.75.75v5.108l2.607 2.488c.3.286.311.761.025 1.061-.287.3-.762.311-1.061.025l-2.84-2.71c-.147-.141-.231-.337-.231-.542v-4.68h-1.5v1.82c0 .3-.179.571-.454.689-.276.121-.596.061-.814-.146l-3.232-3.077-8.618 8.214h1.868c.414 0 .75.336.75.75v7c0 .413.337.75.75.75h4c.414 0 .75.336.75.75s-.336.75-.75.75zm-7.815-9.574-.007.007z"
+  }))));
+}
+const ForwardRef = /*#__PURE__*/React.forwardRef(SvgTechnology);
+export default __webpack_public_path__ + "static/media/technology.5b1c6185f8677846b27b9d30b38cc972.svg";
+export { ForwardRef as ReactComponent };

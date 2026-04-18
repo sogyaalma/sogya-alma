@@ -1,0 +1,121 @@
+.ghaith--donation-method-card.ant-card .ant-card-body {
+  padding: 0 !important;
+}
+
+.ghaith--donation-method-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  background: $semiTransparentWhiteColor;
+  border: none;
+
+  @media (min-width: 1600px) {
+    width: 85%;
+  }
+}
+
+.ghaith--donation-card-inner {
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+  @media (max-width: 992px) {
+  padding: 1rem 1rem !important;
+  }
+}
+
+.ghaith--donation-logo-container {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $whiteColor;
+  padding: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.ghaith--donation-logo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.ghaith--donation-bank-name {
+  color: $mainGreenColor;
+  font-size: 1.25rem;
+  font-family: $fontFamilyArabicLight;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: start;
+}
+
+.ghaith--iban-label {
+  color: $mediumGrayColor;
+  font-size: 0.95rem;
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightNormal;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.ghaith--iban-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ghaith--iban-item {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 0.75rem;
+  padding: 0.36rem 0.1rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: $semiTransparentWhiteColor;
+  }
+}
+
+.ghaith--iban-number {
+  color: $forestColor;
+  font-size: 1rem;
+  font-family: $fontFamilyArabicLight;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  direction: ltr;
+}
+
+.ghaith--copy-icon {
+  align-self: center;
+  color: $forestLight;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $aquaGreenColor;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.ghaith--donation-methods-container {
+  @media (max-width: 992px) {
+    margin: 0.5rem !important;
+  }
+}
+ 

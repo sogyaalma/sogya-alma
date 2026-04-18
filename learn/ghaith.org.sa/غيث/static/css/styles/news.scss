@@ -1,0 +1,251 @@
+/* NewsSection.css */
+.ghaith--news-section {
+  margin-bottom: 3rem;
+}
+
+.ghaith--newsSection-title {
+  text-align: center;
+  margin-bottom: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  direction: rtl;
+  font-weight: $fontWeightNormal !important;
+  font-family: $fontFamilyArabicLight !important;
+  font-size: $font-size-dominant;
+  @media (max-width: 768px) {
+    font-size: $font-size-noteworthy;
+  }
+}
+
+.ghaith--news-row {
+  margin-bottom: 3rem;
+}
+
+.ghaith--pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+.ghaith--news-card {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none !important;
+  background: transparent;
+  direction: rtl;
+}
+
+.ghaith--news-card-image-container {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 0 !important;
+}
+
+.ghaith--news-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+  cursor: pointer;
+}
+
+.ghaith--news-card-image:hover {
+  transform: scale(1.15);
+  width: 100%;
+  height: 100%;
+}
+
+.ghaith--news-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 12%;
+  right: 12%;
+  background: #deefed;
+  padding: 30px 40px;
+  color: #1a5f7a;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 120px;
+  backdrop-filter: blur(3px);
+}
+
+.ghaith--news-card-meta {
+  display: flex;
+
+  gap: 10px;
+  font-size: 13px;
+  color: $EmeraldForestColor;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.ghaith--news-card-meta span {
+  text-transform: uppercase;
+}
+
+.ghaith--news-card-date {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: $fontFamilyArabicLight;
+  font-size: $font-size-fine;
+  font-weight: $fontWeightNormal;
+}
+
+.ghaith--news-card-title {
+  cursor: pointer;
+  color: $EmeraldForestColor;
+  font-family: $fontFamilyArabicMedium;
+  font-size: $font-size-bold;
+  font-weight: $fontWeightNormal;
+  margin: 0;
+  line-height: 1.4;
+  text-align: start;
+  direction: rtl;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  transition: color 0.4s ease;
+}
+.ghaith--news-card-title:hover {
+  color: $mainGreenColor;
+}
+.ghaith--news-card-link {
+  color: $forestLight;
+  font-family: $fontFamilyArabicLight;
+  font-size: $font-size-title;
+  font-weight: $fontWeightNormal;
+  text-decoration: underline;
+  text-align: start;
+  direction: rtl;
+  transition: color 0.3s ease;
+  margin-top: 8px;
+}
+
+.ghaith--news-card-link:hover {
+  color: #3a9d92;
+  text-decoration: underline;
+}
+
+.ghaith--news-card .ant-card-body {
+  padding: 0;
+  background: transparent;
+}
+
+.ghaith--news-card .ant-card-cover {
+  margin: 0;
+  background: transparent;
+}
+
+.ghaith--news-card .ant-card-bordered {
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .ghaith--news-card-image-container {
+    height: 380px;
+  }
+
+  .ghaith--news-card-overlay {
+    left: 12px;
+    right: 12px;
+    padding: 25px 30px;
+    min-height: 120px;
+  }
+
+  .ghaith--news-card-title {
+    font-size: 20px;
+  }
+
+  .ghaith--news-card-meta {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ghaith--news-card-overlay {
+    padding: 20px 25px;
+    min-height: 100px;
+  }
+
+  .ghaith--news-card-title {
+    font-size: 18px;
+  }
+}
+
+.ghaith--news_main-details-image-wrapper {
+  width: 100%;
+  padding: 0 20px;
+  img {
+    width: 100% !important;
+  }
+}
+.ghaith--newsDetails-title-wrapper {
+  padding: 0 3rem;
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+}
+
+.ghaith--newsDetails-title {
+  padding: 0 !important;
+  @media (max-width: 768px) {
+    font-size: $font-size-noteworthy;
+  }
+}
+.ghaith--newsSection-div {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  direction: rtl;
+  font-weight: $fontWeightNormal !important;
+  font-family: $fontFamilyArabicLight !important;
+  font-size: $font-size-dominant;
+  @media (max-width: 768px) {
+    font-size: $font-size-noteworthy;
+  }
+}
+.ghaith--newsDetails-description {
+  margin-top: 2rem;
+  align-self: center;
+  max-width: 900px;
+  font-size: $font-size-moderate;
+  text-align: justify;
+}
+.ghaith--newsAttachment-card-overlay {
+  position: relative;
+  bottom: 0;
+  padding: 20px 20px;
+  color: #1a5f7a;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 120px;
+}
+.ghaith--newsAttachment-desciption {
+  font-size: $font-size-title;
+  color: $EmeraldForestColor;
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightNormal;
+  margin: 0;
+  line-height: 1.4;
+  text-align: start;
+  direction: rtl;
+
+  width: 100%;
+  transition: color 0.4s ease;
+}

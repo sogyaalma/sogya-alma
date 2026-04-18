@@ -1,0 +1,401 @@
+
+
+<div id="giftDetails" role="group" aria-label="تفاصيل الهدية">
+    <h3 class="visually-hidden">تفاصيل الهدية</h3>
+
+    <div class="form-group mb-3" id="senderData" role="group" aria-label='بيانات المُتَبَرِّع'>
+        <h4 class="visually-hidden">بيانات المُتَبَرِّع</h4>
+
+        <label class="form-label required font-ehsan-semibold fs-12px" for="SenderName">المرسل</label>
+        <div class="input-group">
+            <input class="border-bottom form-control senderName payment-input mb-1 remove-special-char"
+                   data-required="true"
+                   id="SenderName"
+                   data-checkname="true"
+                   type="text"
+                   value=""
+                   name="SenderName"
+                   placeholder='اسمك'
+                   data-val-required='اسم المتبرع مطلوب'
+                   maxlength="30"
+                   aria-label='اسم المتبرع'
+                   aria-required="true" />
+        </div>
+        <span id="SenderNameErr" class="error d-none text-danger fs-14px">اسم المرسل مطلوب</span>
+        <span id="SenderNameErrSyn" class="error d-none">صيغة اسم المرسل غير صحيحة</span>
+
+        <div id="validateMobileNumberWrapper">
+                <div class="col-12 giftee-mobile-number-container" id="mobileNumberContainer">
+                    <label class="form-label required font-ehsan-semibold fs-12px">رقم الجوال</label>
+                    <div class="mobile-container input-group align-items-center d-flex input-group mobile-container" role="group" aria-label="رقم الجوال">
+    <input type="text" data-required="true" class="sender-gift-mobile-number border-end-0 form-control input-gifteeNumber mobile-number convert-number-to-english number-only"
+           inputmode="numeric" autocomplete="off" data-val="true" maxlength="9" minlength="9" placeholder="5xxxxxxxx"
+           aria-label="رقم الجوال">
+    <select class="form-controle border-start-0 country-code payment-input w-115px background-neutral-50" aria-label="رمز الدولة" disabled>
+
+                <option value="1" data-code="sa">
+                    966&#x2B; &#x627;&#x644;&#x645;&#x645;&#x644;&#x643;&#x629; &#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629; &#x627;&#x644;&#x633;&#x639;&#x648;&#x62F;&#x64A;&#x629;
+                </option>
+                <option value="2" data-code="sd">
+                    249&#x2B; &#x627;&#x644;&#x633;&#x648;&#x62F;&#x627;&#x646;
+                </option>
+                <option value="3" data-code="us">
+                    1&#x2B; &#x623;&#x645;&#x631;&#x64A;&#x643;&#x627;
+                </option>
+                <option value="4" data-code="eg">
+                    20&#x2B; &#x645;&#x635;&#x631;
+                </option>
+                <option value="5" data-code="sd">
+                    211&#x2B; &#x627;&#x644;&#x633;&#x648;&#x62F;&#x627;&#x646;
+                </option>
+                <option value="6" data-code="ma">
+                    212&#x2B; &#x627;&#x644;&#x645;&#x63A;&#x631;&#x628;
+                </option>
+                <option value="7" data-code="dz">
+                    213&#x2B; &#x627;&#x644;&#x62C;&#x632;&#x627;&#x626;&#x631;
+                </option>
+                <option value="8" data-code="tn">
+                    216&#x2B; &#x62A;&#x648;&#x646;&#x633;
+                </option>
+                <option value="9" data-code="ly">
+                    218&#x2B; &#x644;&#x64A;&#x628;&#x64A;&#x627;
+                </option>
+                <option value="10" data-code="fr">
+                    33&#x2B; &#x641;&#x631;&#x646;&#x633;&#x627;
+                </option>
+                <option value="11" data-code="es">
+                    34&#x2B; &#x625;&#x633;&#x628;&#x627;&#x646;&#x64A;&#x627;
+                </option>
+                <option value="12" data-code="gb">
+                    44&#x2B; &#x628;&#x631;&#x64A;&#x637;&#x627;&#x646;&#x64A;&#x627;
+                </option>
+                <option value="13" data-code="de">
+                    49&#x2B; &#x623;&#x644;&#x645;&#x627;&#x646;&#x64A;&#x627;
+                </option>
+                <option value="14" data-code="ru">
+                    7&#x2B; &#x631;&#x648;&#x633;&#x64A;&#x627;
+                </option>
+                <option value="15" data-code="jp">
+                    81&#x2B; &#x627;&#x644;&#x64A;&#x627;&#x628;&#x627;&#x646;
+                </option>
+                <option value="16" data-code="kr">
+                    82&#x2B; &#x643;&#x648;&#x631;&#x64A;&#x627;
+                </option>
+                <option value="17" data-code="kr">
+                    850&#x2B; &#x643;&#x648;&#x631;&#x64A;&#x627; 
+                </option>
+                <option value="18" data-code="cn">
+                    852&#x2B; &#x627;&#x644;&#x635;&#x64A;&#x646;
+                </option>
+                <option value="19" data-code="cn">
+                    853&#x2B; &#x627;&#x644;&#x635;&#x64A;&#x646;
+                </option>
+                <option value="20" data-code="cn">
+                    86&#x2B; &#x627;&#x644;&#x635;&#x64A;&#x646;
+                </option>
+                <option value="21" data-code="lb">
+                    961&#x2B; &#x644;&#x628;&#x646;&#x627;&#x646;
+                </option>
+                <option value="22" data-code="jo">
+                    962&#x2B; &#x627;&#x644;&#x627;&#x631;&#x62F;&#x646;
+                </option>
+                <option value="23" data-code="sy">
+                    963&#x2B; &#x633;&#x648;&#x631;&#x64A;&#x627;
+                </option>
+                <option value="24" data-code="iq">
+                    964&#x2B; &#x627;&#x644;&#x639;&#x631;&#x627;&#x642;
+                </option>
+                <option value="25" data-code="kw">
+                    965&#x2B; &#x627;&#x644;&#x643;&#x648;&#x64A;&#x62A;
+                </option>
+                <option value="26" data-code="ye">
+                    967&#x2B; &#x627;&#x644;&#x64A;&#x645;&#x646;
+                </option>
+                <option value="27" data-code="om">
+                    968&#x2B; &#x639;&#x645;&#x627;&#x646;
+                </option>
+                <option value="28" data-code="ae">
+                    971&#x2B; &#x627;&#x644;&#x623;&#x645;&#x627;&#x631;&#x627;&#x62A; &#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629; &#x627;&#x644;&#x645;&#x62A;&#x62D;&#x62F;&#x629;
+                </option>
+                <option value="29" data-code="ps">
+                    972&#x2B; &#x641;&#x644;&#x633;&#x637;&#x64A;&#x646;
+                </option>
+                <option value="30" data-code="bh">
+                    973&#x2B; &#x627;&#x644;&#x628;&#x62D;&#x631;&#x64A;&#x646;
+                </option>
+                <option value="31" data-code="qa">
+                    974&#x2B; &#x642;&#x637;&#x631;
+                </option>
+                <option value="33" data-code="cn">
+                    886&#x2B; &#x627;&#x644;&#x635;&#x64A;&#x646;
+                </option>
+    </select>
+</div>
+
+                    <span id="mobileNumberErr" class="error d-none text-danger fs-14px" role="alert">رقم جوالك مطلوب</span>
+                </div>
+                <div id="verificationMobileNumber" data-valid="false" class="text-danger fs-14px mt-2 d-none">
+                    يجب التحقق من رقم الجوال
+                </div>
+                <label class="error fs-14px text-danger" id="msgLimitationError"></label>
+                <div class="col-12 d-flex justify-content-between mb-3 mt-2">
+                    <button id="validateMobileNumberInGift" type="button" data-validate="false" class="btn btn-primary w-100 validateMobileNumberInGift">
+                        إرسال رمز التحقق
+                    </button>
+                </div>
+        </div>
+    </div>
+
+    <div id="gifteeContainer" class="gifteeContainer">
+        
+
+<div class="gifteeBoxDetails background-neutral-50 p-3 my-3 rounded-5 position-relative"
+     data-id="gifteeBoxDetails-0"
+     role="group"
+     aria-label="بيانات المُتَبَرَّع عنه">
+
+    <button type="button"
+            class="btn btn-transparent position-absolute end-8px top-5px remove-giftee-item remove-giftee-btn"
+            data-orphans="false">
+        <img class="remove-giftee-item"
+             data-orphans="false"
+             src="https://cdn.ehsan.sa/ehsan-ui/images/icons/close-icon.svg"
+             alt="حذف مُهدي اليه" />
+    </button>
+
+    <h4 class="visually-hidden gifteeSrTitle">بيانات المُتَبَرَّع عنه</h4>
+
+
+    <div class="row mb-3">
+        <div class="col-12">
+            <label class="form-label required font-ehsan-semibold fs-12px" for="GifteeName-0">
+                المرسل اليه
+            </label>
+            <div class="input-group">
+                <input type="text"
+                       class="input-gifteeName form-control payment-input remove-special-char"
+                       data-required="true"
+                       name="Gift[0].GifteeName"
+                       id="GifteeName-0"
+                       maxlength="50"
+                       placeholder='اسم المتبرع عنه' />
+            </div>
+        </div>
+
+        <div class="col-12 mt-3">
+            <label class="form-label required font-ehsan-semibold fs-12px" for="GifteeMobileNumber-0">
+                رقم الجوال
+            </label>
+            <div class="mobile-container input-group align-items-center d-flex input-group mobile-container" role="group" aria-label="رقم الجوال">
+    <input type="text" data-required="true" class=" border-end-0 form-control input-gifteeNumber mobile-number convert-number-to-english number-only"
+           inputmode="numeric" autocomplete="off" data-val="true" maxlength="9" minlength="9" placeholder="5xxxxxxxx"
+           aria-label="رقم الجوال">
+    <select class="form-controle border-start-0 country-code payment-input w-115px background-neutral-50" aria-label="رمز الدولة" >
+
+                <option value="1" data-code="sa">
+                    966&#x2B; &#x627;&#x644;&#x645;&#x645;&#x644;&#x643;&#x629; &#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629; &#x627;&#x644;&#x633;&#x639;&#x648;&#x62F;&#x64A;&#x629;
+                </option>
+                <option value="2" data-code="sd">
+                    249&#x2B; &#x627;&#x644;&#x633;&#x648;&#x62F;&#x627;&#x646;
+                </option>
+                <option value="3" data-code="us">
+                    1&#x2B; &#x623;&#x645;&#x631;&#x64A;&#x643;&#x627;
+                </option>
+                <option value="4" data-code="eg">
+                    20&#x2B; &#x645;&#x635;&#x631;
+                </option>
+                <option value="5" data-code="sd">
+                    211&#x2B; &#x627;&#x644;&#x633;&#x648;&#x62F;&#x627;&#x646;
+                </option>
+                <option value="6" data-code="ma">
+                    212&#x2B; &#x627;&#x644;&#x645;&#x63A;&#x631;&#x628;
+                </option>
+                <option value="7" data-code="dz">
+                    213&#x2B; &#x627;&#x644;&#x62C;&#x632;&#x627;&#x626;&#x631;
+                </option>
+                <option value="8" data-code="tn">
+                    216&#x2B; &#x62A;&#x648;&#x646;&#x633;
+                </option>
+                <option value="9" data-code="ly">
+                    218&#x2B; &#x644;&#x64A;&#x628;&#x64A;&#x627;
+                </option>
+                <option value="10" data-code="fr">
+                    33&#x2B; &#x641;&#x631;&#x646;&#x633;&#x627;
+                </option>
+                <option value="11" data-code="es">
+                    34&#x2B; &#x625;&#x633;&#x628;&#x627;&#x646;&#x64A;&#x627;
+                </option>
+                <option value="12" data-code="gb">
+                    44&#x2B; &#x628;&#x631;&#x64A;&#x637;&#x627;&#x646;&#x64A;&#x627;
+                </option>
+                <option value="13" data-code="de">
+                    49&#x2B; &#x623;&#x644;&#x645;&#x627;&#x646;&#x64A;&#x627;
+                </option>
+                <option value="14" data-code="ru">
+                    7&#x2B; &#x631;&#x648;&#x633;&#x64A;&#x627;
+                </option>
+                <option value="15" data-code="jp">
+                    81&#x2B; &#x627;&#x644;&#x64A;&#x627;&#x628;&#x627;&#x646;
+                </option>
+                <option value="16" data-code="kr">
+                    82&#x2B; &#x643;&#x648;&#x631;&#x64A;&#x627;
+                </option>
+                <option value="17" data-code="kr">
+                    850&#x2B; &#x643;&#x648;&#x631;&#x64A;&#x627; 
+                </option>
+                <option value="18" data-code="cn">
+                    852&#x2B; &#x627;&#x644;&#x635;&#x64A;&#x646;
+                </option>
+                <option value="19" data-code="cn">
+                    853&#x2B; &#x627;&#x644;&#x635;&#x64A;&#x646;
+                </option>
+                <option value="20" data-code="cn">
+                    86&#x2B; &#x627;&#x644;&#x635;&#x64A;&#x646;
+                </option>
+                <option value="21" data-code="lb">
+                    961&#x2B; &#x644;&#x628;&#x646;&#x627;&#x646;
+                </option>
+                <option value="22" data-code="jo">
+                    962&#x2B; &#x627;&#x644;&#x627;&#x631;&#x62F;&#x646;
+                </option>
+                <option value="23" data-code="sy">
+                    963&#x2B; &#x633;&#x648;&#x631;&#x64A;&#x627;
+                </option>
+                <option value="24" data-code="iq">
+                    964&#x2B; &#x627;&#x644;&#x639;&#x631;&#x627;&#x642;
+                </option>
+                <option value="25" data-code="kw">
+                    965&#x2B; &#x627;&#x644;&#x643;&#x648;&#x64A;&#x62A;
+                </option>
+                <option value="26" data-code="ye">
+                    967&#x2B; &#x627;&#x644;&#x64A;&#x645;&#x646;
+                </option>
+                <option value="27" data-code="om">
+                    968&#x2B; &#x639;&#x645;&#x627;&#x646;
+                </option>
+                <option value="28" data-code="ae">
+                    971&#x2B; &#x627;&#x644;&#x623;&#x645;&#x627;&#x631;&#x627;&#x62A; &#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629; &#x627;&#x644;&#x645;&#x62A;&#x62D;&#x62F;&#x629;
+                </option>
+                <option value="29" data-code="ps">
+                    972&#x2B; &#x641;&#x644;&#x633;&#x637;&#x64A;&#x646;
+                </option>
+                <option value="30" data-code="bh">
+                    973&#x2B; &#x627;&#x644;&#x628;&#x62D;&#x631;&#x64A;&#x646;
+                </option>
+                <option value="31" data-code="qa">
+                    974&#x2B; &#x642;&#x637;&#x631;
+                </option>
+                <option value="33" data-code="cn">
+                    886&#x2B; &#x627;&#x644;&#x635;&#x64A;&#x646;
+                </option>
+    </select>
+</div>
+
+        </div>
+    </div>
+
+    <h5 class="visually-hidden">&#x645;&#x628;&#x644;&#x63A; &#x627;&#x644;&#x62A;&#x628;&#x631;&#x639;</h5>
+
+    <div class="row mb-3" role="group" aria-label="&#x645;&#x628;&#x644;&#x63A; &#x627;&#x644;&#x62A;&#x628;&#x631;&#x639;">
+        <div class="amountsContainer">
+
+                <label class="form-label font-ehsan-bold fs-14px">مبلغ التبرع</label>
+                <div class="d-flex align-items-baseline col-12 col-md-6 col-lg-12 col-xl-6 amount-radios-container">
+                    <div class="amountRadioBtns amountRadioBtns0 d-flex mb-2 mb-lg-2 w-100"
+                         data-bs-toggle="buttons"
+                         role="radiogroup"
+                         aria-label='اختر المبلغ'>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between gap-1 ejar-btn">
+                        <button type="button"
+                                class="btn-outline-secondary-2 btn flex-fill donate-input selected-amount"
+                                data-amount="10"
+                                aria-label='10 ريال سعودي'
+                                aria-pressed="false">
+                            10<small class="ms-1 fs-14px">﷼</small>
+                        </button>
+                        <button type="button"
+                                class="btn-outline-secondary-2 btn flex-fill donate-input selected-amount"
+                                data-amount="50"
+                                aria-label='50 ريال سعودي'
+                                aria-pressed="false">
+                            50<small class="ms-1 fs-14px">﷼</small>
+                        </button>
+                        <button type="button"
+                                class="btn-outline-secondary-2 btn flex-fill donate-input selected-amount"
+                                data-amount="100"
+                                aria-label='100 ريال سعودي'
+                                aria-pressed="false">
+                            100<small class="ms-1 fs-14px">﷼</small>
+                        </button>
+                </div>
+                <div class="input-group mt-3 col-12">
+                    <input name="Gift[0].Amount"
+                           class="border-end-0 final-amount form-control donate-input number-only AnotherAmountAdd giftSpecifiedAmount"
+                           data-max=""
+                           data-required="true"
+                           type="text"
+                           autocomplete="off"
+                           maxlength="7"
+                           placeholder='مبلغ اخر'
+                           inputmode="numeric"
+                           pattern="\d*"
+                           aria-label='أو أضف مبلغ آخر' />
+                    <span class="input-group-text" id="basic-addon2"><small class="text-primary-green">﷼</small></span>
+                </div>
+        </div>
+    </div>
+
+</div>
+
+    </div>
+
+    <button type="button"
+            class="btn btn-outline-secondary btn-sm"
+            id="addGiftee"
+            data-remaining=""
+            data-orphans="false">
+        <img id="addGifteeImage"
+             data-orphans="false"
+             src="https://cdn.ehsan.sa/ehsan-ui/images/icons/plus-icon.svg"
+             alt='تبرع آخر' />
+        تبرع عن شخص آخر
+    </button>
+
+    <div id="giftMax" class="alert-info bg-body-tertiary mt-3 p-2 d-none">
+        <img src="https://cdn.ehsan.sa/ehsan-ui/images/icons/feedback-icon-alert.svg" alt='تنويه' />
+        <span class="font-ehsan-bold">تنويه</span>
+        <span class="font-ehsan-regular">لقد وصلت إلى الحد الأقصى من إهداء التبرع</span>
+    </div>
+
+
+    <h6 class="mt-3 font-ehsan-bold" id="show-hide-heading" role="heading" aria-level="4">
+        حدد ما تود إظهاره برسالة التبرع:
+    </h6>
+
+    <div role="group" id="checkbox-group" aria-label='حدد ما تود إظهاره برسالة التبرع' class="d-flex flex-column flex-md-row">
+        <div class="form-check me-md-3">
+            <input type="checkbox" class="input-showAmount form-check-input" id="ShowHideAmount" name="ShowHideAmount" />
+            <label class="form-check-label fs-12px font-ehsan-semibold" for="ShowHideAmount">إظهار مبلغ التبرع</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="input-showAmount form-check-input" id="showProjectName" name="showProjectName" />
+            <label class="form-check-label fs-12px font-ehsan-semibold" for="showProjectName">إظهار اسم المشروع</label>
+        </div>
+    </div>
+
+    <div class="">
+        <h4 class="visually-hidden">معاينة الرسالة النصية</h4>
+        <button type="button" class="btn btn-transparent mt-2 text-decoration-none" data-bs-toggle="modal" data-bs-target="#previewGiftModal">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.99935 10.1253C7.27346 10.1253 5.87435 8.72622 5.87435 7.00033C5.87435 5.27444 7.27346 3.87533 8.99935 3.87533C10.7252 3.87533 12.1243 5.27444 12.1243 7.00033C12.1243 8.72622 10.7252 10.1253 8.99935 10.1253ZM7.12435 7.00033C7.12435 8.03586 7.96382 8.87533 8.99935 8.87533C10.0349 8.87533 10.8743 8.03586 10.8743 7.00033C10.8743 5.96479 10.0349 5.12533 8.99935 5.12533C7.96382 5.12533 7.12435 5.96479 7.12435 7.00033Z" fill="#007960" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.99935 0.541992C6.85722 0.541992 5.02098 1.48483 3.5996 2.59448C2.17696 3.70512 1.1254 5.01678 0.537191 5.84159L0.492842 5.90344C0.281879 6.19684 0.0410156 6.53182 0.0410156 7.00033C0.0410156 7.46883 0.281879 7.80381 0.492842 8.09722L0.537191 8.15906C1.1254 8.98388 2.17696 10.2955 3.59961 11.4062C5.02098 12.5158 6.85722 13.4587 8.99935 13.4587C11.1415 13.4587 12.9777 12.5158 14.3991 11.4062C15.8217 10.2955 16.8733 8.98388 17.4615 8.15906L17.5059 8.09721C17.7168 7.80381 17.9577 7.46883 17.9577 7.00033C17.9577 6.53182 17.7168 6.19684 17.5059 5.90344L17.4615 5.84159C16.8733 5.01678 15.8217 3.70512 14.3991 2.59448C12.9777 1.48483 11.1415 0.541992 8.99935 0.541992ZM1.55491 6.56737C2.10508 5.7959 3.07633 4.58881 4.36882 3.57978C5.66258 2.56975 7.2338 1.79199 8.99935 1.79199C10.7649 1.79199 12.3361 2.56975 13.6299 3.57978C14.9224 4.58881 15.8936 5.7959 16.4438 6.56737C16.5799 6.75822 16.6447 6.85141 16.6833 6.92559C16.7078 6.97275 16.7078 6.98568 16.7077 6.99833L16.7077 7.00033L16.7077 7.00232C16.7078 7.01498 16.7078 7.0279 16.6833 7.07506C16.6447 7.14924 16.5799 7.24243 16.4438 7.43328C15.8936 8.20475 14.9224 9.41185 13.6299 10.4209C12.3361 11.4309 10.7649 12.2087 8.99935 12.2087C7.2338 12.2087 5.66258 11.4309 4.36882 10.4209C3.07633 9.41185 2.10508 8.20475 1.55491 7.43328C1.41881 7.24243 1.35403 7.14924 1.31542 7.07506C1.29087 7.0279 1.29094 7.01498 1.29101 7.00232L1.29102 7.00033L1.29101 6.99833C1.29094 6.98568 1.29087 6.97275 1.31542 6.92559C1.35403 6.85141 1.41881 6.75822 1.55491 6.56737Z" fill="#007960" />
+            </svg>
+            <span>معاينة الرسالة</span>
+        </button>
+    </div>
+</div>
+
+<input type="hidden" id="ShowHideProjectName" name="ShowHideProjectName" value="" />
+<input type="hidden" id="ShowHideAmount" name="ShowHideAmount" value="" />

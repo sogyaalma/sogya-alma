@@ -1,0 +1,368 @@
+.ghaith--profile-topcard__title {
+  color: #009767;
+  font-family: $fontFamilyArabicMedium !important;
+  padding-top: 18px;
+  font-size: $font-size-title !important;
+}
+.ghaith--profile-topcard_numbers {
+  font-family: $fontFamilyArabicLight !important;
+}
+.ghaith--profile__main-container {
+  padding: 0 9%;
+}
+// Profile Dropdown Styles
+.ghaith--profile-dropdown {
+  min-width: 240px !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  backdrop-filter: blur(10px);
+
+  .ant-dropdown-menu {
+    padding: 8px !important;
+    border-radius: 16px !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .ant-dropdown-menu-item {
+    padding: 0 !important;
+    border-radius: 12px !important;
+    margin-bottom: 4px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      background: linear-gradient(135deg, #f0f7ff 0%, #e6f4ff 100%) !important;
+      transform: translateX(-2px);
+    }
+  }
+
+  .ant-dropdown-menu-item-divider {
+    margin: 8px 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.08) 50%,
+      transparent 100%
+    );
+  }
+}
+
+.ghaith--dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  //direction: rtl;
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightNormal;
+  font-size: $font-size-extra-fine;
+  color: $primaryColor;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  span {
+    flex: 1;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    .ghaith--dropdown-icon {
+      transform: scale(1.1);
+      color: $lightBlueColor;
+    }
+
+    span {
+      color: $lightBlueColor;
+    }
+  }
+}
+
+.ghaith--dropdown-icon {
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: $primaryColor;
+}
+
+.ghaith--dropdown-item-logout {
+  &:hover {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%) !important;
+
+    .ghaith--dropdown-icon,
+    span {
+      color: #ff4d4f !important;
+    }
+  }
+}
+
+// Profile Image Hover Effect
+.ghaith--top-profile-section {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $lightBlueColor, $primaryColor);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+
+    &::before {
+      opacity: 0.2;
+    }
+
+    .ghaith--top-profile-img {
+      border-color: $lightBlueColor;
+    }
+  }
+}
+
+.ghaith--top-profile-img {
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+// Logout Modal Styles
+.ghaith--logout-modal-content {
+  text-align: center;
+  padding: 20px 10px;
+  direction: rtl;
+}
+
+.ghaith--logout-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+  position: relative;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff4d4f22, #ff7a4522);
+    z-index: -1;
+  }
+}
+
+.ghaith--logout-modal-icon {
+  font-size: 36px;
+  color: #ff4d4f;
+}
+
+.ghaith--logout-modal-title {
+  font-size: 24px;
+  font-family: $fontFamilyArabicLight;
+  font-weight: 600;
+  color: $primaryColor;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.ghaith--logout-modal-text {
+  font-size: 16px;
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightNormal;
+  color: $simpleGrayColor;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.ghaith--logout-modal-buttons {
+  margin-top: 24px;
+}
+
+.ghaith--cancel-btn-logout {
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  font-family: $fontFamilyArabicLight;
+  font-size: 15px;
+  font-weight: 500;
+  color: $primaryColor !important;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+
+  &:hover {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%) !important;
+    color: $primaryColor !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    border-color: $primaryColor !important;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.ghaith--confirm-btn-logout {
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  font-family: $fontFamilyArabicLight;
+  font-size: 15px;
+  font-weight: 500;
+  color: $whiteColor !important;
+  background: linear-gradient(135deg, #ff4d4f 0%, #ff7875 100%) !important;
+  border: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(255, 77, 79, 0.3);
+
+  &:hover {
+    background: linear-gradient(135deg, #ff7875 0%, #ff4d4f 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 77, 79, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(255, 77, 79, 0.3);
+  }
+}
+
+// Pulse Animation
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .ghaith--profile-dropdown {
+    min-width: 200px !important;
+  }
+
+  .ghaith--logout-modal-content {
+    padding: 15px 5px;
+  }
+
+  .ghaith--logout-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+  }
+
+  .ghaith--logout-modal-icon {
+    font-size: 28px;
+  }
+
+  .ghaith--logout-modal-title {
+    font-size: 20px;
+  }
+
+  .ghaith--logout-modal-text {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .ghaith--cancel-btn-logout,
+  .ghaith--confirm-btn-logout {
+    height: 44px;
+    font-size: 14px;
+  }
+}
+
+.ghaith--content-services-request-span {
+  font-family: $fontFamilyArabicMedium;
+  font-weight: $fontWeightNormal;
+  color: $primaryColor;
+}
+.ghaith--tag-component {
+  border-radius: 25px;
+}
+
+.ghaith--label-style {
+  label {
+    color: $forestColor !important;
+    font-size: $font-size-fine-plus !important;
+    font-family: $fontFamilyArabicLight !important;
+    font-weight: $fontWeightXMedium !important;
+  }
+  &.ant-form-item-label {
+    padding: 0 0 0 !important;
+  }
+}
+
+/***************** BENEFICIARY EDIT PROFILE *****************/
+
+.ghaith--table-profile-container {
+  margin: 0;
+}
+
+.ghaith--table-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: $fontFamilyArabicLight !important;
+}
+
+.ghaith--table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  direction: rtl;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.ghaith--table th,
+.ghaith--table td {
+  padding: 15px 10px;
+  font-size: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: center !important;
+}
+
+.ghaith--table th {
+  background-color: #f8f9fa !important;
+  font-family: $fontFamilyArabicLight !important;
+  font-weight: 600 !important;
+  color: $forestColor !important;
+}
+
+.ghaith--table tbody tr:hover {
+  background-color: #f1f5f9 !important;
+}
+.ghaith--empty-text-table {
+  font-family: $fontFamilyArabicLight !important;
+  font-weight: $fontWeightNormal !important;
+  color: $mediumGrayColor !important;
+  font-size: $font-size-noteworthy !important;
+}
+.ghaith--confirm-logout {
+  font-size: $font-size-noteworthy;
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightNormal;
+  color: $simpleGrayColor;
+}

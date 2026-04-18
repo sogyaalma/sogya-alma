@@ -1,0 +1,28 @@
+var _style, _path, _g, _g2, _g3, _g4, _g5, _g6, _g7, _g8, _g9, _g0, _g1, _g10, _g11, _g12, _g13;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import * as React from "react";
+function SvgFooterTwitter(_ref, svgRef) {
+  let {
+    title,
+    titleId,
+    ...props
+  } = _ref;
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 1227 1227",
+    width: 1227,
+    height: 1227,
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title === undefined ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, "twitter(3)") : title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _style || (_style = /*#__PURE__*/React.createElement("style", null, "\n\t\t.s0 { fill: #ffffff } \n\t")), _path || (_path = /*#__PURE__*/React.createElement("path", {
+    className: "s0",
+    d: "m727.3 519.3l446.8-519.3h-105.9l-387.9 450.9-309.8-450.9h-357.3l468.5 681.8-468.5 544.6h105.9l409.6-476.2 327.2 476.2h357.3l-485.9-707.1zm-145 168.5l-47.4-67.9-377.7-540.2h162.6l304.8 436 47.4 67.9 396.2 566.7h-162.6l-323.3-462.4z"
+  })), _g || (_g = /*#__PURE__*/React.createElement("g", null)), _g2 || (_g2 = /*#__PURE__*/React.createElement("g", null)), _g3 || (_g3 = /*#__PURE__*/React.createElement("g", null)), _g4 || (_g4 = /*#__PURE__*/React.createElement("g", null)), _g5 || (_g5 = /*#__PURE__*/React.createElement("g", null)), _g6 || (_g6 = /*#__PURE__*/React.createElement("g", null)), _g7 || (_g7 = /*#__PURE__*/React.createElement("g", null)), _g8 || (_g8 = /*#__PURE__*/React.createElement("g", null)), _g9 || (_g9 = /*#__PURE__*/React.createElement("g", null)), _g0 || (_g0 = /*#__PURE__*/React.createElement("g", null)), _g1 || (_g1 = /*#__PURE__*/React.createElement("g", null)), _g10 || (_g10 = /*#__PURE__*/React.createElement("g", null)), _g11 || (_g11 = /*#__PURE__*/React.createElement("g", null)), _g12 || (_g12 = /*#__PURE__*/React.createElement("g", null)), _g13 || (_g13 = /*#__PURE__*/React.createElement("g", null)));
+}
+const ForwardRef = /*#__PURE__*/React.forwardRef(SvgFooterTwitter);
+export default __webpack_public_path__ + "static/media/footer-twitter.80df8b6b1051a242c90f5a720bb69fcf.svg";
+export { ForwardRef as ReactComponent };

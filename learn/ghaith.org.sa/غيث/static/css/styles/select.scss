@@ -1,0 +1,254 @@
+/* Year pill base */
+.ghaith--profile_year-pill-.ant-select {
+  width: 120px; // tweak as needed
+}
+
+/* Selector look & feel */
+.ghaith--profile_year-pill-.ant-select-rtl .ant-select-selector {
+  height: 38px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e6eeeb;
+  //  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+  padding-inline: 18px;
+  display: flex;
+  align-items: center;
+}
+
+/* Center the value text perfectly & style it */
+.ghaith--profile_year-pill-.ant-select-rtl .ant-select-selection-item,
+.ghaith--profile_year-pill-.ant-select-rtl .ant-select-selection-placeholder {
+  width: 100%;
+  text-align: center;
+  font-weight: 800;
+  font-family: $fontFamilyArabicMedium !important;
+  font-size: 16px;
+  color: #0f3f3a;
+  line-height: 1;
+}
+
+.ghaith--profile_year-pill-.ant-select-rtl .ant-select-arrow {
+  left: 10px;
+  right: auto;
+  color: #0f3f3a;
+  transform: translateY(2px);
+  font-size: 10px;
+}
+
+/* Hover/active focus states (keep it subtle) */
+.ghaith--profile_year-pill-.ant-select-rtl:not(.ant-select-disabled):hover
+  .ant-select-selector {
+  border-color: #dde7e4;
+}
+.ghaith--profile_year-pill-.ant-select-rtl.ant-select-focused
+  .ant-select-selector {
+  box-shadow: 0 0 0 3px rgba(15, 63, 58, 0.08);
+  border-color: #dde7e4;
+}
+
+/* Dropdown styling */
+.ghaith--profile_year-pill--dropdown .ant-select-item {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: $fontFamilyArabicMedium !important;
+}
+.ghaith--profile_year-pill--dropdown
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background: #f3f9f9;
+}
+.ghaith--profile_year-pill--dropdown .ant-select-item-option-active {
+  background: #eef6f4;
+}
+.ghaith--profile_year-pill--dropdown .ant-select-dropdown {
+  border: 1px solid #e6eeeb;
+  // box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  //  border-radius: 2px !important;
+}
+
+///////////////////// Custom Select with Label Inside (using Ant Design Select) /////////////////////////////////
+.ghaith--custom-select-wrapper {
+  display: flex;
+  align-items: center;
+  direction: rtl;
+  min-height: 42px; // Changed from height to min-height
+  border-radius: 6px;
+  background-color: #ffffff;
+  border: 1px solid #759596;
+  padding: 0 12px;
+  gap: 8px;
+  position: relative;
+
+  // Remove Ant Design Select default styles
+  .ghaith--custom-select {
+    flex: 1;
+    min-width: 0;
+
+    .ant-select-selector {
+      height: 100% !important;
+      border: none !important;
+      background-color: transparent !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      outline: none !important;
+    }
+
+    .ant-select-selection-search {
+      right: 0 !important;
+      left: auto !important;
+    }
+
+    // Single selection styles
+    .ant-select-selection-item,
+    .ant-select-selection-placeholder {
+      padding: 0 !important;
+      padding-left: 10px !important;
+      line-height: 42px !important;
+      font-size: $font-size-fine-plus;
+      font-family: $fontFamilyArabicMedium !important;
+      text-align: right !important;
+      color: $forestColor;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+      max-width: 100% !important;
+    }
+    .ant-select-selection-item {
+      color: $forestLight !important;
+    }
+
+    .ant-select-selection-placeholder {
+      color: #bfbfbf;
+    }
+
+    // Arrow icon with smooth transition
+    .ant-select-arrow {
+      left: 0;
+      right: auto;
+      color: #759596;
+      transition: transform 0.3s ease;
+      pointer-events: none; // Prevent interference with interactions
+      position: absolute !important; // Ensure it stays in place
+
+      svg {
+        transition: transform 0.3s ease;
+      }
+    }
+
+    // Clear icon
+    .ant-select-clear {
+      left: 20px;
+      right: auto;
+      background-color: transparent;
+
+      .anticon-close-circle {
+        color: #759596;
+        font-size: 14px;
+
+        &:hover {
+          color: #5a7475;
+        }
+      }
+    }
+
+    // Focus state
+    &.ant-select-focused .ant-select-selector {
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    // Open state with smooth arrow rotation
+    &.ant-select-open .ant-select-arrow svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.ghaith--custom-select-label {
+  font-size: $font-size-fine-plus;
+  color: $forestColor;
+  font-family: $fontFamilyArabicMedium;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+// Dropdown customization (optional)
+.ant-select-dropdown {
+  direction: rtl;
+
+  .ant-select-item {
+    font-family: $fontFamilyArabicMedium;
+    text-align: right;
+  }
+
+  .ant-select-item-option-selected {
+    background-color: #f0f5f5;
+  }
+}
+
+.ghaith--select-empty {
+  font-family: $fontFamilyArabicMedium !important;
+  font-weight: $fontWeightNormal !important;
+  color: $mediumGrayColor !important;
+  font-size: $font-size-fine !important;
+}
+
+//////////////////////////////////////////// MULTIPLE SELECT STYLE ////////////////////////////
+.ghaith--multiple-select {
+  // Multiple selection styles
+  .ant-select-selection-overflow {
+    gap: 4px !important;
+    flex-wrap: wrap !important;
+
+    .ant-select-selection-overflow-item {
+      align-self: center !important;
+    }
+  }
+
+  // Tag styles for multiple selection
+  .ant-select-selection-item {
+    background-color: #e6f7f7 !important;
+    border: 1px solid #759596 !important;
+    border-radius: 4px !important;
+    padding: 2px 8px !important;
+    margin: 2px 0 !important;
+    height: auto !important;
+    line-height: 20px !important;
+    font-size: 13px !important;
+    max-width: calc(100% - 30px) !important;
+
+    .ant-select-selection-item-content {
+      color: $forestColor !important;
+      font-family: $fontFamilyArabicMedium !important;
+      margin-right: 10px !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+    }
+
+    .ant-select-selection-item-remove {
+      color: #759596;
+      font-size: 12px !important;
+      margin-right: 4px !important;
+      margin-left: 0 !important;
+      flex-shrink: 0;
+
+      &:hover {
+        color: #5a7475 !important;
+      }
+    }
+  }
+}
+// Error state styling
+.ghaith--custom-select-wrapper.ghaith--custom-select-error {
+  border-color: #ff4d4f !important;
+
+  // Optional: also change arrow icon color on error
+  .ghaith--custom-select .ant-select-arrow {
+    color: #ff4d4f;
+  }
+}
+
+.ghaith--bank-select {
+  background-color: transparent !important;
+  border-color: #109d72;
+}

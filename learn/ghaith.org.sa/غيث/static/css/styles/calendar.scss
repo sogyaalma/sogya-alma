@@ -1,0 +1,254 @@
+.ghaith--ramadan-calendar {
+  .ant-picker-cell-selected {
+    .ant-picker-cell-inner {
+      background-color: #dff3f1 !important;
+    }
+  }
+  .ant-picker-calendar {
+    direction: rtl;
+    font-family: $fontFamilyArabicLight !important;
+  }
+  .ant-picker-body {
+    padding: 0 !important;
+  }
+  .ant-picker-calendar-header {
+    display: none !important;
+  }
+  .ant-picker-cell {
+    border-right: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    height: 140px !important;
+    padding: 0 !important;
+    background-color: #f8f8f8 !important;
+    position: relative;
+  }
+  .ant-picker-cell-in-view .ant-picker-cell-inner {
+    font-size: 20px;
+    font-weight: 300;
+    color: #333;
+    height: 100%;
+    padding: 8px 4px;
+    overflow: visible !important;
+  }
+  .ant-picker-calendar-date {
+    height: 100%;
+    overflow: visible !important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .ant-picker-calendar-date-value {
+    position: relative;
+    z-index: 1;
+  }
+  .ant-picker-calendar-date-content {
+    flex: 1;
+    overflow: visible !important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .ant-picker-content thead tr th {
+    background-color: #fafafa;
+    border-right: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8 !important;
+    font-weight: 500;
+    color: #666;
+    text-align: center;
+    padding: 12px;
+  }
+  .ant-picker-content thead th {
+    border-bottom: 1px solid #e8e8e8;
+    height: 40px !important;
+    &:nth-child(1)::before {
+      content: "الأحد";
+    }
+    &:nth-child(2)::before {
+      content: "الإثنين";
+    }
+    &:nth-child(3)::before {
+      content: "الثلاثاء";
+    }
+    &:nth-child(4)::before {
+      content: "الأربعاء";
+    }
+    &:nth-child(5)::before {
+      content: "الخميس";
+    }
+    &:nth-child(6)::before {
+      content: "الجمعة";
+    }
+    &:nth-child(7)::before {
+      content: "السبت";
+    }
+    font-size: 0;
+
+    &::before {
+      font-size: 14px;
+      font-family: $fontFamilyArabicLight !important;
+    }
+  }
+  .ant-picker-cell-selected .ant-picker-cell-inner {
+    background-color: transparent;
+  }
+  .ant-picker-cell:hover .ant-picker-cell-inner {
+    background-color: rgba(82, 196, 26, 0.1);
+  }
+  .ant-picker-content tbody tr {
+    height: 140px;
+  }
+}
+
+.gh--ramadan-calender-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+.gh--ramadan-calendar-date {
+  font-size: 12px;
+  font-weight: 300;
+  color: #a3a3a3;
+  font-family: $fontFamilyArabicLight !important;
+}
+.gh--ramadan-calendar-special {
+  font-size: 11px;
+  color: #ff66ffa4;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-family: $fontFamilyArabicLight !important;
+}
+.gh--ramadan-calendar-target {
+  font-size: 11px;
+  color: #999;
+  text-align: start;
+  font-family: $fontFamilyArabicLight !important;
+  direction: rtl;
+}
+.gh--ramadan-calendar-achieved {
+  font-size: 12px;
+  text-align: start;
+  margin-top: 6px;
+  direction: rtl;
+  font-weight: 500;
+  font-family: $fontFamilyArabicLight !important;
+
+  .gh--achieved-label {
+    color: #42956b;
+  }
+
+  .gh--achieved-number {
+    color: #274140;
+    font-weight: 600;
+  }
+}
+.gh--ramadan-calendar-percentage-wrapper {
+  width: 100%;
+  height: 20px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 1px;
+  padding-right: 1px;
+  overflow: hidden;
+  margin: 0;
+  font-family: $fontFamilyArabicLight !important;
+}
+.gh--ramadan-calendar-progress-fill {
+  height: 100%;
+  background-color: #42956b;
+  display: flex;
+  align-items: center;
+  transition: width 0.3s ease;
+}
+
+/***************************************** DONATION CONTAINER *************************************/
+.ghaith--ramadan-donation-container {
+  background-color: #ebeff0;
+  padding: 15px 0;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.ghaith--ramadan-donation-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.ghaith--ramadan-donation-target-label {
+  color: #009767;
+}
+
+.ghaith--ramadan-donation-target-value {
+  color: #395452;
+}
+
+.ghaith--ramadan-donation-target-text {
+  font-size: 20px;
+  font-weight: bold;
+  @media (max-width: 545px) {
+    font-size: 14px;
+  }
+}
+
+.ghaith--ramadan-donation-meal-label {
+  font-size: 14px;
+  color: #566361;
+  text-align: left;
+  @media (max-width: 545px) {
+    font-size: 12px;
+  }
+}
+.gh--ramadan-calendar-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  transform: translateY(-50%);
+  background-color: #1c4446;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  margin-left: 15px;
+  animation: fadeInOut 4s ease-in-out 3;
+  animation-fill-mode: forwards;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  font-family: $fontFamilyArabicLight;
+}
+
+.gh--ramadan-calendar-tooltip::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right-color: #1c4446;
+}
+
+// Animations
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+  .gh--ramadan-calendar-tooltip {
+    font-size: 11px;
+    padding: 6px 10px;
+    margin-left: 8px;
+  }
+}

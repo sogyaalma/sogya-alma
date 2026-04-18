@@ -1,0 +1,418 @@
+.ghaith--hero-section-carousel {
+  .slick-next {
+    top: 65% !important;
+    left: 14% !important;
+    color: $forestColor !important;
+    opacity: 1 !important;
+    @media (max-width: 1115px) {
+      top: 69% !important;
+      left: 17% !important;
+    }
+    @media (max-width: 835px) {
+      left: 20% !important;
+    }
+    &::after {
+      content: "" !important;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-inline-width: 4px 0;
+      border-block-width: 4px 0;
+    }
+    &::before {
+      content: "" !important;
+    }
+  }
+  .slick-prev {
+    top: 65% !important;
+    left: 10.5% !important;
+    color: $forestColor !important;
+    opacity: 1 !important;
+    @media (max-width: 1115px) {
+      top: 69% !important;
+      left: 12% !important;
+    }
+    @media (max-width: 835px) {
+      left: 14% !important;
+    }
+    &::after {
+      content: "" !important;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-inline-width: 4px 0;
+      border-block-width: 4px 0;
+    }
+    &::before {
+      content: "" !important;
+    }
+  }
+}
+
+.ghaith--hero-section-container {
+  width: 100%;
+  position: relative;
+  margin-bottom: 1.5rem;
+  .ghaith--lineeee {
+    position: absolute;
+    top: 64%;
+    left: 13%;
+    height: 2rem;
+    z-index: 999;
+    @media (max-width: 1160px) {
+      left: 13.5%;
+    }
+    @media (max-width: 1115px) {
+      top: 68% !important;
+      left: 16% !important;
+    }
+    @media (max-width: 835px) {
+      top: 67% !important;
+      left: 19% !important;
+    }
+
+    @media (max-width: 576px) {
+      display: none;
+    }
+  }
+  .ghaith--hero-section-image {
+    margin-top: 8rem !important;
+    width: 100%;
+  }
+}
+.ghaith--sky-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%; // give it more height for movement
+  z-index: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transform: translateY(0); // default
+    transition: transform 0.1s linear;
+  }
+}
+
+.ghaith--hero-section-carousel {
+  position: relative;
+  z-index: 1; // in front of the background
+}
+
+.ghaith--hero-section-container {
+  position: relative; // to contain absolutely positioned background
+  overflow: hidden;
+}
+.ghaith--hero-social-icons {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  // transform: translateY(-50%);
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  a,
+  img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+
+  a:hover img {
+    transform: scale(1.1);
+  }
+
+  .line-separator {
+    margin-top: 0.5rem;
+    height: 60px;
+    width: auto;
+    transition: none !important;
+    cursor: none !important;
+    height: 2em;
+    &:hover {
+      transform: none !important;
+    }
+  }
+
+  .scroll-icon {
+    margin-top: 0.5rem;
+    width: 40px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+.ghaith--hero-section-content {
+  direction: ltr;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 5%;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .ghaith--hero-section-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+    @media (max-width: 1241px) {
+      margin-top: 13rem;
+    }
+    @media (max-width: 480px) {
+      margin-top: 8rem;
+    }
+
+    .ghaith--hero-title {
+      width: fit-content;
+      width: 100%;
+      height: 2rem;
+      padding: 0 3%;
+      overflow: visible;
+      border-radius: 16px;
+      @media (max-width: 768px) {
+        height: 1.5rem;
+      }
+      .ghaith--title {
+        padding-top: 0.3rem;
+        font-weight: $fontWeightNormal;
+        color: $titleMainColor;
+        font-size: $font-size-massive;
+        padding-right: 2rem;
+        @media (max-width: 1024px) {
+          font-size: 2rem;
+        }
+        @media (max-width: 768px) {
+          font-size: 1.5rem;
+        }
+        @media (max-width: 600px) {
+          font-size: 1rem;
+        }
+      }
+    }
+    h1 {
+      font-weight: $fontWeightNormal;
+      color: $titleMainColor;
+      font-size: $font-size-huge;
+      padding-right: 3rem;
+      line-height: 1;
+      @media (max-width: 1024px) {
+        font-size: 2.3rem;
+      }
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+      @media (max-width: 600px) {
+        font-size: 1.5rem;
+      }
+      @media (max-width: 431px) {
+        font-size: 1rem;
+      }
+    }
+    h4 {
+      font-size: $font-size-substantial;
+      color: $titleMainColor;
+      font-weight: $fontWeightNormal;
+      padding-right: 3rem;
+      line-height: 1.75;
+      @media (max-width: 1024px) {
+        font-size: 1.5rem;
+      }
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+      @media (max-width: 600px) {
+        font-size: 0.8rem;
+      }
+
+      span {
+        font-weight: $fontWeightNormal;
+        font-size: $font-size-fine-plus;
+        @media (max-width: 431px) {
+          font-size: 0.5rem;
+        }
+      }
+    }
+  }
+  .ghaith--hero-section-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+    @media (max-width: 1100px) {
+      margin-top: 6rem;
+    }
+    @media (max-width: 900px) {
+      gap: 2vh;
+    }
+    img {
+      transition: transform 0.2s;
+      cursor: pointer;
+      width: 1.5em;
+      height: 1.5em;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    .ghaith--hero-line {
+      transition: none;
+      cursor: none;
+      height: 2em;
+      &:hover {
+        transform: none;
+      }
+    }
+  }
+}
+
+.ghaith--hero-text-box {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 350px;
+  z-index: 10;
+  direction: rtl;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    padding: 1rem;
+    // Remove display for small screens
+    display: none;
+  }
+
+  .ghaith--hero-description {
+    font-size: $font-size-fine-plus;
+    font-weight: $fontWeightNormal;
+    font-family: $fontFamilyArabic;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .ghaith--hero-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .ghaith--hero-stat-item {
+      flex: 1 1 45%;
+
+      .ghaith--hero-stat-label {
+        font-size: $font-size-fine-plus;
+        font-weight: $fontWeightNormal;
+        font-family: $fontFamilyArabic;
+        font-size: 0.85rem;
+        color: #195c35;
+        margin-bottom: 0.3rem;
+        text-align: right;
+      }
+
+      .ghaith--hero-number-row {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        direction: rtl;
+
+        .ghaith--hero-stat-number {
+          font-weight: bold;
+          font-size: 1.5rem;
+          color: #1e8449;
+        }
+
+        .ghaith--hero-icon {
+          width: 30px;
+          height: 30px;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+
+  .ghaith--hero-link {
+    font-size: 0.9rem;
+    color: #1e8449;
+    text-decoration: underline;
+    align-self: flex-end;
+    font-size: $font-size-fine-plus;
+    font-weight: $fontWeightNormal;
+    font-family: $fontFamilyArabic;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.ghaith--disribution-container {
+  position: absolute;
+  left: 58%;
+  bottom: 32%;
+  z-index: 11;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(10px);
+    cursor: pointer;
+  }
+
+  @media (max-width: 576px) {
+    bottom: 19%;
+  }
+  .ghaith--disribution__img {
+    width: 100%;
+    height: auto;
+    @media (max-width: 1200px) {
+      width: 80%;
+    }
+  }
+}
+
+.ghaith--scroll-now {
+  position: absolute;
+  left: 28%;
+  bottom: 32%;
+  width: clamp(280px, 25vw, 460px);
+  z-index: 11;
+  transition: transform 0.3s ease;
+
+  .ghaith--scroll-now__img {
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transform: translateX(-128px);
+    transition: all 1s ease-in-out;
+  }
+  &:hover {
+    transform: translateY(10px);
+    cursor: pointer;
+  }
+  /* When active (after scroll) */
+  &.is-visible .ghaith--scroll-now__img {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @media (max-width: 576px) {
+    bottom: 12%;
+    left: 8%;
+  }
+}

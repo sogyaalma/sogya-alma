@@ -1,0 +1,46 @@
+.ghaith--marquee-wrapper {
+  width: 100%;
+  background: $whiteColor;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px 0;
+  margin-bottom: 3rem;
+}
+
+/* Base Style */
+.ghaith--marquee-text {
+  font-family: $fontFamilyArabicRegular !important;
+  font-size: $font-size-massive;
+  font-weight: $fontWeightBold;
+  margin: 0 50px;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.ghaith--marquee-highlight-line1 {
+  color: $mainGreenColor;
+}
+
+.ghaith--marquee-highlight-line2 {
+  color: rgb(6, 104, 79);
+}
+
+/* ghaith--marquee-muted Words */
+.ghaith--marquee-muted {
+  color: #00976734;
+}
+
+@media (max-width: 1024px) {
+  .ghaith--marquee-text {
+    font-size: $font-size-remarkable;
+    margin: 0 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ghaith--marquee-text {
+    font-size: $font-size-strong;
+    margin: 0 20px;
+  }
+}

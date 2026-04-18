@@ -1,0 +1,28 @@
+var _style, _path;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import * as React from "react";
+function SvgFooterSnapchat(_ref, svgRef) {
+  let {
+    title,
+    titleId,
+    ...props
+  } = _ref;
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 512 512",
+    width: 512,
+    height: 512,
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title === undefined ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, "snapchat") : title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _style || (_style = /*#__PURE__*/React.createElement("style", null, "\n\t\t.s0 { fill: #000000 } \n\t")), _path || (_path = /*#__PURE__*/React.createElement("path", {
+    className: "s0",
+    d: "m68 422.6c5.8 25.6 12.1 36.2 45.6 30.7 9.8-1.6 22-3.7 37-1.2 25 4.2 90.8 88.1 184.5 14.1 18.3-12.8 28.3-19.9 63.7-13 15.5 3 35.4-0.1 45.1-30.6 92.6-16.7 72.7-67.7 45-72.2-48.3-7.9-80.2-57.6-83.7-73.5 3.4-2.1 10.9-4.7 15.6-6.3 78.2-27 34.7-92.9-18.5-72.6 3.5-55.4 4.5-99.9-40.9-142.5-48.2-45.1-122.7-47.2-171.4-25.8-84.8 37.1-84.2 108.9-80.4 169.2-33.8-12.9-56.7 5.7-60.4 24.8-5.6 30.1 23.1 40.2 40.3 46.2 6 2.1 16 5.7 17.5 6.8-1.8 2.1-12.6 50-76.3 71.1-12.1 4-23.6 7.8-28.6 19-3 6.6-2.8 14.1 0.7 22.1 8.6 20 36.6 28.6 65.2 33.7zm66.4-128.4c14.1-28.3-4.4-43.8-34.3-54.3-6.3-2.3-18-6.4-19.5-10.2 0.5-1.3 4.7-4 8.7-4 1.2 0 4.8 1.4 7.1 2.3 101.2 38.3-18.2-114.7 106.4-169.1 38.2-16.7 99.1-15.4 136.7 19.9 60.4 56.7 12.9 139.4 39.1 151.3 18.7 8.5 36.5-4.5 42.9-4.7 5.1 0 9.4 3 9.9 4 0.1 3.8-13.1 8.4-21 11.1-36.5 12.6-47.9 27.7-27.3 65.3 15.6 28.4 48.5 63.7 92.1 74.4-30.6 17.7-53.8 2.1-60.6 28.8-3.5 14.2-5.7 13.7-9.6 13-108.1-21.2-100.7 91.1-210.5 17.7-37.5-25-44.8-22.4-93.6-16.7-2-8.1-3.4-16.8-6.2-22-7.7-14.3-36.2-7.1-58.5-21.4 44.8-15.3 75.1-33.4 98.2-85.4z"
+  })));
+}
+const ForwardRef = /*#__PURE__*/React.forwardRef(SvgFooterSnapchat);
+export default __webpack_public_path__ + "static/media/footer-snapchat.34bdbbef1381239cb2737729bc941e71.svg";
+export { ForwardRef as ReactComponent };

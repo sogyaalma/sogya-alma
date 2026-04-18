@@ -1,0 +1,36 @@
+/* ===== Input Styling ===== */
+.ghaith--custom-chat-input.ant-input {
+  border-color: #d9d9d9;
+  transition: all 0.2s ease;
+  caret-color: #009767;
+}
+
+.ghaith--custom-chat-input.ant-input:hover,
+.ghaith--custom-chat-input.ant-input:focus,
+.ghaith--custom-chat-input.ant-input-focused {
+  border-color: #009767 !important;
+  box-shadow: 0 0 0 2px rgba(0, 151, 103, 0.2) !important;
+}
+
+/* ===== Send Button Styling ===== */
+.ghaith--chat-send-btn {
+  background-color: #009767 !important;
+  border-color: #009767 !important;
+  transition: all 0.2s ease;
+}
+
+.ghaith--chat-send-btn:not(:disabled):hover {
+  background-color: #00b377 !important; /* lighter green */
+  border-color: #00b377 !important;
+}
+
+.ghaith--chat-send-btn:not(:disabled):active {
+  background-color: #007a54 !important; /* darker green when pressed */
+  border-color: #007a54 !important;
+}
+
+.ghaith--chat-send-btn:disabled {
+  opacity: 1 !important; /* prevent greying out */
+  background-color: #f5f5f5 !important;
+  border-color: #dbdbdb !important;
+}

@@ -1,0 +1,285 @@
+.ghaith--projects-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0px;
+  width: 100%; // Take full col width
+  height: 100%;
+  direction: rtl;
+}
+
+.ghaith--projects-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3.5;
+  overflow: hidden;
+}
+
+.ghaith--projects-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.ghaith--projects-image:hover {
+  transform: scale(1.15);
+  width: 100%;
+  height: 100%;
+}
+.ghaith--projects-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: $whiteColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.ghaith--projects-title {
+  font-family: $fontFamilyArabicExtraLight;
+  font-size: $font-size-noteworthy;
+  font-weight: $font-size-bold;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.ghaith--projects-description {
+  font-family: $fontFamilyArabicExtraLight;
+  font-size: $font-size-fine-plus;
+  font-weight: $font-size-bold;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; // limit to 2 lines
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ghaith--projects-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  direction: ltr;
+}
+
+/* Square button with triangle */
+.ghaith--projects-btn-icon {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  color: white;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px;
+  padding: 0;
+
+  &:hover {
+    background-color: rgba(190, 190, 190, 0.15) !important;
+    border-color: rgba(59, 59, 59, 0.15) !important;
+    transform: scale(1.1);
+  }
+
+  img {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Rectangular button with arrow + text */
+.ghaith--projects-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  color: white;
+  font-weight: $fontWeightBold;
+  font-family: $fontFamilyArabicExtraLight;
+  padding: 0 24px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  border-radius: 0px;
+  font-size: 15px;
+
+  &:hover {
+    background-color: rgba(190, 190, 190, 0.15) !important;
+    border-color: rgba(59, 59, 59, 0.15) !important;
+    color: $whiteColor !important;
+    transform: scale(1.1);
+  }
+
+  .anticon {
+    margin-inline-end: 8px; // space between arrow and text
+  }
+}
+.ghaith--projects-arrow {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+.ghaith--card-container {
+  display: flex;
+  // flex-direction: column !important;
+  // align-items: center !important;
+  //  gap: 2rem !important;
+  //margin: 2rem !important;
+  justify-content: center;
+  align-items: stretch;
+
+  @media (max-width: 576) {
+    max-height: 200px !important;
+  }
+}
+.ghaith--project-section {
+  padding: 2rem 0;
+  direction: rtl;
+
+  .slider-container {
+    height: 100% !important;
+    .slick-slide {
+      padding: 0 12px; // reduce spacing between cards
+    }
+  }
+
+  ///right side of project section
+}
+
+.ghaith--project-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2rem;
+  direction: rtl;
+}
+
+.ghaith--project-section-title {
+  font-family: $fontFamilyArabicExtraLight !important;
+  font-size: $font-size-outstanding !important;
+  font-weight: $font-size-bold !important;
+  margin: 0;
+  display: flex;
+  gap: 4px;
+}
+
+.ghaith--project-section-title .green {
+  color: $mainGreenColor;
+}
+
+.ghaith--project-section-title .black {
+  color: $EmeraldForestColor;
+}
+
+.ghaith--project-section-icon {
+  width: 32px;
+  height: 32px;
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+.ghaith--project-subtitle {
+  font-family: $fontFamilyArabicLight !important;
+  font-size: $font-size-prominent !important;
+  font-weight: $font-size-bold !important;
+  margin-bottom: 1.5rem;
+  color: $mainGreenColor;
+
+  span {
+    color: $EmeraldForestColor;
+  }
+}
+
+.ghaith--project-text {
+  font-size: $font-size-modest;
+  font-family: $fontFamilyArabicMedium;
+  line-height: 1.8;
+  color: black;
+  flex-grow: 1;
+  text-align: justify;
+}
+
+.ghaith--project-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.ghaith--discover-btn {
+  background: transparent;
+  border: 1px solid $mainGreenColor;
+  color: $mainGreenColor;
+  font-weight: bold;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 50px;
+  font-size: $font-size-fine;
+  font-family: $fontFamilyArabicLight;
+  &:hover {
+    background: $mainGreenColor !important;
+    color: #fff !important;
+    border: $mainGreenColor !important;
+    transform: scale(1.05);
+  }
+  @media (max-width: 1200px) {
+    width: 250px !important;
+  }
+}
+.ghaith--project-row {
+  display: flex;
+  align-items: stretch;
+}
+.ghaith--project-description-col {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0 2rem !important;
+}
+
+.ghaith--project-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2rem;
+  background: #fff;
+  direction: rtl;
+}
+.ghaith--card-col {
+  @media (max-width: 576px) {
+    padding: 0 2rem !important;
+  }
+}
+
+.ghaith--projects-page {
+  padding: 3rem 2rem;
+  direction: rtl;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+}
+
+.ghaith--projects-empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #666;
+  font-family: $fontFamilyArabicMedium;
+  font-size: $font-size-modest;
+  p {
+    margin: 0;
+  }
+}

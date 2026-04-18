@@ -1,0 +1,209 @@
+.ghaith--statistics {
+  position: relative;
+  direction: rtl;
+}
+
+.ghaith--statistics-title-wrapper {
+  position: absolute;
+  z-index: 3;
+  right: 15%;
+  direction: ltr;
+
+  // Smooth transition for responsive changes
+  @media (max-width: 1200px) {
+    right: 10%;
+  }
+
+  @media (max-width: 768px) {
+    right: 5%;
+    margin-top: -2rem;
+  }
+
+  @media (max-width: 480px) {
+    right: 0;
+    // left: 50%;
+    transform: translateX(-50%);
+    margin-top: -2.5rem;
+  }
+}
+
+.ghaith--statistics-title-box {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(6px, 1vw, 8px);
+  border-radius: 8px;
+  flex-direction: row-reverse;
+}
+
+.ghaith--statistics-title-icon {
+  width: clamp(32px, 5vw, 44px);
+  height: clamp(32px, 5vw, 44px);
+  margin-left: clamp(6px, 1.5vw, 14px);
+}
+
+.ghaith--statistics-title {
+  margin: 0;
+  font-family: $fontFamilyArabicLight !important;
+  font-size: clamp($font-size-dominant, 3vw, $font-size-enormous);
+  line-height: 1.1;
+
+  span {
+    color: $mainGreenColor;
+  }
+}
+
+.ghaith--statistics-container {
+  width: 100%;
+  margin-top: clamp(-4rem, -12vw, -12rem);
+  padding: clamp(1rem, 3vw, 2rem);
+  color: white;
+  z-index: 3;
+  position: relative;
+  justify-content: center;
+
+  // Desktop (1200px+)
+  @media (min-width: 1400px) {
+    .ghaith--stat-label {
+      font-size: $font-size-substantial;
+    }
+    .ghaith--stat-value {
+      font-size: $font-size-heroic; // 59px
+    }
+    .ghaith--stat-unit {
+      font-size: $font-size-substantial;
+    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1399px) {
+    margin-top: -10rem;
+    .ghaith--stat-label {
+      font-size: $font-size-prominent;
+    }
+    .ghaith--stat-value {
+      font-size: $font-size-huge; // 53px
+    }
+    .ghaith--stat-unit {
+      font-size: $font-size-substantial;
+    }
+  }
+
+  // Tablet portrait (768px - 991px)
+  @media (min-width: 768px) and (max-width: 991px) {
+    margin-top: -8rem;
+    .ghaith--stat-label {
+      font-size: $font-size-noteworthy; // 20px
+    }
+    .ghaith--stat-value {
+      font-size: $font-size-massive; // 48px
+    }
+    .ghaith--stat-unit {
+      font-size: 19px;
+    }
+  }
+
+  // Mobile landscape (576px - 767px)
+  @media (min-width: 576px) and (max-width: 767px) {
+    margin-top: -6rem;
+    .ghaith--stat-label {
+      font-size: $font-size-modest; // 18px
+    }
+    .ghaith--stat-value {
+      font-size: $font-size-striking; // 36px
+    }
+    .ghaith--stat-unit {
+      font-size: 17px;
+    }
+  }
+
+  // Mobile portrait (below 576px)
+  @media (max-width: 575px) {
+    margin-top: -3rem;
+    padding: 1rem;
+
+    .ghaith--stat-label {
+      font-size: $font-size-fine; // 16px
+    }
+    .ghaith--stat-value {
+      font-size: $font-size-substantial; // 29px
+    }
+    .ghaith--stat-unit {
+      font-size: 15px;
+    }
+  }
+
+  // Extra small devices (below 400px)
+  @media (max-width: 399px) {
+    margin-top: -2rem;
+
+    .ghaith--stat-label {
+      font-size: $font-size-extra-fine; // 14px
+    }
+    .ghaith--stat-value {
+      font-size: $font-size-prominent; // 22px
+    }
+    .ghaith--stat-unit {
+      font-size: 13px;
+    }
+  }
+
+  .ghaith--stat-label {
+    white-space: nowrap;
+    color: $primaryColor;
+    font-family: $fontFamilyArabicMedium;
+    font-weight: $fontWeightNormal;
+    transition: font-size 0.3s ease;
+  }
+
+  .ghaith--stat-value {
+    color: $mainGreenColor;
+    font-family: $fontFamilyArabicMedium;
+    font-weight: $fontWeightNormal;
+    transition: font-size 0.3s ease;
+    display: flex;
+    direction: ltr;
+  }
+  .ghaith--stat-unit {
+    color: $mainGreenColor;
+    font-family: $fontFamilyArabicMedium;
+    font-weight: $fontWeightNormal;
+    transition: font-size 0.3s ease;
+    margin-bottom: 12px;
+    margin-top: -10px;
+  }
+}
+
+.ghaith--statistic-content {
+  padding: clamp(1rem, 4vw, 3rem) 0 0 0;
+  justify-content: center;
+
+  @media (max-width: 991px) {
+    text-align: center;
+  }
+
+  @media (max-width: 575px) {
+    padding: 1rem;
+    gap: clamp(1rem, 3vw, 2rem);
+  }
+}
+
+.ghaith--statistics-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
+
+  // Add spacing between columns on mobile
+  @media (max-width: 767px) {
+    margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.ghaith--statistics-content-icon {
+  width: clamp(120px, 20vw, 250px) !important;
+  height: auto !important;
+  aspect-ratio: 250 / 97;
+}

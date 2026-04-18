@@ -1,0 +1,318 @@
+.ghaith--zakat-calculator-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  direction: rtl;
+}
+
+.ghaith--zakat-calculator-grid {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 968px) {
+  .ghaith--zakat-calculator-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Empty State */
+.ghaith--zakat-empty-state {
+  background: white;
+  border-radius: 12px;
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.ghaith--zakat-empty-icon {
+  font-size: 4rem;
+  color: #14b8a6;
+  margin-bottom: 1rem;
+}
+
+.ghaith--zakat-empty-text {
+  font-family: $fontFamilyArabicLight;
+
+  font-size: 1.125rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Type Selection Cards */
+.ghaith--ghaith--zakat-type-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .ghaith--ghaith--zakat-type-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ghaith--zakat-type-card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ghaith--zakat-type-card:hover {
+  border-color: #14b8a6;
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.1);
+}
+
+.ghaith--zakat-type-card-selected {
+  border-color: #14b8a6;
+  background: #f0fdfa;
+}
+
+.ghaith--zakat-type-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ghaith--zakat-type-label {
+  font-family: $fontFamilyArabicLight;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.ghaith--zakat-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.ghaith--zakat-checkbox-checked {
+  background: #14b8a6;
+  border-color: #14b8a6;
+  color: white;
+}
+
+.ghaith--zakat-checkbox i {
+  font-size: 14px;
+}
+
+/* Section Styles */
+.ghaith--zakat-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ghaith--zakat-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f1f5f9;
+  font-family: $fontFamilyArabicLight;
+  margin-bottom: 1.5rem;
+}
+
+.ghaith--zakat-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-family: $fontFamilyArabicLight;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.ghaith--zakat-section-title i {
+  color: #14b8a6;
+  font-size: 1.5rem;
+}
+
+.ghaith--zakat-clear-btn {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ghaith--zakat-clear-btn:hover {
+  background: #fecaca;
+}
+
+.ghaith--zakat-clear-btn i {
+  font-size: 1rem;
+}
+
+.ghaith--zakat-section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ghaith--zakat-info-text {
+  background: #f0fdfa;
+  color: #0f766e;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  margin: 0;
+  border-right: 4px solid #14b8a6;
+  font-family: $fontFamilyArabicLight;
+}
+
+.ghaith--zakat-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ghaith--zakat-result {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $fontFamilyArabicLight;
+  margin-top: 0.5rem;
+}
+
+.ghaith--zakat-result span:first-child {
+  font-family: $fontFamilyArabicLight;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.ghaith--zakat-amount {
+  font-size: 1.25rem;
+  font-family: $fontFamilyArabicLight;
+  font-weight: 700;
+  color: #14b8a6;
+}
+
+/* Sidebar Total Card */
+.ghaith--zakat-sidebar {
+  position: sticky;
+  top: 2rem;
+}
+
+.ghaith--zakat-total-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.ghaith--zakat-total-title {
+  font-family: $fontFamilyArabicLight;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 1.5rem 0;
+}
+
+.ghaith--zakat-total-amount {
+  font-size: 2rem;
+  font-family: $fontFamilyArabicLight;
+  font-weight: 700;
+  color: #14b8a6;
+  margin-bottom: 1.5rem;
+}
+
+.ghaith--zakat-donate-btn {
+  width: 100%;
+  background: #14b8a6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ghaith--zakat-donate-btn:hover:not(:disabled) {
+  background: #0d9488;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+}
+
+.ghaith--zakat-donate-btn:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+}
+
+/* Main Area */
+.ghaith--zakat-calculator-main {
+  min-height: 400px;
+}
+/* Add these styles to your existing CSS file */
+
+.ghaith--zakat-type-label-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ghaith--zakat-type-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* If you want to use Font Awesome check icon with white color */
+.ghaith--check-icon {
+  width: 14px;
+  height: 14px;
+  filter: brightness(0) invert(1); /* Makes the icon white */
+}
+
+/* Alternative if you're using an SVG file */
+.ghaith--zakat-checkbox-checked .ghaith--check-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Ensure the checkbox has proper alignment */
+.ghaith--zakat-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.ghaith--zakat-checkbox-checked {
+  background: #14b8a6;
+  border-color: #14b8a6;
+}
+
+/* Update the existing card content alignment */
+.ghaith--zakat-type-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

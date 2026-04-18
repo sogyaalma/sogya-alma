@@ -1,0 +1,204 @@
+.ghaith--job-title {
+  color: $oceanBlueColor;
+  font-size: $font-size-dominant;
+  font-weight: $fontWeightNormal;
+  font-family: $fontFamilyArabicLight;
+}
+
+.ghaith--header-jobs-panel {
+  border-bottom: none !important;
+  background-color: $whiteColor !important;
+  border-radius: 15px !important;
+  .ant-collapse-header {
+    line-height: 0 !important;
+  }
+
+  .ant-collapse-header {
+    border-radius: 15px !important;
+    align-items: center !important;
+    background-color: $whiteColor !important;
+  }
+}
+
+.ghaith--job-title-collapse {
+  span {
+    font-family: $fontFamilyArabicLight;
+    font-weight: $fontWeightNormal;
+    font-size: $font-size-dominant;
+    color: $primaryColor;
+  }
+}
+
+.ghaith--jobs-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  span {
+    font-family: $fontFamilyArabicLight;
+    font-weight: $fontWeightNormal;
+    font-size: $font-size-modest;
+    color: $mediumGrayColor;
+  }
+}
+
+.ant-collapse .ant-collapse-content {
+  border-top: none !important;
+}
+
+.ghaith--job-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  line-height: 1.8 !important;
+  @media (max-width: 767px) {
+    padding: 2rem 0.5rem;
+  }
+}
+
+.ghaith--job-button {
+  width: 90% !important;
+  background-color: $mainGreenColor;
+  font-size: $font-size-extra-fine;
+  min-width: 90% !important;
+}
+
+.ghaith--apply-job-detail-button {
+  margin-top: 0.5rem;
+  background-color: $primaryColor;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+  &:hover {
+    background-color: $primaryColor !important;
+    transform: scale(1.04);
+  }
+}
+
+.ghaith--clicked-job {
+  background-color: #e4e2e2 !important;
+  color: $forestColor !important;
+  &:hover {
+    background-color: #e4e2e2 !important;
+    color: $forestColor !important;
+  }
+}
+
+.ghaith--apply-job-button {
+  background-color: $mainGreenColor;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+  &:hover {
+    background-color: $mainGreenColor !important;
+    transform: scale(1.04);
+  }
+}
+
+.ghaith--jobs-opportunities {
+  margin-bottom: 1.5rem;
+}
+
+.ghaith--apply-job-button-container-green {
+  display: flex;
+  align-items: end;
+  margin-bottom: 1rem;
+  justify-content: end;
+
+  @media (min-width: 1600px) {
+    //margin-right: -0.9rem;
+  }
+}
+.ghaith--content-services-request-p {
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightNormal;
+  color: $forestColor;
+  font-size: $font-size-fine;
+  margin-right: 12px;
+}
+.ghaith--content-services-request-span {
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightNormal;
+  color: $primaryColor;
+  font-size: $font-size-fine;
+}
+.ghaith--survey-collapse {
+  background-color: transparent !important;
+}
+.ghaith--no-services {
+  font-family: $fontFamilyArabicLight& !important;
+  font-weight: $fontWeightNormal !important;
+  color: $mediumGrayColor !important;
+  font-size: $font-size-noteworthy !important;
+  text-align: center !important;
+}
+
+.ghaith--evaluation {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 3rem;
+  padding: 3rem 7rem 0 7rem;
+  @media (max-width: 1250px) {
+    padding: 3rem 6rem 0 6rem;
+  }
+  @media (max-width: 1024px) {
+    padding: 3rem 2rem 0 2rem;
+  }
+}
+.ghaith--collapse-profile-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+  .ant-collapse-header {
+    padding: 0 !important;
+  }
+}
+.ghaith--collapse-beneficiary-services {
+  border-radius: 15px 15px 25px 25px !important;
+  .ant-collapse-content-box {
+    padding-top: 2.5rem !important;
+  }
+  .ghaith--content-profile-box1 {
+    @media (max-width: 767px) {
+      margin-bottom: 0 !important;
+    }
+    .ghaith--col--amount-not-visible {
+      margin-right: 0.4vw;
+      @media (max-width: 767px) {
+        margin-right: 0;
+      }
+    }
+  }
+  .ghaith--header-profile-container {
+    border-radius: 15px 15px 25px 25px !important;
+  }
+  .ghaith--header-profile-Panel {
+    border-radius: 25px !important;
+
+    .ant-collapse-header {
+      border-radius: 25px !important;
+      padding: 0.5rem 0.1rem 0.2rem 0.1rem !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      background-color: $ProfileIconsBGColor !important ;
+      .ant-collapse-arrow > * {
+        color: $ProfileIconsColor !important;
+      }
+      @media (max-width: 480px) {
+        //padding: 1rem !important;
+      }
+    }
+    background-color: $panelBgColor !important;
+  }
+}
+.ghaith--collapse-profile {
+  border: none;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: $whiteColor;
+}

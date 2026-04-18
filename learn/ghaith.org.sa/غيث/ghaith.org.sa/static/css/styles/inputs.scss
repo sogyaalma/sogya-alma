@@ -1,0 +1,561 @@
+.ghaith-error-message {
+  .ant-form-item-explain {
+    .ant-form-item-explain-error {
+      font-size: $font-size-xtra-fine !important ;
+    }
+  }
+}
+.ghaith--input {
+  direction: rtl;
+  border: 1px solid #759596;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  color: $darkGrayColor;
+  font-size: $font-size-fine;
+  font-weight: $fontWeightNormal;
+  font-family: $fontFamilyArabicLight;
+  &::placeholder {
+    color: $grayColor;
+    font-size: $font-size-fine;
+    font-weight: $fontWeightNormal;
+    font-family: $fontFamilyArabicLight;
+  }
+  &:focus-within {
+    border-color: $whiteGrayColor;
+    box-shadow: none;
+  }
+
+  &:hover {
+    border-color: $whiteGrayColor;
+  }
+  .ant-input::placeholder {
+    color: $grayColor;
+    font-size: $font-size-fine;
+    font-weight: $fontWeightNormal;
+    font-family: $fontFamilyArabicLight;
+  }
+  .ant-input-prefix {
+    svg {
+      path {
+        fill: $grayColor !important;
+      }
+    }
+  }
+
+  .ant-input-number-handler-wrap {
+    display: block !important; /* Force arrows to always be displayed */
+    opacity: 1 !important; /* Ensure the arrows are visible */
+  }
+
+  .ant-input-number-handler-wrap {
+    opacity: 1 !important;
+  }
+
+  .ant-input-number .ant-input-number-handler-wrap {
+    opacity: 1;
+  }
+}
+
+/* Input number */
+.ghaith--request-input-number {
+  width: 100%;
+}
+
+.ghaith--request-input-number.ant-input-number .ant-input-number-input {
+  color: $darkGrayColor;
+  font-size: $font-size-moderate;
+  font-weight: $fontWeightNormal !important;
+  font-family: $fontFamilyArabicLight !important;
+}
+
+.ant-picker-cell-inner {
+  font-size: 14px !important;
+  font-weight: $fontWeightNormal;
+  font-family: $fontFamilyArabicLight;
+}
+.ghaith--input-date {
+  .ant-picker-input > input {
+    font-size: $font-size-fine-plus;
+    color: $forestColor;
+    font-family: $fontFamilyArabicMedium;
+    white-space: nowrap;
+    min-height: 26px;
+  }
+  .ant-picker-input > input::placeholder {
+    font-size: $font-size-fine-plus;
+    color: $forestColor;
+    font-family: $fontFamilyArabicMedium;
+    white-space: nowrap;
+  }
+  .ant-picker-input {
+    cursor: pointer;
+    .ant-picker-suffix {
+      svg {
+        path {
+          fill: $grayColor !important;
+        }
+      }
+    }
+  }
+}
+.ghaith--input-date-container {
+  width: 100%;
+}
+/* date style */
+.ant-picker-dropdown .ant-picker-content th {
+  font-family: $fontFamilyArabicLight !important;
+  color: $primaryColor !important;
+  font-size: 11px !important;
+  font-weight: $fontWeightXMedium !important;
+}
+
+.ant-picker-dropdown .ant-picker-header-view > button {
+  font-family: $fontFamilyArabicLight !important;
+  color: $forestColor !important;
+  font-size: $font-size-fine-plus !important;
+  font-weight: $fontWeightMedium !important;
+}
+
+.ant-picker-dropdown .ant-picker-header-view > button:hover {
+  color: $forestColor !important;
+}
+
+.ant-picker-dropdown .ant-picker-header-view {
+  font-family: $fontFamilyArabicLight !important;
+  color: $forestColor !important;
+  font-size: $font-size-fine-plus !important;
+  font-weight: $fontWeightMedium !important;
+}
+
+.ant-picker-dropdown .ant-picker-cell-in-view {
+  font-family: $fontFamilyArabicLight !important;
+  font-size: $font-size-fine-plus !important;
+}
+
+.ant-picker-now a {
+  font-family: $fontFamilyArabicLight !important;
+  color: $forestColor !important;
+  font-size: $font-size-fine-plus !important;
+  font-weight: $fontWeightNormal !important;
+}
+
+/* Error message style*/
+.ant-form-item-explain-error {
+  font-family: $fontFamilyArabicLight !important;
+}
+
+.ghaith--input-upload {
+  .ant-upload-wrapper .ant-upload-select {
+    width: 100% !important;
+    display: inline-block;
+  }
+  .ghaith--upload-file {
+    .ant-upload-wrapper .ant-upload {
+      outline: 0;
+      width: 100% !important;
+    }
+  }
+  .ghaith--upload {
+    width: 100% !important;
+    border: 1px solid $whiteGrayColor !important;
+    outline: none;
+    padding: 1.2rem !important;
+    span {
+      color: $grayColor;
+      font-size: $font-size-fine;
+      font-weight: $fontWeightNormal;
+      font-family: $fontFamilyArabicLight;
+    }
+  }
+}
+
+/* Hijri datepicker */
+.ghaith--hijri-datepicker .MuiInputBase-root {
+  width: 100% !important;
+  border: 1px solid #759596 !important;
+  border-radius: 6px !important;
+  padding: 0.3rem 0.9rem 0.3rem 0rem !important;
+  min-height: 42px;
+}
+
+.MuiFormControl-root {
+  width: 100% !important;
+}
+
+.ghaith--hijri-datepicker .MuiInputBase-root:hover {
+  border-color: #759596;
+}
+
+.ghaith--hijri-datepicker .Mui-focused {
+  border-color: #759596 !important;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.ghaith--hijri-datepicker .MuiInputBase-input {
+  padding: 0;
+}
+
+.ghaith--hijri-datepicker .MuiInputBase-root {
+  border: none;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ghaith--hijri-datepicker .MuiInputAdornment-root {
+  margin-right: 0;
+}
+
+.ghaith--hijri-datepicker .MuiInputBase-input {
+  padding: 0.15rem 0 !important;
+  font-family: $fontFamilyArabicMedium !important;
+  font-size: $font-size-fine-plus !important;
+  font-size: $font-size-fine !important;
+}
+
+.ghaith--hijri-datepicker .MuiInputBase-input::placeholder {
+  color: transparent;
+  font-size: $font-size-fine-plus !important;
+  font-weight: $fontWeightNormal;
+  font-family: $fontFamilyArabicLight;
+}
+
+.ghaith--hijri-datepicker .MuiOutlinedInput-notchedOutline {
+  display: none;
+}
+
+.ghaith--hijri-datepicker .MuiInputBase-root:hover,
+.ghaith--hijri-datepicker .Mui-focused {
+  border: none;
+  box-shadow: none;
+}
+
+.MuiSvgIcon-root {
+  color: $silverGrayColor !important;
+}
+
+.MuiPickersLayout-actionBar {
+  display: none !important;
+}
+
+.MuiPickersLayout-toolbar {
+  display: none !important;
+}
+
+.ghaith--date-filter-title {
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightLight;
+  font-size: $font-size-prominent;
+  color: $nightBlueColor;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+  align-items: last baseline;
+}
+
+/// // Custom Input with Label Inside
+// Custom Input with Label Inside
+.ghaith--custom-input-wrapper {
+  display: flex;
+  align-items: center;
+  direction: rtl;
+  // margin-bottom: 20px;
+  height: 38px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  border: 1px solid #759596;
+  padding: 0 12px;
+  gap: 8px;
+}
+
+.ghaith--custom-input-label {
+  font-size: $font-size-fine-plus;
+  color: $forestColor;
+  font-family: $fontFamilyArabicMedium;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ghaith--custom-input {
+  flex: 1;
+  height: 100%;
+  border: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  font-size: $font-size-fine-plus;
+  font-family: $fontFamilyArabicMedium !important;
+  direction: rtl;
+  text-align: right !important;
+  outline: none !important;
+  box-shadow: none !important;
+  color: $forestLight;
+  &:focus {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  &::placeholder {
+    color: #bfbfbf;
+    font-family: $fontFamilyArabicMedium !important;
+  }
+}
+
+.ghaith--input-no-arrows {
+  /* Hide arrows in Chrome, Safari, Edge, and other WebKit browsers */
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+
+  /* Optional: This can help to ensure proper spacing */
+  margin: 0;
+}
+
+/* Hide arrows in Firefox */
+.ghaith--input-no-arrows::-webkit-inner-spin-button,
+.ghaith--input-no-arrows::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Optional: For Edge and IE */
+.ghaith--input-no-arrows::-ms-clear {
+  display: none;
+}
+
+.ghaith--textarea-input {
+  direction: rtl;
+  border: 1px solid #759596;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  color: $darkGrayColor;
+  font-size: $font-size-title !important;
+  font-weight: $fontWeightNormal;
+  font-family: $fontFamilyArabicLight !important;
+  &::placeholder {
+    color: $grayColor;
+    font-size: $font-size-fine;
+    font-weight: $fontWeightNormal;
+    font-family: $fontFamilyArabicLight;
+  }
+  &:focus-within {
+    border: 1px solid #759596;
+    box-shadow: none;
+  }
+
+  &:hover {
+    border-color: $whiteGrayColor;
+  }
+}
+// CustomUploadInput_FileListStyles.scss
+// Optional additional styles to customize the Ant Design file list
+// Add these to your CustomUploadInput.scss if you want to style the file list
+
+// CustomUploadInput.scss
+
+.custom-upload-input {
+  width: 100%;
+
+  .custom-upload-wrapper {
+    width: 100%;
+
+    .ant-upload {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .custom-upload-area {
+    background: linear-gradient(135deg, #1b4345 0%, #1b4345 100%);
+    border-radius: 8px;
+    border: 2px solid #109d72;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, #1e5a5a 0%, #236666 100%);
+      border-color: rgba(72, 187, 172, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(26, 77, 77, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  .custom-upload-icon {
+    color: #109d72;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+
+    svg {
+      width: 80px;
+      height: 80px;
+    }
+
+    .custom-upload-area:hover & {
+      transform: translateY(-4px);
+      color: #5cd4c3;
+    }
+  }
+
+  .custom-upload-text {
+    color: #ffffff;
+    font-family: $fontFamilyArabicMedium;
+    font-size: $font-size-fine;
+    font-weight: $fontWeightNormal;
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+
+// Alternative color schemes (you can use these by adding a class to the component)
+.custom-upload-input.blue-theme {
+  .custom-upload-area {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+
+    &:hover {
+      background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    }
+  }
+
+  .custom-upload-icon {
+    color: #60a5fa;
+
+    .custom-upload-area:hover & {
+      color: #93c5fd;
+    }
+  }
+}
+
+.custom-upload-input.purple-theme {
+  .custom-upload-area {
+    background: linear-gradient(135deg, #581c87 0%, #7c3aed 100%);
+
+    &:hover {
+      background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+    }
+  }
+
+  .custom-upload-icon {
+    color: #a78bfa;
+
+    .custom-upload-area:hover & {
+      color: #c4b5fd;
+    }
+  }
+
+  // Optional: Customize Ant Design's file list appearance
+  .ant-upload-list {
+    margin-top: 16px;
+
+    .ant-upload-list-item {
+      border-radius: 8px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      background: #fafafa;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #f0f0f0;
+        border-color: #48bbac;
+      }
+
+      // File name text
+      .ant-upload-list-item-name {
+        color: #333;
+        font-size: 14px;
+      }
+
+      // File icon
+      .ant-upload-list-item-thumbnail {
+        .anticon {
+          color: #48bbac;
+        }
+      }
+
+      // Remove button
+      .ant-upload-list-item-actions {
+        .anticon-delete {
+          color: #ff4d4f;
+
+          &:hover {
+            color: #ff7875;
+          }
+        }
+      }
+    }
+
+    // Success state
+    .ant-upload-list-item-done {
+      .ant-upload-list-item-thumbnail {
+        .anticon {
+          color: #52c41a;
+        }
+      }
+    }
+
+    // Error state
+    .ant-upload-list-item-error {
+      border-color: #ff4d4f;
+      background: #fff2f0;
+
+      .ant-upload-list-item-name {
+        color: #ff4d4f;
+      }
+    }
+
+    // Uploading state
+    .ant-upload-list-item-uploading {
+      border-color: #48bbac;
+      background: #f0fffe;
+    }
+  }
+}
+
+// RTL Support for file list
+[dir="rtl"] .custom-upload-input {
+  .ant-upload-list-item {
+    direction: rtl;
+  }
+}
+
+///////// checkbox /////////
+.ghaith--custom-checkbox .ant-checkbox-inner {
+  border-color: #109d72;
+  border-radius: 4px;
+}
+
+.ghaith--custom-checkbox .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #109d72;
+  border-color: #109d72;
+}
+
+.ghaith--custom-checkbox .ant-checkbox-checked::after {
+  border-color: #109d72;
+}
+
+.ghaith--custom-checkbox:hover .ant-checkbox-inner {
+  border-color: #109d72;
+}
+.gh--add_beneficiary-input {
+  height: 42px;
+}
+.ghaith--number-prefix {
+  font-size: $font-size-fine-plus !important;
+  color: $forestColor;
+  font-family: $fontFamilyArabicMedium;
+  white-space: nowrap;
+  flex-shrink: 0;
+}

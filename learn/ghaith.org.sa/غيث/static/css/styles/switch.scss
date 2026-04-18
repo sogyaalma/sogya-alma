@@ -1,0 +1,45 @@
+.ghaith--details-project-card-donation-box {
+  //  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 0.5rem;
+  direction: rtl;
+  .ant-switch.ant-switch-checked {
+    background: $EmeraldForestColor;
+    &:hover {
+      background: $EmeraldForestColor;
+    }
+  }
+  .ant-switch {
+    padding-bottom: 22px;
+    padding-right: 6px;
+  }
+  p {
+    width: fit-content;
+  }
+}
+.ghaith--donation-switch {
+  background: $fineGrayColor;
+  min-width: 2em !important;
+  border: 1px solid #109d72;
+
+  &:hover {
+    background: $fineGrayColor;
+  }
+}
+.ghaith--donation-card-text {
+  font-family: $fontFamilyArabicMedium;
+  font-weight: $fontWeightNormal;
+  color: $EmeraldForestColor;
+  font-size: $font-size-fine;
+  width: 100%;
+  text-align: center;
+  span {
+    color: $blueGreenColor;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

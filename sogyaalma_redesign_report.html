@@ -1,0 +1,558 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--teal:#0D6E8A;--green:#2A7A4B;--navy:#1A2B3C;--bg:#F7F8FA}
+body{direction:rtl;font-family:var(--font-sans)}
+.report-wrap{padding:1rem 0;color:var(--color-text-primary)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem;border-bottom:0.5px solid var(--color-border-tertiary);padding-bottom:10px}
+.tab{padding:7px 14px;border-radius:var(--border-radius-md);font-size:13px;cursor:pointer;border:0.5px solid var(--color-border-tertiary);background:transparent;color:var(--color-text-secondary);transition:all .15s}
+.tab.active{background:var(--teal);color:#fff;border-color:transparent}
+.section{display:none}.section.active{display:block}
+.section-title{font-size:16px;font-weight:500;margin-bottom:1rem;color:var(--color-text-primary)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:1.5rem}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem}
+.card-title{font-size:13px;color:var(--color-text-secondary);margin-bottom:6px}
+.card-val{font-size:22px;font-weight:500}
+.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:4px}
+.badge-red{background:var(--color-background-danger);color:var(--color-text-danger)}
+.badge-amber{background:var(--color-background-warning);color:var(--color-text-warning)}
+.badge-green{background:var(--color-background-success);color:var(--color-text-success)}
+.badge-info{background:var(--color-background-info);color:var(--color-text-info)}
+.issue-row{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.issue-row:last-child{border-bottom:none}
+.issue-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.icon-red{background:var(--color-background-danger)}
+.icon-amber{background:var(--color-background-warning)}
+.issue-text{flex:1}
+.issue-label{font-size:13px;font-weight:500;margin-bottom:3px}
+.issue-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.5}
+.severity{font-size:11px;margin-top:4px}
+.ia-wrap{overflow-x:auto;padding-bottom:8px}
+.ia-tree{display:flex;flex-direction:column;gap:8px;min-width:600px}
+.ia-root{background:var(--teal);color:#fff;padding:10px 16px;border-radius:var(--border-radius-lg);font-size:14px;font-weight:500;text-align:center}
+.ia-level{display:flex;gap:8px;justify-content:center}
+.ia-node{background:var(--color-background-primary);border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:8px 12px;font-size:12px;text-align:center;flex:1;min-width:80px;cursor:pointer;transition:all .15s}
+.ia-node:hover{border-color:var(--teal);color:var(--teal)}
+.ia-node.new-page{border-color:var(--color-border-success);background:var(--color-background-success)}
+.ia-node .tag{display:block;font-size:10px;margin-top:3px;opacity:.7}
+.ia-connector{height:16px;display:flex;justify-content:center;align-items:center}
+.ia-connector svg{width:100%;height:16px}
+.palette-grid{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem}
+.swatch{border-radius:var(--border-radius-md);overflow:hidden;flex:1;min-width:100px;border:0.5px solid var(--color-border-tertiary)}
+.swatch-color{height:56px}
+.swatch-info{padding:8px 10px;background:var(--color-background-primary)}
+.swatch-name{font-size:12px;font-weight:500}
+.swatch-hex{font-size:11px;color:var(--color-text-secondary);font-family:var(--font-mono)}
+.swatch-role{font-size:10px;color:var(--color-text-tertiary);margin-top:2px}
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:14px;padding:14px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.tl-item:last-child{border-bottom:none}
+.tl-dot-col{display:flex;flex-direction:column;align-items:center;gap:0;padding-top:4px}
+.tl-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0}
+.tl-line{width:1px;flex:1;background:var(--color-border-tertiary);margin-top:4px}
+.tl-content{flex:1}
+.tl-phase{font-size:12px;font-weight:500;margin-bottom:6px}
+.tl-tasks{display:flex;flex-direction:column;gap:4px}
+.tl-task{font-size:12px;color:var(--color-text-secondary);display:flex;align-items:flex-start;gap:6px;line-height:1.5}
+.tl-task::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--color-border-secondary);flex-shrink:0;margin-top:6px}
+.metric-bar{margin-bottom:10px}
+.bar-label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;color:var(--color-text-secondary)}
+.bar-track{height:8px;background:var(--color-background-secondary);border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;transition:width .6s ease}
+.mockup-frame{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:12px;margin-bottom:1rem}
+.mock-header{background:var(--color-background-primary);border-radius:var(--border-radius-md);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;border:0.5px solid var(--color-border-tertiary);margin-bottom:8px}
+.mock-logo{width:28px;height:28px;background:#0D6E8A;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:500}
+.mock-nav{display:flex;gap:10px}
+.mock-nav span{font-size:11px;color:var(--color-text-secondary);cursor:pointer}
+.mock-cta{background:#0D6E8A;color:#fff;font-size:11px;padding:5px 12px;border-radius:6px;border:none;cursor:pointer}
+.mock-hero{background:linear-gradient(135deg,#0D6E8A 0%,#0a5a72 100%);border-radius:var(--border-radius-md);padding:20px;color:#fff;margin-bottom:8px;min-height:100px;position:relative;overflow:hidden}
+.mock-hero-title{font-size:15px;font-weight:500;margin-bottom:6px}
+.mock-hero-sub{font-size:11px;opacity:.8;margin-bottom:12px}
+.mock-hero-btns{display:flex;gap:8px}
+.mock-btn-pri{background:#fff;color:#0D6E8A;font-size:11px;padding:5px 12px;border-radius:5px;border:none;cursor:pointer;font-weight:500}
+.mock-btn-sec{background:transparent;color:#fff;font-size:11px;padding:5px 12px;border-radius:5px;border:1px solid rgba(255,255,255,.4);cursor:pointer}
+.mock-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px}
+.mock-stat{background:var(--color-background-primary);border-radius:var(--border-radius-md);padding:10px;text-align:center;border:0.5px solid var(--color-border-tertiary)}
+.mock-stat-val{font-size:16px;font-weight:500;color:#0D6E8A}
+.mock-stat-label{font-size:10px;color:var(--color-text-secondary);margin-top:2px}
+.mock-projects{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mock-proj{background:var(--color-background-primary);border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);overflow:hidden}
+.mock-proj-img{height:40px;background:var(--color-background-secondary)}
+.mock-proj-body{padding:8px}
+.mock-proj-title{font-size:11px;font-weight:500;margin-bottom:4px}
+.mock-proj-prog{height:4px;background:var(--color-background-secondary);border-radius:2px;margin-bottom:4px;overflow:hidden}
+.mock-proj-fill{height:100%;background:#0D6E8A;border-radius:2px}
+.mock-proj-pct{font-size:10px;color:var(--color-text-secondary)}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem}
+.compare-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem}
+.compare-card.current{border-color:var(--color-border-danger)}
+.compare-card.proposed{border-color:var(--color-border-success)}
+.compare-head{font-size:13px;font-weight:500;margin-bottom:10px;padding-bottom:8px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.compare-item{display:flex;align-items:flex-start;gap:6px;margin-bottom:6px;font-size:12px;color:var(--color-text-secondary);line-height:1.5}
+.x-icon{color:var(--color-text-danger);flex-shrink:0;font-weight:500}
+.check-icon{color:var(--color-text-success);flex-shrink:0;font-weight:500}
+.font-demo{margin-bottom:1rem}
+.font-sample{margin-bottom:10px;padding:10px;background:var(--color-background-secondary);border-radius:var(--border-radius-md)}
+.font-role{font-size:11px;color:var(--color-text-tertiary);margin-bottom:4px}
+.tech-table{width:100%;font-size:12px;border-collapse:collapse}
+.tech-table th{text-align:right;padding:8px 10px;font-weight:500;font-size:12px;background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary)}
+.tech-table td{padding:8px 10px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);vertical-align:top}
+.tech-table tr:last-child td{border-bottom:none}
+</style>
+
+<div class="report-wrap">
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">تقرير تطوير موقع جمعية سقيا الماء — تحليل شامل وتوصيات</h2>
+
+<div class="tabs" id="tabBar">
+  <button class="tab active" onclick="switchTab('analysis')">تحليل الموقع</button>
+  <button class="tab" onclick="switchTab('ia')">بنية المعلومات</button>
+  <button class="tab" onclick="switchTab('visual')">الهوية البصرية</button>
+  <button class="tab" onclick="switchTab('mockup')">نماذج التصميم</button>
+  <button class="tab" onclick="switchTab('tech')">التقنيات</button>
+  <button class="tab" onclick="switchTab('roadmap')">خطة التنفيذ</button>
+</div>
+
+<!-- TAB 1: ANALYSIS -->
+<div class="section active" id="tab-analysis">
+  <p class="section-title">تحليل الموقع الحالي — sogyaalma.org.sa</p>
+  
+  <div class="cards">
+    <div class="card"><div class="card-title">مشاكل حرجة</div><div class="card-val" style="color:var(--color-text-danger)">4</div></div>
+    <div class="card"><div class="card-title">ثغرات UX</div><div class="card-val" style="color:var(--color-text-warning)">6</div></div>
+    <div class="card"><div class="card-title">نقاط المحتوى</div><div class="card-val" style="color:var(--color-text-warning)">5</div></div>
+    <div class="card"><div class="card-title">تقدير أداء الجوال</div><div class="card-val" style="color:var(--color-text-danger)">~45</div></div>
+  </div>
+
+  <div style="margin-bottom:1.5rem">
+    <div style="font-size:13px;font-weight:500;margin-bottom:10px">مؤشرات الأداء المقدّرة (الوضع الحالي)</div>
+    <div class="metric-bar"><div class="bar-label"><span>تجربة المستخدم (UX)</span><span>38%</span></div><div class="bar-track"><div class="bar-fill" style="width:38%;background:#E24B4A"></div></div></div>
+    <div class="metric-bar"><div class="bar-label"><span>هوية بصرية</span><span>30%</span></div><div class="bar-track"><div class="bar-fill" style="width:30%;background:#E24B4A"></div></div></div>
+    <div class="metric-bar"><div class="bar-label"><span>بنية المعلومات (IA)</span><span>45%</span></div><div class="bar-track"><div class="bar-fill" style="width:45%;background:#BA7517"></div></div></div>
+    <div class="metric-bar"><div class="bar-label"><span>الأمان والأداء</span><span>55%</span></div><div class="bar-track"><div class="bar-fill" style="width:55%;background:#BA7517"></div></div></div>
+    <div class="metric-bar"><div class="bar-label"><span>جودة المحتوى</span><span>50%</span></div><div class="bar-track"><div class="bar-fill" style="width:50%;background:#BA7517"></div></div></div>
+  </div>
+
+  <div style="font-size:13px;font-weight:500;margin-bottom:10px">المشاكل التفصيلية</div>
+  
+  <div class="issue-row">
+    <div class="issue-icon icon-red">⚠</div>
+    <div class="issue-text">
+      <div class="issue-label">متغيرات JavaScript مكشوفة <span class="badge badge-red" style="margin-right:6px">حرج</span></div>
+      <div class="issue-desc">عناصر مثل <code style="font-family:var(--font-mono);font-size:11px;background:var(--color-background-secondary);padding:1px 4px;border-radius:3px">{{title}}</code> و<code style="font-family:var(--font-mono);font-size:11px;background:var(--color-background-secondary);padding:1px 4px;border-radius:3px">{{cart_total}}</code> تظهر للمستخدم مباشرةً — خطأ برمجي يُضرّ بالمصداقية</div>
+    </div>
+  </div>
+  <div class="issue-row">
+    <div class="issue-icon icon-red">⚠</div>
+    <div class="issue-text">
+      <div class="issue-label">ازدواجية النطاق <span class="badge badge-red" style="margin-right:6px">حرج</span></div>
+      <div class="issue-desc">موقعان منفصلان (sogyaalma.org.sa و store.sogyaalma.org.sa) يُشتتان المستخدم ويُقلّلان من الثقة المؤسسية</div>
+    </div>
+  </div>
+  <div class="issue-row">
+    <div class="issue-icon icon-red">⚠</div>
+    <div class="issue-text">
+      <div class="issue-label">نموذج التواصل لا يُحمَّل <span class="badge badge-red" style="margin-right:6px">حرج</span></div>
+      <div class="issue-desc">رسالة "جارٍ تحميل النموذج..." تظهر دون تحميل فعلي، مما يمنع التواصل مع الجمعية</div>
+    </div>
+  </div>
+  <div class="issue-row">
+    <div class="issue-icon icon-red">⚠</div>
+    <div class="issue-text">
+      <div class="issue-label">غياب شهادة SSL الواضحة <span class="badge badge-red" style="margin-right:6px">حرج</span></div>
+      <div class="issue-desc">عدم تفعيل HTTPS بشكل صحيح في المسارات الفرعية يُعرّض بيانات التبرعات للخطر</div>
+    </div>
+  </div>
+  <div class="issue-row">
+    <div class="issue-icon icon-amber">!</div>
+    <div class="issue-text">
+      <div class="issue-label">التبرع في نافذة منبثقة <span class="badge badge-amber" style="margin-right:6px">عالي</span></div>
+      <div class="issue-desc">زر "تبرع سريع" يفتح popup بدلاً من صفحة مستقلة، مما يُقلّل معدل إتمام التبرعات</div>
+    </div>
+  </div>
+  <div class="issue-row">
+    <div class="issue-icon icon-amber">!</div>
+    <div class="issue-text">
+      <div class="issue-label">قائمة مشتتة غير هرمية <span class="badge badge-amber" style="margin-right:6px">عالي</span></div>
+      <div class="issue-desc">"الفيديوهات" و"اصنع معايدتك" في المستوى الأول بينما تغيب صفحات "أثرنا" و"شركاؤنا" الجوهرية</div>
+    </div>
+  </div>
+  <div class="issue-row">
+    <div class="issue-icon icon-amber">!</div>
+    <div class="issue-text">
+      <div class="issue-label">غياب أرقام الإنجاز البارزة <span class="badge badge-amber" style="margin-right:6px">عالي</span></div>
+      <div class="issue-desc">لا تظهر الأسر المستفيدة وعبوات المياه الموزعة بشكل ظاهر في الصفحة الرئيسية لبناء الثقة</div>
+    </div>
+  </div>
+  <div class="issue-row">
+    <div class="issue-icon icon-amber">!</div>
+    <div class="issue-text">
+      <div class="issue-label">لا تقرير سنوي واضح <span class="badge badge-amber" style="margin-right:6px">متوسط</span></div>
+      <div class="issue-desc">غياب التقارير المالية المنشورة يُضعف الشفافية المطلوبة من الجهات المانحة المؤسسية</div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 2: IA -->
+<div class="section" id="tab-ia">
+  <p class="section-title">بنية المعلومات المقترحة — هيكل القائمة الجديد</p>
+  
+  <div class="ia-wrap">
+    <div class="ia-tree">
+      <div class="ia-root">سقيا الماء — القائمة الرئيسية</div>
+      <div class="ia-connector"><svg><line x1="50%" y1="0" x2="50%" y2="100%" stroke="var(--color-border-secondary)" stroke-width="1" stroke-dasharray="3 2"/></svg></div>
+      <div class="ia-level">
+        <div class="ia-node" onclick="sendPrompt('وضّح ما تحتوي عليه صفحة الرئيسية في الموقع المقترح')">الرئيسية<span class="tag">Hero + إحصاء</span></div>
+        <div class="ia-node" onclick="sendPrompt('ما مكونات صفحة عن الجمعية؟')">عن الجمعية<span class="tag">رسالة + فريق</span></div>
+        <div class="ia-node" onclick="sendPrompt('اشرح بنية صفحة المشاريع')">مشاريعنا<span class="tag">نشطة + منجزة</span></div>
+        <div class="ia-node new-page" onclick="sendPrompt('لماذا صفحة أثرنا مهمة؟')">أثرنا ✦<span class="tag">جديدة</span></div>
+        <div class="ia-node" onclick="sendPrompt('ما محتوى صفحة تبرع الآن؟')">تبرع الآن<span class="tag">صفحة مستقلة</span></div>
+        <div class="ia-node new-page" onclick="sendPrompt('ما أهمية صفحة الشفافية؟')">الشفافية ✦<span class="tag">جديدة</span></div>
+        <div class="ia-node" onclick="sendPrompt('ما محتوى صفحة تواصل معنا؟')">تواصل معنا<span class="tag">نموذج + خريطة</span></div>
+      </div>
+      <div class="ia-connector"><svg><line x1="50%" y1="0" x2="50%" y2="100%" stroke="var(--color-border-tertiary)" stroke-width="0.5" stroke-dasharray="3 2"/></svg></div>
+      <div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:10px;text-align:center">الصفحات الفرعية التفصيلية</div>
+      <div class="ia-level" style="flex-wrap:wrap">
+        <div class="ia-node" style="flex:none;width:120px">رسالتنا ورؤيتنا</div>
+        <div class="ia-node" style="flex:none;width:120px">فريق العمل</div>
+        <div class="ia-node" style="flex:none;width:120px">مشاريع المياه</div>
+        <div class="ia-node" style="flex:none;width:120px">مشاريع الصرف</div>
+        <div class="ia-node new-page" style="flex:none;width:120px">التقرير السنوي ✦</div>
+        <div class="ia-node new-page" style="flex:none;width:120px">الحوكمة المالية ✦</div>
+        <div class="ia-node" style="flex:none;width:120px">الأخبار والميديا</div>
+        <div class="ia-node new-page" style="flex:none;width:120px">شركاؤنا ✦</div>
+      </div>
+    </div>
+  </div>
+  
+  <div style="margin-top:1rem;padding:10px;background:var(--color-background-info);border-radius:var(--border-radius-md);font-size:12px;color:var(--color-text-info)">
+    ✦ صفحات جديدة مقترحة — الصفحات المضافة بلون أخضر هي الأكثر أثراً لبناء الثقة
+  </div>
+
+  <div style="margin-top:1.5rem">
+    <div style="font-size:13px;font-weight:500;margin-bottom:10px">مقارنة: القائمة الحالية مقابل المقترحة</div>
+    <div class="compare-grid">
+      <div class="compare-card current">
+        <div class="compare-head" style="color:var(--color-text-danger)">القائمة الحالية — مشاكل</div>
+        <div class="compare-item"><span class="x-icon">✕</span>"اصنع معايدتك" في المستوى الأول</div>
+        <div class="compare-item"><span class="x-icon">✕</span>"الفيديوهات" كقائمة مستقلة</div>
+        <div class="compare-item"><span class="x-icon">✕</span>لا توجد صفحة "أثرنا"</div>
+        <div class="compare-item"><span class="x-icon">✕</span>لا توجد صفحة "شركاؤنا"</div>
+        <div class="compare-item"><span class="x-icon">✕</span>موقعان منفصلان للتبرع</div>
+        <div class="compare-item"><span class="x-icon">✕</span>لا صفحة شفافية مالية</div>
+      </div>
+      <div class="compare-card proposed">
+        <div class="compare-head" style="color:var(--color-text-success)">القائمة المقترحة — حلول</div>
+        <div class="compare-item"><span class="check-icon">✓</span>هيكل هرمي 7 بنود فقط</div>
+        <div class="compare-item"><span class="check-icon">✓</span>تبرع الآن = صفحة مستقلة احترافية</div>
+        <div class="compare-item"><span class="check-icon">✓</span>صفحة "أثرنا" بالأرقام الحية</div>
+        <div class="compare-item"><span class="check-icon">✓</span>صفحة "الشفافية" بالتقارير</div>
+        <div class="compare-item"><span class="check-icon">✓</span>دمج الموقعين في نطاق واحد</div>
+        <div class="compare-item"><span class="check-icon">✓</span>صفحة "شركاؤنا" لبناء الثقة</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 3: VISUAL IDENTITY -->
+<div class="section" id="tab-visual">
+  <p class="section-title">الهوية البصرية المقترحة — Mood Board</p>
+  
+  <div style="font-size:13px;font-weight:500;margin-bottom:10px">منظومة الألوان</div>
+  <div class="palette-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#0D6E8A"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">أزرق مائي عميق</div>
+        <div class="swatch-hex">#0D6E8A</div>
+        <div class="swatch-role">اللون الأساسي</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#2A7A4B"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">أخضر هادئ</div>
+        <div class="swatch-hex">#2A7A4B</div>
+        <div class="swatch-role">الاستدامة</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#0A4D63"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">كحلي داكن</div>
+        <div class="swatch-hex">#0A4D63</div>
+        <div class="swatch-role">التمييز / Hover</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F7F8FA;border:0.5px solid var(--color-border-tertiary)"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">رمادي فاتح</div>
+        <div class="swatch-hex">#F7F8FA</div>
+        <div class="swatch-role">خلفية الصفحة</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1A2B3C"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">كحلي النص</div>
+        <div class="swatch-hex">#1A2B3C</div>
+        <div class="swatch-role">النص الأساسي</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="font-size:13px;font-weight:500;margin-bottom:10px">عينات الأزرار والعناصر</div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem;align-items:center">
+    <button style="background:#0D6E8A;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:13px;cursor:pointer">تبرع الآن</button>
+    <button style="background:transparent;color:#0D6E8A;border:1.5px solid #0D6E8A;padding:9px 20px;border-radius:8px;font-size:13px;cursor:pointer">اقرأ المزيد</button>
+    <button style="background:#2A7A4B;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:13px;cursor:pointer">تطوع معنا</button>
+    <span style="background:rgba(13,110,138,.1);color:#0D6E8A;font-size:11px;padding:4px 10px;border-radius:4px">ترخيص رقم 1123</span>
+    <span style="background:rgba(42,122,75,.1);color:#2A7A4B;font-size:11px;padding:4px 10px;border-radius:4px">مشروع نشط</span>
+  </div>
+
+  <div style="font-size:13px;font-weight:500;margin-bottom:10px">الخطوط المقترحة</div>
+  <div class="font-demo">
+    <div class="font-sample">
+      <div class="font-role">عناوين رئيسية — IBM Plex Arabic / Expo Arabic — وزن 700</div>
+      <div style="font-size:20px;font-weight:700;color:var(--color-text-primary);line-height:1.4">نسقي لأن الماء حياة</div>
+    </div>
+    <div class="font-sample">
+      <div class="font-role">عناوين ثانوية — وزن 500</div>
+      <div style="font-size:16px;font-weight:500;color:var(--color-text-primary)">مشاريعنا الميدانية في المناطق النائية</div>
+    </div>
+    <div class="font-sample">
+      <div class="font-role">نص المحتوى — Noto Naskh Arabic — وزن 400، ارتفاع سطر 1.8</div>
+      <div style="font-size:14px;font-weight:400;color:var(--color-text-secondary);line-height:1.8">جمعية سقيا الماء تعمل على توفير المياه النظيفة للأسر المحتاجة في مختلف مناطق المملكة العربية السعودية من خلال مشاريع ميدانية موثقة.</div>
+    </div>
+  </div>
+
+  <div style="font-size:13px;font-weight:500;margin-bottom:10px">استلهام من المواقع المرجعية</div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">وزارة الموارد البشرية (hrsd.gov.sa)</div>
+      <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin-top:6px">شريط علوي أزرق ثابت، تسلسل هرمي واضح، أزرار CTA بارزة، إحصاءات الإنجاز في الصفحة الرئيسية، خط نظيف بلا فوضى بصرية</div>
+    </div>
+    <div class="card">
+      <div class="card-title">جمعية غيث الخيرية (ghaith.org.sa)</div>
+      <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin-top:6px">بطاقات المشاريع مع شريط التقدم، قصص المستفيدين، شفافية الأرقام، تكامل وسائل التواصل، تصميم متجاوب للجوال</div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 4: MOCKUP -->
+<div class="section" id="tab-mockup">
+  <p class="section-title">نماذج التصميم — Wireframe عالي المستوى</p>
+  
+  <div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:12px">تصور الصفحة الرئيسية المقترحة (محاكاة تفاعلية)</div>
+  
+  <div class="mockup-frame">
+    <div class="mock-header">
+      <div style="display:flex;align-items:center;gap:8px">
+        <div class="mock-logo">سقيا</div>
+        <span style="font-size:11px;font-weight:500;color:var(--color-text-primary)">سقيا الماء</span>
+      </div>
+      <div class="mock-nav">
+        <span>عن الجمعية</span>
+        <span>مشاريعنا</span>
+        <span>أثرنا</span>
+        <span>الشفافية</span>
+      </div>
+      <button class="mock-cta">تبرع الآن</button>
+    </div>
+    
+    <div class="mock-hero">
+      <div class="mock-hero-title">نسقي لأن الماء حياة</div>
+      <div class="mock-hero-sub">جمعية مرخصة برقم 1123 — نوفر المياه النظيفة للأسر المحتاجة</div>
+      <div class="mock-hero-btns">
+        <button class="mock-btn-pri">تبرع الآن</button>
+        <button class="mock-btn-sec">تعرف علينا</button>
+      </div>
+    </div>
+    
+    <div class="mock-stats">
+      <div class="mock-stat"><div class="mock-stat-val" id="count1">0</div><div class="mock-stat-label">أسرة مستفيدة</div></div>
+      <div class="mock-stat"><div class="mock-stat-val" id="count2">0</div><div class="mock-stat-label">عبوة ماء موزعة</div></div>
+      <div class="mock-stat"><div class="mock-stat-val" id="count3">0</div><div class="mock-stat-label">مشروع منجز</div></div>
+    </div>
+    
+    <div style="font-size:11px;font-weight:500;margin:8px 0 6px;color:var(--color-text-primary)">المشاريع النشطة</div>
+    <div class="mock-projects">
+      <div class="mock-proj"><div class="mock-proj-img" style="background:linear-gradient(135deg,#0D6E8A22,#0D6E8A44)"></div><div class="mock-proj-body"><div class="mock-proj-title">آبار المياه — الجوف</div><div class="mock-proj-prog"><div class="mock-proj-fill" style="width:72%"></div></div><div class="mock-proj-pct">72% مكتمل</div></div></div>
+      <div class="mock-proj"><div class="mock-proj-img" style="background:linear-gradient(135deg,#2A7A4B22,#2A7A4B44)"></div><div class="mock-proj-body"><div class="mock-proj-title">خزانات الشرب — نجران</div><div class="mock-proj-prog"><div class="mock-proj-fill" style="width:45%"></div></div><div class="mock-proj-pct">45% مكتمل</div></div></div>
+      <div class="mock-proj"><div class="mock-proj-img" style="background:linear-gradient(135deg,#0A4D6322,#0A4D6344)"></div><div class="mock-proj-body"><div class="mock-proj-title">فلاتر المياه — جازان</div><div class="mock-proj-prog"><div class="mock-proj-fill" style="width:89%"></div></div><div class="mock-proj-pct">89% مكتمل</div></div></div>
+    </div>
+  </div>
+
+  <div style="font-size:13px;font-weight:500;margin:1rem 0 10px">عناصر UI الجوهرية المقترحة</div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">شريط التقدم (Progress Bar)</div>
+      <div style="margin-top:8px">
+        <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:4px">المبلغ المستهدف: 50,000 ريال</div>
+        <div style="height:8px;background:var(--color-background-secondary);border-radius:4px;overflow:hidden;margin-bottom:4px"><div style="width:68%;height:100%;background:#0D6E8A;border-radius:4px"></div></div>
+        <div style="font-size:11px;color:#0D6E8A;font-weight:500">34,000 ريال جُمعت (68%)</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">بطاقة الإنجاز</div>
+      <div style="margin-top:8px;text-align:center">
+        <div style="font-size:28px;font-weight:500;color:#0D6E8A">١٢٠٠+</div>
+        <div style="font-size:12px;color:var(--color-text-secondary)">أسرة استفادت في 2024</div>
+        <div style="margin-top:6px"><span class="badge badge-green">↑ 23% عن العام الماضي</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">مسارات المشاركة</div>
+      <div style="margin-top:8px;display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px"><span style="width:20px;height:20px;background:rgba(13,110,138,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#0D6E8A;font-size:10px">1</span>تبرع مالي</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px"><span style="width:20px;height:20px;background:rgba(42,122,75,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#2A7A4B;font-size:10px">2</span>تطوع ميداني</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px"><span style="width:20px;height:20px;background:rgba(10,77,99,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#0A4D63;font-size:10px">3</span>شراكة مؤسسية</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 5: TECH -->
+<div class="section" id="tab-tech">
+  <p class="section-title">التوصيات التقنية</p>
+  
+  <div style="font-size:13px;font-weight:500;margin-bottom:10px">منصة CMS المقترحة</div>
+  <div class="compare-grid" style="margin-bottom:1.5rem">
+    <div class="compare-card proposed">
+      <div class="compare-head" style="color:var(--color-text-success)">WordPress — الخيار الموصى به</div>
+      <div class="compare-item"><span class="check-icon">✓</span>دعم كامل للعربية وRTL</div>
+      <div class="compare-item"><span class="check-icon">✓</span>إضافة GiveWP لإدارة التبرعات</div>
+      <div class="compare-item"><span class="check-icon">✓</span>مطورون محليون متاحون</div>
+      <div class="compare-item"><span class="check-icon">✓</span>تكلفة تشغيل معقولة</div>
+      <div class="compare-item"><span class="check-icon">✓</span>Yoast SEO للعربية</div>
+    </div>
+    <div class="compare-card">
+      <div class="compare-head">Next.js + Headless CMS — مستقبلي</div>
+      <div class="compare-item"><span style="color:var(--color-text-secondary);flex-shrink:0">→</span>أداء أفضل على المدى البعيد</div>
+      <div class="compare-item"><span style="color:var(--color-text-secondary);flex-shrink:0">→</span>تكلفة تطوير أعلى</div>
+      <div class="compare-item"><span style="color:var(--color-text-secondary);flex-shrink:0">→</span>مناسب لمرحلة النمو</div>
+      <div class="compare-item"><span style="color:var(--color-text-secondary);flex-shrink:0">→</span>Contentful أو Sanity كـ CMS</div>
+    </div>
+  </div>
+
+  <div style="font-size:13px;font-weight:500;margin-bottom:10px">الإضافات والأدوات المقترحة</div>
+  <table class="tech-table" style="margin-bottom:1.5rem">
+    <thead><tr><th>الأداة</th><th>الدور</th><th>الأولوية</th></tr></thead>
+    <tbody>
+      <tr><td style="font-weight:500;color:var(--color-text-primary)">GiveWP / Charitable</td><td>إدارة التبرعات وإصدار الإيصالات</td><td><span class="badge badge-red">حرج</span></td></tr>
+      <tr><td style="font-weight:500;color:var(--color-text-primary)">Yoast SEO</td><td>تحسين محركات البحث العربية</td><td><span class="badge badge-red">حرج</span></td></tr>
+      <tr><td style="font-weight:500;color:var(--color-text-primary)">WP Rocket</td><td>تخزين مؤقت وسرعة تحميل</td><td><span class="badge badge-amber">عالي</span></td></tr>
+      <tr><td style="font-weight:500;color:var(--color-text-primary)">WordFence</td><td>أمان ومراقبة الاختراقات</td><td><span class="badge badge-amber">عالي</span></td></tr>
+      <tr><td style="font-weight:500;color:var(--color-text-primary)">ShortPixel</td><td>ضغط الصور تلقائياً (WebP)</td><td><span class="badge badge-info">متوسط</span></td></tr>
+    </tbody>
+  </table>
+
+  <div style="font-size:13px;font-weight:500;margin-bottom:10px">أهداف الأداء المستهدفة</div>
+  <div class="metric-bar"><div class="bar-label"><span>Google PageSpeed — الجوال</span><span>90+</span></div><div class="bar-track"><div class="bar-fill" style="width:90%;background:#0D6E8A"></div></div></div>
+  <div class="metric-bar"><div class="bar-label"><span>Google PageSpeed — سطح المكتب</span><span>95+</span></div><div class="bar-track"><div class="bar-fill" style="width:95%;background:#0D6E8A"></div></div></div>
+  <div class="metric-bar"><div class="bar-label"><span>وقت التحميل الأول (LCP)</span><span>&lt; 2.5 ثانية</span></div><div class="bar-track"><div class="bar-fill" style="width:85%;background:#2A7A4B"></div></div></div>
+
+  <div style="margin-top:1rem;padding:10px 14px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);font-size:12px;color:var(--color-text-secondary);line-height:1.7">
+    <strong style="color:var(--color-text-primary);font-weight:500">الاستضافة المقترحة:</strong> خادم في منطقة الخليج — AWS Bahrain أو Oracle Cloud Jeddah، مع CDN لتسريع تحميل الأصول الثابتة. تفعيل HTTPS Strict (HSTS) + حماية XSS + نسخ احتياطية يومية محتفظ بها 30 يوماً.
+  </div>
+</div>
+
+<!-- TAB 6: ROADMAP -->
+<div class="section" id="tab-roadmap">
+  <p class="section-title">خطة التنفيذ المقترحة</p>
+  
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot-col"><div class="tl-dot" style="background:#E24B4A"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-phase">المرحلة 0 — الإصلاحات الفورية <span class="badge badge-red" style="margin-right:8px">أسبوعان</span></div>
+        <div class="tl-tasks">
+          <div class="tl-task">إصلاح متغيرات JavaScript المكشوفة للمستخدم</div>
+          <div class="tl-task">تثبيت شهادة SSL بشكل صحيح على جميع المسارات</div>
+          <div class="tl-task">إصلاح نموذج "صوتك مسموع" المعطوب</div>
+          <div class="tl-task">نقل زر التبرع إلى صفحة مستقلة مؤقتة</div>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot-col"><div class="tl-dot" style="background:#BA7517"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-phase">المرحلة 1 — التصميم والبنية <span class="badge badge-amber" style="margin-right:8px">الشهر الأول</span></div>
+        <div class="tl-tasks">
+          <div class="tl-task">تصميم الهوية البصرية الجديدة (ألوان، خطوط، أيقونات)</div>
+          <div class="tl-task">تصميم wireframes للصفحات الرئيسية وموافقة الجمعية</div>
+          <div class="tl-task">دمج الموقعين (sogyaalma.org.sa + store) في نطاق موحد</div>
+          <div class="tl-task">إعداد بيئة التطوير على WordPress</div>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot-col"><div class="tl-dot" style="background:#0D6E8A"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-phase">المرحلة 2 — التطوير الجوهري <span class="badge badge-info" style="margin-right:8px">الشهران 2-3</span></div>
+        <div class="tl-tasks">
+          <div class="tl-task">تطوير الصفحة الرئيسية مع Hero ومؤشرات الإنجاز المتحركة</div>
+          <div class="tl-task">بناء نظام التبرع المتكامل (GiveWP + بوابة الدفع)</div>
+          <div class="tl-task">إطلاق صفحات: المشاريع، أثرنا، الشفافية، شركاؤنا</div>
+          <div class="tl-task">تهيئة SEO للعربية وبنية البيانات المنظمة (Schema)</div>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot-col"><div class="tl-dot" style="background:#2A7A4B"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-phase">المرحلة 3 — الإطلاق والاختبار <span class="badge badge-green" style="margin-right:8px">الشهر 4</span></div>
+        <div class="tl-tasks">
+          <div class="tl-task">اختبار شامل على جميع المتصفحات والأجهزة</div>
+          <div class="tl-task">اختبار إمكانية الوصول (WCAG 2.1 AA)</div>
+          <div class="tl-task">اختبار أداء وسرعة التحميل (PageSpeed 90+)</div>
+          <div class="tl-task">الإطلاق الرسمي مع مراقبة 30 يوماً</div>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot-col"><div class="tl-dot" style="background:var(--color-border-secondary)"></div></div>
+      <div class="tl-content">
+        <div class="tl-phase">ما بعد الإطلاق — التحسين المستمر <span class="badge badge-info" style="margin-right:8px">مستمر</span></div>
+        <div class="tl-tasks">
+          <div class="tl-task">نشر قصص الأثر والمستفيدين شهرياً</div>
+          <div class="tl-task">التقارير السنوية التفاعلية (لا PDF فقط)</div>
+          <div class="tl-task">مراجعة أداء الموقع ربع سنوياً عبر Google Analytics</div>
+          <div class="tl-task">مواءمة الهوية مع دليل منصة "إحسان" الوطنية</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1.5rem;padding:12px 14px;border:0.5px solid var(--color-border-success);border-radius:var(--border-radius-lg);background:var(--color-background-success)">
+    <div style="font-size:13px;font-weight:500;color:var(--color-text-success);margin-bottom:6px">ملاحظة ختامية</div>
+    <div style="font-size:12px;color:var(--color-text-success);line-height:1.7">مواءمة تصميم الموقع مع دليل الهوية البصرية لمنصة <strong style="font-weight:500">إحسان</strong> (مركز تنمية القطاع غير الربحي) تُعزز الثقة المؤسسية وتُسهل الحصول على دعم الجهات الحكومية — يُنصح بمراجعة الدليل ضمن مرحلة التصميم.</div>
+  </div>
+</div>
+</div>
+
+<script>
+function switchTab(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  const tabs=['analysis','ia','visual','mockup','tech','roadmap'];
+  document.querySelectorAll('.tab')[tabs.indexOf(id)].classList.add('active');
+}
+function animateCount(el,target,suffix,dur){
+  let start=0;const step=target/60;
+  const t=setInterval(()=>{
+    start+=step;
+    if(start>=target){start=target;clearInterval(t);}
+    el.textContent=Math.round(start).toLocaleString('ar-SA')+suffix;
+  },dur/60);
+}
+setTimeout(()=>{
+  const c1=document.getElementById('count1');
+  const c2=document.getElementById('count2');
+  const c3=document.getElementById('count3');
+  if(c1)animateCount(c1,1200,'',1200);
+  if(c2)animateCount(c2,85000,'',1500);
+  if(c3)animateCount(c3,47,'',1000);
+},400);
+</script>

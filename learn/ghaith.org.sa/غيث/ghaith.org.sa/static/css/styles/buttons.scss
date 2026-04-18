@@ -1,0 +1,461 @@
+@keyframes pulseSponsor {
+  0% {
+    box-shadow: 0 0 0 0 $EmeraldForestColor;
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px #1b43453d;
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 #1b43453d;
+  }
+}
+@keyframes pulseUmrah {
+  0% {
+    box-shadow: 0 0 0 0 $herbalColor;
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px #0da88942;
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 #22ceac1c;
+  }
+}
+
+/*-----------------------PRIMARY BUTTON-----------------------*/
+.ghaith--primary-button {
+  background-color: $mainGreenColor;
+  border-radius: 7px;
+  box-sizing: border-box;
+  color: $whiteColor;
+  font-size: $font-size-extra-fine;
+  font-weight: $fontWeightNormal;
+  font-family: $fontFamilyArabicLight;
+  padding: 1rem 3rem;
+  border: none;
+  outline: none;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+    color: $whiteColor !important;
+    border: none !important;
+    background-color: $mainGreenColor !important;
+  }
+  &:disabled {
+    background-color: transparent !important;
+    color: $silverGrayColor !important;
+    border: 1px solid $silverGrayColor !important;
+  }
+}
+.ghaith--grey-button {
+  background-color: $greyColor;
+  border-radius: 7px;
+  color: $titleColor;
+  font-size: $font-size-extra-fine;
+  font-weight: $fontWeightNormal;
+  padding: 0.7rem;
+  font-family: $fontFamilyArabicLight;
+  border: none;
+  outline: none;
+  transition: transform 0.3s ease;
+  &.ghaith--grey-button-active {
+    color: $whiteColor !important;
+    border: none !important;
+    background-color: $primaryGreenColor !important;
+  }
+  &:hover {
+    transform: scale(1.02);
+    color: $whiteColor !important;
+    border: none !important;
+    background-color: $primaryGreenColor !important;
+  }
+  &:disabled {
+    background-color: transparent !important;
+    color: $silverGrayColor !important;
+    border: 1px solid $silverGrayColor !important;
+  }
+}
+.ghaith--grey-color {
+  color: $mediumGrayColor;
+}
+/*-----------------------TRANSPARENT BUTTON-----------------------*/
+.ghaith--tansparent-button {
+  background-color: $transparentColor;
+  border-radius: 20px;
+  color: $whiteColor;
+  font-size: $font-size-fine;
+  font-family: $fontFamilyArabicLight;
+  width: fit-content;
+  cursor: pointer !important;
+  padding: 1.4rem 1rem;
+  border: none;
+  outline: none;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+    color: $whiteColor !important;
+    border: none !important;
+    background-color: $transparentColor !important;
+  }
+  .ghaith--title {
+    color: $forestColor;
+    font-size: $font-size-extra-fine;
+    font-family: $fontFamilyArabicLight;
+    direction: rtl;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 5.5rem;
+  }
+  .ghaith--title-animated {
+    animation: gentleBreath 3s ease-in-out infinite;
+  }
+}
+@keyframes gentleBreath {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+/*-----------------------SECONDARY BUTTON-----------------------*/
+
+.ghaith--secondary-button {
+  background-color: $secondaryColor;
+  border-radius: 10px;
+  color: $whiteColor;
+  font-size: $font-size-moderate;
+  font-weight: $fontWeightNormal;
+  font-family: $fontFamilyArabicLight;
+  padding: 1rem 1rem;
+  min-width: 8vw;
+  border: none;
+  outline: none;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+    color: $whiteColor !important;
+    border: none !important;
+    background-color: $secondaryColor !important;
+  }
+  &:disabled {
+    background-color: transparent !important;
+    color: $silverGrayColor !important;
+    border: 1px solid $silverGrayColor !important;
+  }
+}
+
+.ghaith--navbar_login_button {
+  font-weight: 700 !important;
+  font-family: $fontWeightMedium !important;
+  text-decoration: underline;
+  box-shadow: none !important;
+  background-color: transparent !important ; //#030000 with 20% opacity
+  color: $primaryColor !important;
+  border: none;
+  &:hover {
+    font-weight: 700 !important;
+    font-family: $fontWeightMedium !important;
+    text-decoration: underline;
+    box-shadow: none !important;
+    background-color: transparent !important ; //#030000 with 20% opacity
+    color: $primaryColor !important;
+    border: none;
+  }
+}
+
+.ghaith--request-button {
+  background-color: rgba(0, 0, 0, 0.068);
+  color: $primaryColor;
+  border-radius: 6px;
+  font-size: $font-size-fine;
+  font-family: $fontFamilyArabicMedium;
+  width: fit-content;
+  cursor: pointer !important;
+  padding: 1.4rem;
+  border: none;
+  outline: none;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+    border: none !important;
+    background-color: rgba(0, 0, 0, 0.082) !important;
+    color: $primaryColor !important;
+  }
+}
+//// add partnership button ///////////
+.ghaith--communs-add-partnership-button {
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightLight;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  box-shadow: none;
+  color: $forestColor;
+  font-size: $font-size-bold;
+  &:hover {
+    color: $forestColor !important;
+  }
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  @media (max-width: 480px) {
+    font-size: $font-size-fine;
+  }
+}
+.ghaith--add-partnership-active-button {
+  background-color: $partnershipButtonBgColor;
+  border-radius: 0;
+  &:hover {
+    background-color: $partnershipButtonBgColor !important;
+  }
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.ghaith--cancel-edir-button {
+  background-color: #fff !important;
+  border: 1px gray solid !important;
+  height: 38px;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  font-family: $fontFamilyArabicRegular !important;
+  transition: transform 0.3s ease;
+  color: $forestColor !important;
+  padding: 1.4rem 1rem;
+  &:hover {
+    background-color: #f0f0f0e5 !important;
+    transform: scale(1.06);
+    color: $forestColor !important;
+  }
+}
+
+.ghaith--moreNumbers-button {
+  font-size: $font-size-moderate;
+  padding: 25px 25px;
+  @media (max-width: 768px) {
+    font-size: $font-size-fine;
+    padding: 20px 20px;
+  }
+}
+
+.ghaith--statistics-card {
+  background: $semiTransparentWhiteColor;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+  width: 335px;
+}
+
+.ghaith--statistics-card-icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.ghaith--statistics-card-number {
+  font-size: 2.25rem;
+  font-weight: $fontWeightBold;
+  color: $aquaGreenColor;
+  line-height: 1;
+  font-family: $fontFamilyArabicLight;
+}
+
+.ghaith--statistics-card-unit {
+  font-size: 1.3rem;
+  color: $aquaGreenColor;
+  font-weight: $fontWeightBold;
+  font-family: $fontFamilyArabicLight;
+}
+
+.ghaith--statistics-card-name {
+  font-size: 1.4rem;
+  color: $forestColor;
+  margin-top: 0.5rem;
+  font-weight: $fontWeightBold;
+  font-family: $fontFamilyArabicLight;
+}
+
+.ghaith--gift-button {
+  z-index: 15;
+  position: fixed;
+  right: 0;
+  top: 12.5rem;
+  cursor: pointer;
+  border: none;
+  width: fit-content;
+  cursor: pointer;
+  padding: 1.2rem 1.38rem;
+  background-color: $EmeraldForestColor;
+  border-radius: 0 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  justify-content: end;
+  white-space: nowrap;
+  font-family: $fontFamilyArabicMedium;
+  font-weight: $fontWeightNormal;
+  font-size: $font-size-fine;
+  color: $whiteColor;
+  animation: pulseSponsor 2s infinite;
+
+  &:hover {
+    box-shadow: none;
+    background-color: $EmeraldForestColor !important;
+    color: $whiteColor !important;
+  }
+  &:focus {
+    box-shadow: none !important;
+  }
+  .ant-btn-icon svg {
+    margin-top: 4px;
+    width: 19px;
+    height: 19px;
+    color: $whiteColor;
+  }
+  @media (max-width: 1110px) {
+    top: 13.5rem;
+  }
+  @media (max-width: 900px) {
+    top: 11.5rem;
+  }
+  @media (max-width: 767px) {
+    top: 10rem;
+    padding: 1.3rem 1.34rem;
+    min-width: 58px;
+    justify-content: center;
+    .ant-btn-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  @media (max-width: 700px) {
+  }
+}
+.ghaith--umrah-button {
+  z-index: 15;
+  position: fixed;
+  left: 0;
+  top: 12.5rem;
+  cursor: pointer;
+  border: none;
+  width: fit-content;
+  cursor: pointer;
+  padding: 1.2rem 1.5rem;
+  background-color: $herbalColor;
+  border-radius: 0 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  justify-content: end;
+  white-space: nowrap;
+  font-family: $fontFamilyArabicMedium;
+  font-weight: $fontWeightNormal;
+  font-size: $font-size-fine;
+  color: $whiteColor;
+  animation: pulseUmrah 2s infinite;
+
+  &:hover {
+    box-shadow: none;
+    background-color: $herbalColor !important;
+    color: $whiteColor !important;
+  }
+  &:focus {
+    box-shadow: none !important;
+  }
+  .ant-btn-icon svg {
+    margin-top: 4px;
+    width: 19px;
+    height: 19px;
+    color: $whiteColor;
+  }
+  @media (max-width: 1110px) {
+    top: 13.5rem;
+  }
+  @media (max-width: 900px) {
+    top: 11.5rem;
+  }
+  @media (max-width: 767px) {
+    top: 10rem;
+    padding: 1.3rem 1.25rem;
+    min-width: 55px;
+    justify-content: center;
+    .ant-btn-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+.ghaith--ramadan-button {
+  z-index: 999;
+  position: fixed;
+  left: 0;
+  top: 8.5rem;
+  cursor: pointer;
+  border: none;
+  width: fit-content;
+  cursor: pointer;
+  padding: 1.2rem 1.5rem;
+  background-color: $EmeraldForestColor;
+  border-radius: 0 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  justify-content: end;
+  white-space: nowrap;
+  font-family: $fontFamilyArabicMedium;
+  font-weight: $fontWeightNormal;
+  font-size: $font-size-fine;
+  color: $whiteColor;
+  animation: pulseSponsor 2s infinite;
+
+  &:hover {
+    box-shadow: none;
+    background-color: $EmeraldForestColor !important;
+    color: $whiteColor !important;
+  }
+  &:focus {
+    box-shadow: none !important;
+  }
+  .ant-btn-icon img {
+    margin-top: 4px;
+    width: 26px;
+    height: 26px;
+    color: $whiteColor;
+  }
+  @media (max-width: 1110px) {
+    top: 9.5rem;
+  }
+  @media (max-width: 900px) {
+    top: 7.5rem;
+  }
+  @media (max-width: 767px) {
+    top: 6rem;
+    padding: 1.3rem 1.25rem;
+    min-width: 55px;
+    justify-content: center;
+    .ant-btn-icon img {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}

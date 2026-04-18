@@ -1,0 +1,21 @@
+.ghaith--progress-card {
+  direction: rtl;
+  border: 3px solid $mistyBlueColor;
+  border-radius: 11px;
+  .ant-progress-outer {
+    border-radius: 50px;
+    padding: 3px;
+  }
+  .ant-progress-inner {
+    background-color: $whiteColor !important;
+  }
+  .ant-progress-bg {
+    background: #5aaca8 !important;
+  }
+  .ant-progress-text {
+    font-family: $fontFamilyArabicLight;
+    font-weight: $fontWeightNormal;
+    color: $whiteColor !important;
+    font-size: $font-size-fine;
+  }
+}

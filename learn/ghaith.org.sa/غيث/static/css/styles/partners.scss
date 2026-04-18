@@ -1,0 +1,260 @@
+.ghaith--partners-title-wrapper {
+  position: relative;
+  z-index: 3;
+  right: 10%;
+  margin-bottom: 4rem;
+  direction: rtl;
+}
+
+.ghaith--partners-title-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  flex-direction: row-reverse;
+}
+
+.ghaith--partners-title-icon {
+  width: 44px;
+  height: 44px;
+  margin-left: 14px;
+}
+
+.ghaith--partners-title {
+  margin: 0;
+  font-family: $fontFamilyArabicLight !important;
+  font-size: $font-size-enormous;
+  line-height: 1.1;
+}
+
+.ghaith--partners-title span {
+  color: $mainGreenColor;
+}
+
+.ghaith--partener-container {
+  margin-top: 7rem;
+  width: 100%;
+  min-height: 25rem;
+  padding: 0.9rem 8rem 4rem 5rem;
+  position: relative;
+  @media (max-width: 1024px) {
+    padding: 0.9rem 3rem 4rem 3rem;
+    margin-top: 5rem;
+  }
+  @media (max-width: 767px) {
+    padding: 0.9rem 3rem 4rem 3rem;
+    margin-top: 3rem;
+  }
+
+  .ghaith--partner-img-container {
+    border: 3px solid #009767;
+    width: 15.5rem;
+    height: 9rem;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 7px;
+    padding: 1rem;
+    margin-bottom: 6rem;
+
+    background-color: $whiteColor;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .ghaith--partner-img-container {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+/* Custom Navigation Arrows - Centered below carousel */
+.ghaith--carousel-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 2rem auto 0;
+  width: fit-content;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ghaith--carousel-arrow {
+  background-color: transparent;
+  border: none;
+  color: #009767;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #111827;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.ghaith--carousel-divider {
+  width: 2px;
+  height: 38px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 767px) {
+  .ghaith--partners-title {
+    font-size: $font-size-dominant !important;
+  }
+
+  .ghaith--partners-title-icon {
+    width: 37px;
+    height: 37px;
+    margin-left: 6px;
+  }
+
+  .ghaith--carousel-arrow {
+    width: 42px;
+    height: 42px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .ghaith--carousel-divider {
+    height: 24px;
+  }
+}
+
+////////////************ Partners Card************///////////////
+.ghaith--partner-card.ant-card .ant-card-body {
+  padding: 0 !important;
+}
+
+.ghaith--partner-card {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  filter: drop-shadow(0px 4px 14px rgba(0, 0, 0, 0.06));
+  @media (min-width: 1600px) {
+    width: 85%;
+  }
+}
+
+.ghaith--partner-image-container {
+  width: 100%;
+  height: 12rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px !important;
+}
+
+.ghaith--partner-image-container img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.ghaith--partner-card-content {
+  width: 100%;
+  background-color: #deefed;
+  padding: 1rem;
+  text-align: justify;
+  min-height: 12rem;
+}
+
+.ghaith--partner-card-title {
+  color: $mainGreenColor;
+  font-size: $font-size-noteworthy;
+  font-family: $fontFamilyArabicMedium;
+  font-weight: $fontWeightNormal;
+}
+
+.ghaith--partner-card-description {
+  color: $darkGrayColor;
+  font-size: $font-size-small;
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightNormal;
+  padding-top: 1rem;
+}
+
+.ghaith--reports-container {
+  min-height: 30vh;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  @media (min-width: 1600px) {
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+  }
+  @media (max-width: 920px) {
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+  }
+  @media (max-width: 768px) {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+///////////// Add partnership ///////////////////////
+.ghaith--add-partnership {
+  background-color: $whiteColor;
+}
+//unit duration select
+.ghaith--select-partnership-unit {
+  margin-top: 1.4rem;
+}
+//Container
+.ghaith--add-partnership-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  direction: rtl;
+  gap: 1rem;
+  padding: 0 8vw;
+}
+//Divider
+.ghaith--add-partnership-divider {
+  width: 100%;
+  height: 2px;
+  background-color: #deefed;
+  margin: 0;
+}
+//sections title
+.ghaith--add-partnership-title {
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightLight;
+  color: $primaryGreenColor;
+  font-size: $font-size-strong;
+}
+//sections subtitle
+.ghaith--add-partnership-subtitle {
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightLight;
+  color: $primaryColor;
+  font-size: $font-size-small;
+}
+//span checkbox
+.ghaith--check-partnershipstyle {
+  font-family: $fontFamilyArabicLight;
+  font-weight: $fontWeightLight;
+  font-size: $font-size-small;
+  color: $mediumGrayColor;
+}

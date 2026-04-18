@@ -1,0 +1,452 @@
+.ghaith--donation-card {
+  border-radius: 0 !important;
+  overflow: visible;
+  font-family: $fontFamilyArabicMedium !important;
+  font-weight: $fontWeightNormal;
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+}
+
+.ghaith--donation-card__image-wrapper {
+  position: relative;
+}
+
+.ghaith--donation-card__image-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.829),
+      transparent
+    );
+    pointer-events: none;
+  }
+}
+
+.ghaith--donation-card__image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover !important;
+  border-radius: 7px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.ghaith--donation-card__share-btn {
+  position: absolute;
+  top: 12px;
+  left: 27px;
+  width: 38px !important;
+  height: 38px;
+  background: $whiteColor;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #f5f5f5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    color: #009767 !important;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+.ghaith--detail-fav-btn {
+  top: 24px !important;
+  left: 34px !important;
+}
+.ghaith--donation-fav-btn {
+  position: absolute;
+  top: 12px;
+  left: 73px;
+  width: 38px !important;
+  height: 38px;
+  background: $whiteColor;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #f5f5f5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    color: #ff9800 !important;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.ghaith--donation-card__title {
+  font-family: $fontFamilyArabicExtraLight !important;
+  font-size: $font-size-substantial;
+
+  //  font-weight: 600   !important;
+  position: absolute;
+  bottom: 100%;
+  right: 10px;
+  margin-bottom: 10px;
+  padding: 4px 8px;
+  color: #fff;
+  border-radius: 4px;
+  z-index: 2;
+  @media (max-width: 768px) {
+    font-size: $font-size-title;
+  }
+}
+
+.ghaith--donation-card__footer {
+  border-radius: 10px;
+  position: relative;
+  margin-top: -4rem;
+  min-height: 150px;
+  padding: 24px 16px 16px;
+  background: #deefed;
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ghaith--donation-card__qr-wrapper {
+  position: absolute;
+  top: -42px;
+  left: 23px;
+  width: 74px;
+  height: 74px;
+  background: $whiteColor;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.ghaith--donation-card__qr {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ghaith--donation-card__safety-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  span {
+    font-size: 14px;
+    font-family: $fontFamilyArabicBold !important;
+    color: #009767;
+  }
+}
+
+.ghaith--donation-card__safety-donate {
+  position: absolute;
+  top: -20px;
+  left: 108px;
+  width: auto; /* let it fit content */
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* space between icon and text */
+  z-index: 2;
+  font-family: $fontFamilyArabicBold !important;
+  img {
+    width: 18px !important; /* or adjust size */
+    color: #009767; /* match your theme */
+  }
+}
+
+.safety-icon {
+  font-size: 18px; /* or adjust size */
+  color: #1d7044; /* match your theme */
+}
+
+.ghaith--donation-card__buttons {
+  margin-left: 100px;
+}
+
+.ghaith--donation-card__buttons > .ant-btn {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 0 8px;
+  transition: all 0.3s ease;
+}
+.ghaith--donation-card__amount-btn {
+  position: absolute;
+  top: 92px;
+  left: 16px;
+  background-color: transparent !important;
+  font-family: $fontFamilyArabicMedium !important;
+  font-size: $font-size-title;
+  border: 1px #009767 solid !important;
+  color: #333 !important;
+  padding: 0 3px !important;
+  width: 88px;
+  &:hover {
+    background-color: transparent !important;
+    font-family: $fontFamilyArabicMedium !important;
+    border: 1px #009767 solid !important;
+    color: #333 !important;
+  }
+}
+.ghaith--donation-card__donate-btn {
+  position: absolute;
+  top: 52px;
+  left: 16px;
+  background-color: #009767;
+  padding: 15px !important;
+  border-color: #009767;
+  color: #fff;
+  font-family: $fontFamilyArabicMedium !important;
+
+  &:hover {
+    background-color: #0f8c59 !important;
+    border-color: #0f8c59 !important;
+    box-shadow: 0 4px 12px rgba(19, 166, 107, 0.3);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    background-color: #0d7549 !important;
+    border-color: #0d7549 !important;
+    transform: translateY(0);
+  }
+
+  &:focus {
+    background-color: #009767;
+    border-color: #009767;
+  }
+}
+
+.ghaith--donation-card__tag-btn {
+  background-color: transparent;
+  font-family: $fontFamilyArabicMedium;
+  border: 2px #fff solid;
+  color: #333;
+
+  &:hover {
+    background-color: #009767 !important;
+    border-color: #009767 !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    background-color: #009767 !important;
+    border-color: #009767 !important;
+    color: #fff !important;
+    transform: translateY(0);
+    box-shadow: 6px 6px 8px rgba(19, 166, 107, 0.226);
+  }
+
+  &:focus {
+    background-color: transparent;
+    border-color: #fff;
+    color: #333;
+  }
+
+  &:disabled,
+  &[disabled] {
+    background-color: #f5f5f5 !important;
+    border-color: #00976777 !important;
+    color: rgba(0, 0, 0, 0.25) !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+    box-shadow: none !important;
+    opacity: 0.6;
+
+    &:hover {
+      background-color: #f5f5f5 !important;
+      border-color: #009767a8 !important;
+      color: rgba(0, 0, 0, 0.452) !important;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+  }
+}
+.ghaith--donation-card__tag-btn--active {
+  background-color: #009767 !important;
+  border-color: #009767 !important;
+  color: #fff !important;
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(19, 166, 107, 0.15);
+}
+
+// Completed state styles
+.ghaith--donation-card--completed {
+  position: relative;
+  pointer-events: none;
+  cursor: not-allowed;
+
+  .ghaith--donation-card__image,
+  .ghaith--donation-card__qr {
+    filter: saturate(0);
+  }
+
+  .ghaith--donation-card__footer {
+    background: #e0e0e0;
+  }
+
+  .ghaith--donation-card__safety-line span,
+  .ghaith--donation-card__safety-donate span {
+    color: $grayDisabledColor !important;
+  }
+
+  .ghaith--donation-card__title {
+    color: $grayDisabledColorTitle !important;
+  }
+
+  .ghaith--donation-card__share-btn,
+  .ghaith--donation-fav-btn {
+    background-color: #f5f5f5 !important;
+    border-color: $silverGrayColor !important;
+    cursor: not-allowed !important;
+
+    &:hover {
+      background-color: #f5f5f5 !important;
+      transform: none !important;
+    }
+  }
+
+  .ghaith--donation-card__donate-btn {
+    background-color: transparent !important;
+    color: $silverGrayColor !important;
+    border: 1px solid $silverGrayColor !important;
+
+    &:hover {
+      background-color: transparent !important;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  .ghaith--donation-card__amount-btn {
+    background-color: transparent !important;
+    color: $grayDisabledColor !important;
+    border-color: $silverGrayColor !important;
+  }
+
+  .ghaith--donation-card__tag-btn {
+    background-color: #f5f5f5 !important;
+    border-color: $silverGrayColor !important;
+    color: $grayDisabledColor !important;
+  }
+}
+
+.ghaith--donation-card__completed-image {
+  height: 11rem;
+  width: 11rem;
+  filter: saturate(1);
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+  @media (max-width: 768px) {
+    height: 9rem;
+    width: 9rem;
+  }
+}
+//////////// Donation section style/////////////////
+
+.ghaith--donation-section {
+  // padding: 100px 80px;
+  direction: rtl;
+  margin-bottom: 4rem;
+}
+
+.ghaith--donationSection-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 10px;
+  font-weight: $fontWeightLight !important;
+  font-family: $fontFamilyArabicLight !important;
+  //  font-size: $font-size-xtra-fine !important;
+}
+
+.ghaith--donationSection-title-icon {
+  height: 40px;
+  width: 40px;
+}
+.ghaith--donations-row {
+  margin-right: 6rem !important;
+  margin-left: 6rem !important;
+  @media (max-width: 1189px) {
+    margin-right: 1rem !important;
+    margin-left: 1rem !important;
+  }
+}
+.ghaith--donationSection-title h2 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.ghaith--donation-highlight {
+  color: $mainGreenColor !important;
+  margin-left: 5px !important;
+}
+
+.ghaith--donation-primary {
+  color: $primaryColor;
+}
+.ghaith--donations-title {
+  margin-right: 9rem !important;
+  margin-bottom: 3rem;
+  @media (max-width: 1189px) {
+    margin-right: 3rem !important;
+  }
+  @media (max-width: 558px) {
+    font-size: 12px !important;
+  }
+}
+.ghaith--favorite-button {
+  @media (max-width: 558px) {
+    width: 150px !important;
+  }
+}
+.ghaith--donation-header-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 0 22px;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @media (max-width: 1550px) {
+    padding: 0 16px;
+  }
+
+  @media (max-width: 768px) {
+    > div:first-child {
+      order: 1;
+      margin-bottom: 1rem;
+    }
+
+    .ghaith--favorite-button {
+      order: 2;
+      margin-right: auto;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.ghaith--pagination-container {
+  margin-top: 3rem;
+
+  margin-bottom: 5vh;
+  & ul.ant-pagination.ant-pagination-center {
+    //background-color: $lightGrayColor !important;
+  }
+  .ant-pagination-item {
+    font-family: $fontFamilyArabicLight !important;
+    font-weight: bold !important;
+    font-size: $font-size-small !important;
+    width: 35px;
+    height: 35px;
+    border-radius: 50% !important;
+    background-color: $detailsBackgroundColor !important;
+    a {
+      color: $simpleGrayColor !important;
+    }
+  }
+  .ant-pagination-item-active {
+    border: 1px solid transparent !important;
+    border-bottom: 3px solid $primaryGreenColor !important;
+    a {
+      color: $primaryGreenColor !important;
+    }
+  }
+}
+
+.ghaith--pagination-arrow {
+  align-items: center;
+  background-color: $primaryGreenColor;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  height: 35px;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.3s ease;
+  width: 35px;
+  &disabled {
+    background-color: $lightGrayColor !important;
+  }
+  :hover {
+    transform: scale(1.1) !important;
+  }
+}

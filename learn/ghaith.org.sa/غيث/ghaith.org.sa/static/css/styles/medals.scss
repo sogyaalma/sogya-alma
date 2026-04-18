@@ -1,0 +1,139 @@
+.ghaith--medal-modal-container {
+  direction: rtl;
+}
+
+.ghaith--medal-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ghaith--medal-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.ghaith--medal-logo {
+  width: 50px;
+  height: 50px;
+}
+
+.ghaith--medal-title {
+  color: #1c4246;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.ghaith--medal-description {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.ghaith--medal-list-container {
+  max-height: 500px;
+  padding-bottom: 20px;
+  overflow-y: auto;
+}
+
+.ghaith--medal-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  transition: all 0.3s ease;
+}
+
+.ghaith--medal-item-current {
+  background: linear-gradient(135deg, #deefed 0%, #a8dad5 120%);
+}
+
+.ghaith--medal-icon-wrapper {
+  min-width: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.ghaith--medal-icon {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.ghaith--medal-icon-placeholder {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.ghaith--medal-info {
+  flex: 1;
+  margin-right: 20px;
+  text-align: right;
+}
+
+.ghaith--medal-name {
+  color: #1c4246;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.ghaith--medal-amount {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+.ghaith--medal-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ghaith--medal-download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #1c4246;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #2a5a5f;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(28, 66, 70, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.ghaith--medal-current-badge {
+  background-color: #a3c5c2ff;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.ghaith--medal-empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-size: $font-size-moderate;
+}

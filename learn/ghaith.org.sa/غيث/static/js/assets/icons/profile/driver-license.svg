@@ -1,0 +1,43 @@
+var _style, _g;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import * as React from "react";
+function SvgDriverLicense(_ref, svgRef) {
+  let {
+    title,
+    titleId,
+    ...props
+  } = _ref;
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 512 512",
+    width: 512,
+    height: 512,
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title === undefined ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, "driver-license") : title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _style || (_style = /*#__PURE__*/React.createElement("style", null, "\n\t\t.s0 { fill: #e2821b } \n\t")), _g || (_g = /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+    className: "s0",
+    d: "m464.87 72.3h-417.74c-26.33 0-47.13 21.39-47.13 47.13v273.14c0 26.33 21.39 47.13 47.13 47.13h417.74c26.33 0 47.13-21.39 47.13-47.13v-273.14c0-26.33-21.39-47.13-47.13-47.13zm17.13 320.27c0 9.45-7.66 17.13-17.13 17.13h-417.74c-9.45 0-17.13-7.66-17.13-17.13v-273.14c0-9.45 7.66-17.13 17.13-17.13h417.74c9.45 0 17.13 7.66 17.13 17.13z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s0",
+    d: "m200.74 292.7c8.72-9.76 14.03-22.62 14.03-36.7 0-30.42-24.75-55.17-55.17-55.17-30.42 0-55.17 24.75-55.17 55.17 0 14.08 5.31 26.94 14.03 36.7-22.84 13.93-38.13 39.08-38.13 67.73 0 8.29 6.72 15 15 15h128.54c8.28 0 15-6.71 15-15 0-28.65-15.29-53.8-38.13-67.73zm-41.14-61.87c13.88 0 25.17 11.29 25.17 25.17 0 13.88-11.29 25.17-25.17 25.17-13.88 0-25.17-11.29-25.17-25.17 0-13.88 11.29-25.17 25.17-25.17zm-46.93 114.6c6.36-19.85 24.99-34.26 46.93-34.26 21.94 0 40.57 14.41 46.93 34.26z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s0",
+    d: "m416.67 216.9h-112.47c-8.28 0-15 6.72-15 15 0 8.28 6.72 15 15 15h112.47c8.28 0 15-6.72 15-15 0-8.28-6.72-15-15-15z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s0",
+    d: "m416.67 136.57h-321.34c-8.28 0-15 6.71-15 15 0 8.28 6.72 15 15 15h321.34c8.28 0 15-6.72 15-15 0-8.29-6.72-15-15-15z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s0",
+    d: "m416.67 281.17h-112.47c-8.28 0-15 6.71-15 15 0 8.28 6.72 15 15 15h112.47c8.28 0 15-6.72 15-15 0-8.29-6.72-15-15-15z"
+  }), /*#__PURE__*/React.createElement("path", {
+    className: "s0",
+    d: "m384.53 345.43h-80.33c-8.28 0-15 6.72-15 15 0 8.29 6.72 15 15 15h80.33c8.29 0 15-6.71 15-15 0-8.28-6.71-15-15-15z"
+  }))));
+}
+const ForwardRef = /*#__PURE__*/React.forwardRef(SvgDriverLicense);
+export default __webpack_public_path__ + "static/media/driver-license.c5930956e6b7eeeafbf6c3d2f1cce5b4.svg";
+export { ForwardRef as ReactComponent };

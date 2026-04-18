@@ -1,0 +1,34 @@
+var _style, _path, _path2, _path3;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import * as React from "react";
+function SvgFooterInstagram(_ref, svgRef) {
+  let {
+    title,
+    titleId,
+    ...props
+  } = _ref;
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 513 512",
+    width: 513,
+    height: 512,
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title === undefined ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, "instagram(2)") : title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _style || (_style = /*#__PURE__*/React.createElement("style", null, "\n\t\t.s0 { fill: #000000 } \n\t")), _path || (_path = /*#__PURE__*/React.createElement("path", {
+    className: "s0",
+    d: "m511.9 150.5c-1.1-27.2-5.5-45.9-11.8-62.1-6.5-17.2-16.5-32.6-29.7-45.4-12.8-13-28.3-23.1-45.3-29.5-16.2-6.3-34.8-10.7-62-11.9-27.5-1.3-36.2-1.6-105.7-1.6-69.5 0-78.1 0.3-105.5 1.5-27.1 1.2-45.8 5.6-62 11.9-17.3 6.5-32.6 16.5-45.5 29.6-13 12.8-23 28.3-29.5 45.3-6.3 16.3-10.6 34.9-11.8 62.1-1.3 27.4-1.7 36.1-1.7 105.6 0 69.5 0.4 78.2 1.5 105.5 1.2 27.2 5.7 45.9 12 62.1 6.5 17.2 16.5 32.6 29.5 45.4 12.9 13 28.4 23.1 45.4 29.5 16.3 6.3 34.8 10.7 62.1 11.9 27.2 1.2 36 1.5 105.5 1.5 69.5 0 78.2-0.3 105.5-1.5 27.2-1.2 45.9-5.6 62-11.9 34.5-13.3 61.7-40.5 75-74.9 6.2-16.3 10.7-34.9 11.9-62.1 1.1-27.3 1.5-36 1.5-105.5 0-69.5-0.2-78.2-1.4-105.5zm-46 209c-1.1 25-5.3 38.5-8.8 47.5-8.7 22.3-26.3 40-48.7 48.6-9 3.5-22.5 7.7-47.5 8.8-27 1.2-35 1.5-103.3 1.5-68.3 0-76.5-0.3-103.5-1.5-25-1.1-38.5-5.3-47.5-8.8-11-4.1-21.2-10.6-29.3-19.1-8.5-8.3-15-18.3-19.2-29.4-3.5-9-7.7-22.6-8.7-47.5-1.3-27-1.5-35.1-1.5-103.4 0-68.3 0.2-76.5 1.5-103.4 1-25 5.2-38.5 8.7-47.5 4.2-11.1 10.7-21.2 19.3-29.4 8.2-8.5 18.2-15 29.4-19.1 9-3.5 22.6-7.7 47.5-8.8 27-1.2 35.1-1.5 103.3-1.5 68.5 0 76.5 0.3 103.5 1.5 25 1.1 38.5 5.3 47.5 8.8 11 4.1 21.2 10.6 29.3 19.1 8.5 8.3 15 18.3 19.2 29.4 3.5 9 7.7 22.6 8.8 47.5 1.2 27 1.5 35.1 1.5 103.4 0 68.3-0.3 76.3-1.5 103.3z"
+  })), _path2 || (_path2 = /*#__PURE__*/React.createElement("path", {
+    className: "s0",
+    d: "m257.4 124.5c-72.5 0-131.5 58.9-131.5 131.5 0 72.6 59 131.5 131.5 131.5 72.7 0 131.5-58.9 131.5-131.5 0-72.6-58.8-131.5-131.5-131.5zm0 216.8c-47 0-85.3-38.2-85.3-85.3 0-47.1 38.3-85.3 85.3-85.3 47.2 0 85.4 38.2 85.4 85.3 0 47.1-38.2 85.3-85.4 85.3z"
+  })), _path3 || (_path3 = /*#__PURE__*/React.createElement("path", {
+    className: "s0",
+    d: "m424.9 119.3c0 17-13.8 30.7-30.8 30.7-16.9 0-30.7-13.7-30.7-30.7 0-17 13.8-30.7 30.7-30.7 17 0 30.8 13.7 30.8 30.7z"
+  })));
+}
+const ForwardRef = /*#__PURE__*/React.forwardRef(SvgFooterInstagram);
+export default __webpack_public_path__ + "static/media/footer-instagram.e8efec88e369c53d341d926da83eba43.svg";
+export { ForwardRef as ReactComponent };

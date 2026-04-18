@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  # Enterprise Standard: Decoupled Frontend/Backend Container
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXTAUTH_URL=http://localhost:3000
+      - NEXTAUTH_SECRET=sogya-alma-enterprise-secret-key-123
+      - NEXT_PUBLIC_API_URL=http://localhost:3000
+    restart: unless-stopped
+    # In a full Enterprise setup, you would add redis and postgres services here
+    # depends_on:
+    #   - db
+    #   - redis

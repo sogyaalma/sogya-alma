@@ -1,0 +1,315 @@
+.ghaith--testamon {
+  position: relative;
+  direction: rtl;
+  margin-bottom: 3rem;
+  min-height: 600px; /* Add minimum height to prevent collapsing */
+}
+
+.ghaith--testamon-layer {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ghaith--testamon-mosque,
+.ghaith--testamon-hands {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: auto;
+  display: block;
+  align-self: end;
+  justify-self: stretch;
+}
+
+.ghaith--testamon-mosque {
+  z-index: 1;
+}
+
+.ghaith--testamon-hands {
+  position: relative;
+  z-index: 2;
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 12%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  mask-image: linear-gradient(to top, transparent 0%, black 12%);
+  mask-repeat: no-repeat;
+  mask-size: cover;
+}
+
+/* ===== Title placement ===== */
+.ghaith--testamon-title-wrapper {
+  position: absolute;
+  z-index: 3;
+  top: 8%; /* Reduced slightly */
+  right: 15%;
+  direction: ltr;
+}
+
+.ghaith--testamon-title-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  flex-direction: row-reverse; /* Moved here to consolidate */
+}
+
+.ghaith--testamon-title-icon {
+  width: 44px;
+  height: 44px;
+  margin-left: 14px;
+}
+
+.ghaith--testamon-title {
+  margin: 0;
+  font-family: $fontFamilyArabicLight !important;
+  font-size: $font-size-enormous;
+  line-height: 1.1;
+}
+
+.ghaith--testamon-title span {
+  color: $mainGreenColor;
+}
+
+/* ===== Responsive title ===== */
+@media (max-width: 767px) {
+  .ghaith--testamon-title-wrapper {
+    top: 5%; /* Move up more on mobile */
+    right: 10%;
+  }
+
+  .ghaith--testamon-title {
+    font-size: $font-size-dominant !important;
+  }
+
+  .ghaith--testamon-title-icon {
+    width: 37px;
+    height: 37px;
+    margin-left: 6px;
+  }
+
+  .ghaith--testamon-title-box {
+    margin-bottom: 1rem;
+    padding: 8px 12px;
+  }
+}
+
+//////////////// TEXT SLIDER CSS //////////////////////////
+.ghaith--para-slider {
+  position: absolute;
+  left: 50%;
+  top: 30%; /* Increased from 25% to create more gap */
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 90vw;
+  max-width: 740px;
+  min-width: 360px;
+  z-index: 3;
+  direction: ltr;
+  margin-top: 1rem;
+}
+
+.ghaith--para-slider__controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  width: 40px;
+  min-width: 40px;
+  align-items: center;
+}
+
+.ghaith--para-slider__arrow {
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+
+.ghaith--para-slider__arrow img {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.ghaith--para-slider__arrow--up img {
+  transform: rotate(180deg);
+}
+
+.ghaith--para-slider__separator {
+  width: 1px;
+  background: rgba(0, 0, 0, 0.15);
+  align-self: stretch;
+}
+
+.ghaith--para-slider__content {
+  flex: 1;
+  background: transparent;
+  min-width: 0;
+}
+
+.ghaith--para-slide__text {
+  margin: 0;
+  line-height: 1.9;
+  font-size: $font-size-noteworthy;
+  font-family: $fontFamilyArabicMedium !important;
+  color: #1b1b1b;
+  text-align: right;
+  height: auto;
+  direction: rtl;
+
+  * {
+    font-size: inherit !important;
+    font-family: inherit !important;
+    line-height: inherit !important;
+  }
+
+  p,
+  span,
+  div,
+  strong,
+  em,
+  b,
+  i {
+    font-size: inherit !important;
+    font-family: inherit !important;
+  }
+}
+
+.ghaith--para-slide__author {
+  margin: 1rem 0 0 0;
+  font-size: calc($font-size-noteworthy * 0.85);
+  font-family: $fontFamilyArabicMedium !important;
+  color: $mainGreenColor;
+  text-align: right;
+  direction: rtl;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-start;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1200px) {
+  .ghaith--testamon {
+    min-height: 550px;
+  }
+
+  .ghaith--para-slider {
+    top: 45%; /* Adjusted */
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 992px) {
+  .ghaith--testamon {
+    min-height: 500px;
+  }
+
+  .ghaith--para-slider {
+    top: 42%; /* Adjusted */
+    max-width: 420px;
+  }
+
+  .ghaith--para-slider__controls {
+    width: 32px;
+    min-width: 32px;
+    gap: 24px;
+  }
+
+  .ghaith--para-slider__arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .ghaith--para-slider__arrow img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .ghaith--para-slide__text {
+    font-size: 16px;
+    line-height: 1.8;
+    min-height: 7em;
+  }
+
+  .ghaith--para-slide__author {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ghaith--testamon {
+    min-height: 450px;
+  }
+
+  .ghaith--para-slider {
+    top: 42%; /* Adjusted */
+    max-width: 420px;
+  }
+
+  .ghaith--para-slide__text {
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 5em;
+  }
+
+  .ghaith--para-slide__author {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ghaith--testamon {
+    min-height: 420px;
+  }
+
+  .ghaith--testamon-title-wrapper {
+    top: 3%;
+    right: 8%;
+  }
+
+  .ghaith--para-slider {
+    top: 38%; /* Further down on very small screens */
+    width: 88vw;
+    min-width: unset;
+    margin-top: 3rem;
+  }
+  .ghaith--testamon-mosque,
+  .ghaith--testamon-hands {
+    display: none;
+  }
+}
+
+.ghaith--para-slider .slick-vertical .slick-slide {
+  height: auto !important;
+}
+
+.ghaith--para-slider .slick-track {
+  display: block;
+}
+
+.ghaith--para-slide {
+  height: auto !important;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ghaith--para-slide__author-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}

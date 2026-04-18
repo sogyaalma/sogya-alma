@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>MOC-Contact Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/media/icons/moc-logo.png" />
+
+    <link href="/lib/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" />
+
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/lib/bootstrap/dist/css/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="/css/angular-material/angular-material.css" rel="stylesheet" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="/css/Loader.css" rel="stylesheet" />
+    <link href="/lib/intl-tel-input-master/build/css/intlTelInput.min.css" rel="stylesheet" />
+    <link href="/css/mainLayout.css?v=16" rel="stylesheet" />
+
+
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery UI library    - Sultan 2/7/24 -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <!-- jQuery easing plugin -->
+    <script src="https://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Datepicker JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="/lib/intl-tel-input-master/build/js/intlTelInput.js"></script>
+    <script src="/lib/intl-tel-input-master/build/js/intlTelInput-jquery.js"></script>
+
+
+    <script src="/lib/angular/angular.js" type="text/javascript"></script>
+    <script src="/lib/angular/angular-route.min.js" type="text/javascript"></script>
+    <script src="/lib/angular/angular-resource.min.js" type="text/javascript"></script>
+    <script src="/lib/angular/angular-sanitize.js"></script>
+    <script src="/lib/angular/angular-filter.js" type="text/javascript"></script>
+    <script src="/lib/angular/angular-ui/ui-bootstrap.min.js" type="text/javascript"></script>
+    <script src="/lib/angular/angular-ui/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+    <script src="/lib/angular/ng-file-upload.min.js" type="text/javascript"></script>
+    <script src="/lib/angular/angular-animate.min.js" type="text/javascript"></script>
+    <script src="/lib/angular/angular-aria.min.js" type="text/javascript"></script>
+    <script src="/lib/angular/angular-material.min.js" type="text/javascript"></script>
+    <script src="/lib/angular/angular-ui/ui-select.js" type="text/javascript"></script>
+    <script src="/lib/angular/ng-pattern-restrict.min.js" type="text/javascript"></script>
+
+    <script src="/js/angularOut/app.js?v=25"></script>
+    <script src="/js/angularOut/controller.js?v=27"></script>
+
+
+
+
+    <style>
+        .loader_grad_relative {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: auto;
+            /*height: auto;*/
+            background: rgba(0,0,0,0.3);
+            z-index: 900;
+            opacity: 0.9;
+        }
+    </style>
+
+</head>
+<body class="rtl-layout" ng-controller="controller">
+    <div>
+        
+
+<div ng-view></div>
+
+    </div>
+
+    <div class="hidden ng-cloak">
+        <div class="md-dialog-container" id="AlertModal">
+            <md-dialog style="width:500px !important">
+                <div class="service-Alertmodal-container">
+                    <div class="modal-box">
+                        <div>
+                            <div class="title text-right"
+                                 ng-class="
+                                 {'bg-success' : AlertModalObj.Type =='Success',
+                                  'bg-success' : AlertModalObj.Type =='Error'}">
+                                <span>{{AlertModalObj.Title}}</span>
+                            </div>
+                            <div class="body text-center">
+                                <div ng-if="AlertModalObj.Type !='Error'">
+                                    <i class="fg-green fas fa-check-double" style="font-size: 50px;"></i>
+                                </div>
+                                <div>
+                                    <p style="padding: 0px 75px;">{{AlertModalObj.Body}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-1 text-center">
+                            <a ng-if="!IsNullOrEmpty(AlertModalObj.RedirectTo)" ng-click="ChangeView(AlertModalObj.RedirectTo);CloseModal()" class="moc-btn secondary py-2">&#x625;&#x63A;&#x644;&#x627;&#x642;</a>
+                            <a ng-if="IsNullOrEmpty(AlertModalObj.RedirectTo)" ng-click="CloseModal()" class="moc-btn secondary py-2">&#x625;&#x63A;&#x644;&#x627;&#x642;</a>
+                        </div>
+                    </div>
+                </div>
+            </md-dialog>
+        </div>
+    </div>
+    <div class="hidden ng-cloak">
+        <div class="md-dialog-container" id="VerifyMobileModal">
+            <md-dialog style="width:500px !important">
+                <div class="service-Alertmodal-container">
+                    <div class="modal-box">
+                        <div>
+                            <div class="title">
+                                <span>&#x627;&#x644;&#x631;&#x62C;&#x627;&#x621; &#x627;&#x62F;&#x62E;&#x627;&#x644; &#x631;&#x645;&#x632; &#x627;&#x644;&#x62A;&#x62D;&#x642;&#x642; &#x627;&#x644;&#x645;&#x631;&#x633;&#x644; &#x639;&#x644;&#x649; &#x627;&#x644;&#x647;&#x627;&#x62A;&#x641;(&#x627;&#x648; &#x627;&#x644;&#x628;&#x631;&#x64A;&#x62F; &#x627;&#x644;&#x627;&#x644;&#x643;&#x62A;&#x631;&#x648;&#x646;&#x64A; &#x627;&#x630;&#x627; &#x643;&#x627;&#x646; &#x627;&#x644;&#x631;&#x642;&#x645; &#x63A;&#x64A;&#x631; &#x633;&#x639;&#x648;&#x62F;&#x64A;)</span>
+                            </div>
+                            <div class="body text-center">
+                                <div>
+                                    <p style="padding: 0px 75px;">&#x64A;&#x631;&#x62C;&#x649; &#x625;&#x62F;&#x62E;&#x627;&#x644; &#x627;&#x644;&#x631;&#x645;&#x632; &#x627;&#x644;&#x645;&#x631;&#x633;&#x644; &#x639;&#x644;&#x649; &#x627;&#x644;&#x631;&#x642;&#x645;</p>
+                                    <p style="padding: 0px 75px;">{{SelectedUser.MobileNumber}}</p>
+                                </div>
+                                <div class="row" ng-show="!IsNullOrEmpty(VerifyMobileError)">
+                                    <div class="col-md-12 text-center">
+                                        <span class="text-danger error-label">{{VerifyMobileError}}</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input class="form-control" ng-model="SelectedUser.VerificationCode" type="text" placeholder="&#x623;&#x62F;&#x62E;&#x644; &#x631;&#x645;&#x632; &#x627;&#x644;&#x62A;&#x62D;&#x642;&#x642;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-1 text-center">
+                            <a ng-click="VerifyMobile(SelectedUser);" ng-disabled="IsNullOrEmpty(SelectedUser.VerificationCode)" class="moc-btn">&#x62A;&#x62D;&#x642;&#x642;</a>
+                            <!-- زر إعادة إرسال الرمز -->
+                            <a ng-click="ResendVerificationCode(SelectedUser);"
+                               ng-disabled="ResendDisabled"
+                               class="moc-btn"
+                               style="margin-left:10px;">
+                                <span ng-if="!ResendDisabled">&#x625;&#x639;&#x627;&#x62F;&#x629; &#x625;&#x631;&#x633;&#x627;&#x644; &#x627;&#x644;&#x631;&#x645;&#x632;</span>
+                                <span ng-if="ResendDisabled">&#x625;&#x639;&#x627;&#x62F;&#x629; &#x627;&#x644;&#x625;&#x631;&#x633;&#x627;&#x644; &#x62E;&#x644;&#x627;&#x644; {{ResendTimer}}s</span>
+                            </a>
+
+                            <!-- زر الرجوع -->
+                            <a ng-click="BackToForm();"
+                               class="moc-btn"
+                               style="margin-left:10px; background:#6c757d; color:white;">
+                                &#x631;&#x62C;&#x648;&#x639;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </md-dialog>
+        </div>
+    </div>
+    <div id="MainLoader" class="loader_grad_relative hidden">
+        <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+
+
+    <span ng-init="SharedResource.PleaseContactTechnicalSupport = '&#x64A;&#x631;&#x62C;&#x649; &#x627;&#x644;&#x62A;&#x648;&#x627;&#x635;&#x644; &#x645;&#x639; &#x627;&#x644;&#x62F;&#x639;&#x645; &#x627;&#x644;&#x641;&#x646;&#x64A;'"></span>
+    <span ng-init="SharedResource.ConnectionProblem = '&#x645;&#x634;&#x643;&#x644;&#x629; &#x641;&#x64A; &#x627;&#x644;&#x625;&#x62A;&#x635;&#x627;&#x644;'"></span>
+
+
+
+    <script src="/lib/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfXi8QpAAAAAIYQaS5-qj66bCeZbbiUxTs6XRuK"></script>
+    <script>
+
+        function validateCaptcha() {
+            grecaptcha.ready(function() {
+                window.grecaptcha.execute('6LfXi8QpAAAAAIYQaS5-qj66bCeZbbiUxTs6XRuK', { action: 'home' }).then(function(token) {
+                    fetch('/GoogleReCaptcha/ValidateCaptcha', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ token: token })
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                // Captcha validation successful, proceed with your logic
+                                console.log('Captcha validation passed!');
+                                angular.element(document.getElementById("loginForm")).scope().Loading(true);
+
+                            } else {
+                                window.location.href = "/";
+                                failedCaptcha();
+                                // Captcha validation failed
+                                console.error('Captcha validation failed.');
+                            }
+                        })
+                        .catch(error => {
+                            window.location.href = "/";
+                            failedCaptcha();
+                            console.error('Error validating captcha:', error);
+                        });
+                    //$("#captchaInput").val(token);
+                });
+            });
+        }
+
+
+        function failedCaptcha() {
+            $("#Login").prop("disabled", true);
+            $("#NewAccount").prop("disabled", true);
+            $("#step4Next").prop("disabled", true);
+            alert("Captcha is invalid");
+        }
+
+
+    </script>
+</body>
+</html>

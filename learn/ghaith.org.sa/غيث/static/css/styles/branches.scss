@@ -1,0 +1,227 @@
+.ghaith-branch-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.17);
+  //overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.ghaith-branch-collapse {
+  width: 100%;
+  background-color: #f8f9fa;
+
+  padding: 0 !important;
+
+  .ant-collapse-item {
+    border: none !important;
+  }
+
+  .ant-collapse-content {
+    border: none !important;
+    padding: 0 !important;
+    background: transparent;
+  }
+
+  .ant-collapse-content-box {
+    padding: 0 !important;
+  }
+
+  .ant-collapse-header {
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .ant-collapse-expand-icon {
+    padding-inline-end: 0 !important;
+    margin-inline-end: 0 !important;
+  }
+}
+
+.ghaith-collapse-arrow {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ghaith-arrow-icon {
+  font-size: 14px;
+  color: $forestColor;
+}
+
+.ghaith-branch-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .ghaith-branch-container {
+    flex-direction: column;
+  }
+}
+
+.ghaith-branch-image {
+  width: 30%;
+  position: relative;
+  order: 1;
+}
+
+/* Add media query for 768px to 1248px */
+@media (min-width: 769px) and (max-width: 1248px) {
+  .ghaith-branch-image {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ghaith-branch-image {
+    width: 100%;
+  }
+}
+
+.ghaith-branch-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 280px;
+}
+
+@media (max-width: 768px) {
+  .ghaith-branch-image img {
+    min-height: 250px;
+  }
+}
+
+.ghaith-branch-content {
+  width: 70%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+  direction: rtl;
+  order: 2;
+}
+
+/* Add media query for 768px to 1248px */
+@media (min-width: 769px) and (max-width: 1248px) {
+  .ghaith-branch-content {
+    width: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ghaith-branch-content {
+    width: 100%;
+    padding: 24px;
+  }
+}
+
+.ghaith-branch-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: $forestColor;
+  margin: 0 0 16px 0;
+  font-family: $fontFamilyArabicLight;
+}
+
+@media (max-width: 768px) {
+  .ghaith-branch-title {
+    font-size: 24px;
+  }
+}
+
+.ghaith-branch-address {
+  font-size: 18px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+  font-family: $fontFamilyArabicLight;
+}
+
+@media (max-width: 768px) {
+  .ghaith-branch-address {
+    font-size: 16px;
+  }
+}
+
+.ghaith-branch-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: $whiteColor;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: fit-content;
+  font-size: 16px;
+}
+
+/* Simplified Branch Offices Styles */
+.ghaith-branch-offices {
+  padding: 24px 40px;
+  background: #f1f5f9;
+  border-top: 1px solid #e2e8f0;
+  direction: rtl;
+}
+
+@media (max-width: 768px) {
+  .ghaith-branch-offices {
+    padding: 16px 24px;
+  }
+}
+
+.ghaith-offices-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: $forestColor;
+  margin: 0 0 20px 0;
+  font-family: $fontFamilyArabicLight;
+}
+
+.ghaith-offices-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ghaith-office-name-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.ghaith-office-name-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  font-family: $fontFamilyArabicLight;
+}
+
+.ghaith-office-icon {
+  color: $forestColor;
+  font-size: 18px;
+  flex-shrink: 0;
+}

@@ -5,7 +5,9 @@ import RecurringDonationModal from "@/components/RecurringDonationModal";
 import { User, Medal, CreditCard, Droplets, HeartHandshake, History, CheckCircle2, Trophy, Eye, Calendar, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { createClient } from "@/utils/supabase/client";
+import { useState, useEffect } from "react";
 
 const mockDonations = [
   { id: "TX-20251102", project: "ساهم بكرتون للمساجد", amount: 500, date: "2025-11-02", status: "مكتمل" },
@@ -15,9 +17,25 @@ const mockDonations = [
 ];
 
 export default function DashboardPage() {
-  const { data: session, status } = useSession();
+  const router = useRouter();
+  const supabase = createClient();
+  const [user, setUser] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
-  if (status === "loading") {
+  useEffect(() => {
+    const checkUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        router.push("/auth/login");
+      } else {
+        setUser(user);
+        setLoading(false);
+      }
+    };
+    checkUser();
+  }, [router, supabase]);
+
+  if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
         <div className="flex flex-col items-center gap-4">
@@ -26,10 +44,6 @@ export default function DashboardPage() {
         </div>
       </div>
     );
-  }
-
-  if (status === "unauthenticated") {
-    redirect("/auth/login");
   }
 
   return (
@@ -47,7 +61,7 @@ export default function DashboardPage() {
                   <CheckCircle2 size={14} />
                 </div>
               </div>
-              <h2 className="font-bold text-xl text-secondary dark:text-white">{session?.user?.name || "المتبرع"}</h2>
+              <h2 className="font-bold text-xl text-secondary dark:text-white">{user?.user_metadata?.full_name || user?.email || "المتبرع"}</h2>
               <span className="text-sm font-bold text-gray-400 mt-1">متبرع نشط</span>
             </div>
 
@@ -61,9 +75,16 @@ export default function DashboardPage() {
               <Link href="/periodicdonation" className="flex items-center gap-3 text-gray-500 dark:text-gray-400 hover:text-primary font-bold hover:bg-gray-50 dark:hover:bg-gray-700 px-4 py-3 rounded-xl transition-colors">
                 <CreditCard size={20} /> الاستقطاع والبطاقات
               </Link>
-              <Link href="/api/auth/signout" className="flex items-center gap-3 text-red-500 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 font-bold px-4 py-3 rounded-xl transition-colors mt-6">
+              <button 
+                onClick={async () => {
+                  await supabase.auth.signOut();
+                  router.push("/");
+                  router.refresh();
+                }}
+                className="flex items-center gap-3 text-red-500 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 font-bold px-4 py-3 rounded-xl transition-colors mt-6 w-full text-right"
+              >
                 تسجيل الخروج
-              </Link>
+              </button>
             </nav>
 
             {/* Recurring Donation Modal — Portal renders to document.body */}

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Search, ShoppingCart, User, Globe, ChevronDown, Menu, X, Moon, Sun, LogOut, History, CreditCard } from "lucide-react";
-import { useSession, signOut } from "next-auth/react";
+import { createClient } from "@/utils/supabase/client";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,14 +13,29 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { data: session } = useSession();
+  const [user, setUser] = useState<any>(null);
   const { theme, setTheme } = useTheme();
   const router = useRouter();
+  const supabase = createClient();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    // Initial user fetch
+    supabase.auth.getUser().then(({ data }) => {
+      setUser(data.user);
+    });
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      subscription.unsubscribe();
+    };
   }, []);
 
   const toggleLang = () => {
@@ -128,7 +143,7 @@ export default function Header() {
             </Link>
 
             <div className="hidden md:flex items-center h-full relative" id="login-btn">
-              {session ? (
+              {user ? (
                 <>
                   <button
                     onClick={() => setShowUserMenu(!showUserMenu)}
@@ -137,7 +152,7 @@ export default function Header() {
                     <div className="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 hover:bg-primary/10 hover:text-primary transition-colors">
                        <User size={18} strokeWidth={2} />
                     </div>
-                    <span>{session.user?.name}</span>
+                    <span>{user.user_metadata?.full_name || user.email}</span>
                     <ChevronDown size={14} className={`transition-transform duration-200 ${showUserMenu ? 'rotate-180' : ''}`} />
                   </button>
                   
@@ -158,7 +173,14 @@ export default function Header() {
                           </li>
                           <div className="h-px bg-gray-100 dark:bg-gray-700 my-1"></div>
                           <li>
-                            <button onClick={() => signOut()} className="flex items-center gap-2 p-3 hover:bg-red-50 dark:hover:bg-red-900/20 text-red-600 rounded-lg w-full text-right">
+                            <button 
+                              onClick={async () => {
+                                await supabase.auth.signOut();
+                                router.refresh();
+                                setShowUserMenu(false);
+                              }} 
+                              className="flex items-center gap-2 p-3 hover:bg-red-50 dark:hover:bg-red-900/20 text-red-600 rounded-lg w-full text-right"
+                            >
                                <LogOut size={16} />
                                تسجيل الخروج
                             </button>

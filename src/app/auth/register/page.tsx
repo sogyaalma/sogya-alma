@@ -6,21 +6,42 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import { createClient } from "@/utils/supabase/client";
+
 export default function RegisterPage() {
   const router = useRouter();
+  const supabase = createClient();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [form, setForm] = useState({ name: "", phone: "", password: "", confirm: "" });
+  const [form, setForm] = useState({ name: "", email: "", password: "", confirm: "" });
   const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (form.password !== form.confirm) { setError("كلمتا المرور غير متطابقتين"); return; }
     if (form.password.length < 6) { setError("كلمة المرور يجب أن تكون 6 أحرف على الأقل"); return; }
-    setLoading(true); setError("");
-    await new Promise(r => setTimeout(r, 1200));
-    setLoading(false); setSuccess(true);
-    setTimeout(() => router.push("/auth/login"), 2000);
+    
+    setLoading(true); 
+    setError("");
+    
+    const { error: signUpError } = await supabase.auth.signUp({
+      email: form.email,
+      password: form.password,
+      options: {
+        data: {
+          full_name: form.name,
+        }
+      }
+    });
+
+    if (signUpError) {
+      setError(signUpError.message);
+      setLoading(false);
+    } else {
+      setLoading(false); 
+      setSuccess(true);
+      setTimeout(() => router.push("/auth/login"), 2000);
+    }
   };
 
   return (
@@ -52,10 +73,10 @@ export default function RegisterPage() {
                 <input type="text" required value={form.name} onChange={e => setForm({...form, name: e.target.value})} className="w-full border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 dark:text-white rounded-xl px-4 py-3 focus:outline-none focus:border-primary text-sm" placeholder="أدخل اسمك الكامل" />
               </div>
               <div>
-                <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">رقم الجوال</label>
+                <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">البريد الإلكتروني</label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"><Phone className="h-5 w-5 text-gray-400" /></div>
-                  <input type="tel" required value={form.phone} onChange={e => setForm({...form, phone: e.target.value})} className="w-full pl-4 pr-10 py-3 border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 dark:text-white rounded-xl focus:outline-none focus:border-primary text-left text-sm" placeholder="05x xxx xxxx" dir="ltr" />
+                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"><User className="h-5 w-5 text-gray-400" /></div>
+                  <input type="email" required value={form.email} onChange={e => setForm({...form, email: e.target.value})} className="w-full pl-4 pr-10 py-3 border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 dark:text-white rounded-xl focus:outline-none focus:border-primary text-left text-sm" placeholder="email@example.com" dir="ltr" />
                 </div>
               </div>
               <div>

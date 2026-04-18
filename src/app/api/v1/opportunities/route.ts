@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getDatabaseRows } from '@/lib/csv-db';
 
+export const dynamic = 'force-dynamic';
+
 // Enterprise Standard: Unified JSON Response Format
 function createResponse(success: boolean, data: any, message: string = '', status: number = 200) {
   return NextResponse.json({

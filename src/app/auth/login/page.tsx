@@ -4,11 +4,11 @@ import Footer from "@/components/Footer";
 import { User, Lock, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { createClient } from "@/utils/supabase/client";
 
 export default function LoginPage() {
   const router = useRouter();
+  const supabase = createClient();
   const [phoneOrEmail, setPhoneOrEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -24,14 +24,13 @@ export default function LoginPage() {
     setLoading(true);
     setError("");
     
-    const result = await signIn("credentials", {
-      phoneOrEmail,
+    const { error: authError } = await supabase.auth.signInWithPassword({
+      email: phoneOrEmail,
       password,
-      redirect: false,
     });
 
-    if (result?.error) {
-      setError("بيانات الدخول غير صحيحة");
+    if (authError) {
+      setError("بيانات الدخول غير صحيحة أو الحساب غير موجود");
       setLoading(false);
     } else {
       router.push("/auth/dashboard");
@@ -106,9 +105,6 @@ export default function LoginPage() {
             </button>
           </form>
 
-          <div className="mt-6 p-4 bg-blue-50 border border-blue-100 rounded-xl text-xs text-blue-700 text-center font-bold">
-            بيانات الاختبار: أي رقم جوال + كلمة المرور <span dir="ltr">123456</span>
-          </div>
           <p className="text-center text-sm text-gray-500 mt-4">
             ليس لديك حساب؟ <Link href="/auth/register" className="text-primary font-bold hover:underline">سجل الآن</Link>
           </p>

@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getAllPosts } from "@/lib/mdx";
-import { getDatabaseRows } from "@/lib/csv-db";
+import { getDatabaseRows } from "@/lib/db";
 import MediaLibraryClient from "@/components/MediaLibraryClient";
 
 export default async function MediaCenterPage() {

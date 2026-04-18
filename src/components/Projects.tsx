@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, Gift } from "lucide-react";
-import { getDatabaseRows } from "@/lib/csv-db";
+import { getDatabaseRows } from "@/lib/db";
 import CardRenderer from "@/components/CardRenderer";
 
 export default async function Projects() {

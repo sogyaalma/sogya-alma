@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Building2, Droplets } from "lucide-react";
 import CardRenderer from "@/components/CardRenderer";
-import { getDatabaseRows } from "@/lib/csv-db";
+import { getDatabaseRows } from "@/lib/db";
 
 async function getMosqueProjects() {
   const rows = await getDatabaseRows();

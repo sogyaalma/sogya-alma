@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import RecurringDonationModal from "@/components/RecurringDonationModal";
 import { User, Medal, CreditCard, Droplets, HeartHandshake, History, CheckCircle2, Trophy, Eye, Calendar, ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/utils/supabase/client";
 import { useState, useEffect } from "react";

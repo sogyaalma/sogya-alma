@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getDatabaseRows } from "@/lib/csv-db";
+import { getDatabaseRows } from "@/lib/db";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Calendar, ArrowRight, Tag, Newspaper } from "lucide-react";

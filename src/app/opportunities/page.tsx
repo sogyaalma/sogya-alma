@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CardRenderer from "@/components/CardRenderer";
-import { getDatabaseRows } from "@/lib/csv-db";
+import { getDatabaseRows } from "@/lib/db";
 import Link from "next/link";
 import { Droplets, Filter } from "lucide-react";
 

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getDatabaseRows } from '@/lib/csv-db';
+import { getDatabaseRows } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
 

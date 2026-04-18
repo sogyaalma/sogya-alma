@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Newspaper, Video, Image as ImageIcon, ArrowLeft, Calendar, Tag, PlayCircle, Clock } from "lucide-react";
 import type { Post } from "@/lib/mdx";
-import type { DatabaseRow } from "@/lib/csv-db";
+import type { DatabaseRow } from "@/lib/db";
 
 interface Props {
   mdxPosts: Post[];

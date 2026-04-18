@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { MapPin, Users, Droplets, ArrowRight, Share2, Heart, CircleCheck } from "lucide-react";
 import Link from "next/link";
 import DonationSidebar from "@/components/DonationSidebar";
-import { getDatabaseRows } from "@/lib/csv-db";
+import { getDatabaseRows } from "@/lib/db";
 import type { Metadata } from "next";
 
 export async function generateMetadata(

@@ -60,15 +60,12 @@ export default function Header() {
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
           
-          <Link href="/" className="flex items-center gap-2 lg:ml-12 md:ml-4">
-            <div className="w-[45px] h-[45px] md:h-[56px] md:w-[56px] rounded-full bg-primary flex items-center justify-center text-white font-bold text-xs shadow-inner">
-              سقيا
-            </div>
-            <div className="hidden lg:flex flex-col">
-              <span className="font-bold text-primary text-xl leading-none" style={{ fontFamily: 'var(--font-ibm)' }}>
-                جمعية سقيا الماء
-              </span>
-            </div>
+          <Link href="/" className="flex items-center gap-2 lg:ml-12 md:ml-4 group">
+            <img 
+              src="/logo.svg" 
+              alt="جمعية سقيا الماء" 
+              className="h-[50px] md:h-[65px] w-auto transition-transform group-hover:scale-105" 
+            />
           </Link>
         </div>
 

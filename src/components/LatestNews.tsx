@@ -1,4 +1,4 @@
-import { getDatabaseRows } from "@/lib/csv-db";
+import { getDatabaseRows } from "@/lib/db";
 import CardRenderer from "@/components/CardRenderer";
 import Link from "next/link";
 import { Newspaper, ArrowLeft } from "lucide-react";

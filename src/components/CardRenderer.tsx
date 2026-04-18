@@ -1,4 +1,4 @@
-import { DatabaseRow } from '@/lib/csv-db';
+import { DatabaseRow } from '@/lib/db';
 import Link from 'next/link';
 import { Image as ImageIcon } from 'lucide-react';
 
